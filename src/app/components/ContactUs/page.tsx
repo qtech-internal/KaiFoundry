@@ -15,7 +15,7 @@ const ContactUs = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-stretch">
                 {/* Left Section */}
                 <div className="flex flex-col justify-between h-full">
-                    <h3 className="text-xl font-semibold mb-4">Where To Find Us</h3>
+                    <h3 className="text-xl font-semibold">Where To Find Us</h3>
                     <MapLocation />
                     <ContactDetails />
                     <SocialIcons />

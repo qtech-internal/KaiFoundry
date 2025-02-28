@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    firstName: "",
+    name: "",
     lastName: "",
     email: "",
     phone: "",
@@ -24,11 +24,11 @@ const ContactForm = () => {
       {/* First & Last Name */}
       <div className="flex space-x-4">
         <div className="w-full">
-          <label htmlFor="firstName" className="block text-black mb-1">Name*</label>
+          <label htmlFor="name" className="block text-black mb-1">Name*</label>
           <input
             type="text"
-            id="firstName"
-            name="firstName"
+            id="name"
+            name="name"
             placeholder="Enter your Name"
             className="w-full border border-gray-300 bg-transparent p-3 rounded-md text-black focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none"
             onChange={handleChange}
