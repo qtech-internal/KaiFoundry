@@ -15,8 +15,8 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
     <motion.div
       initial={{ borderBottomWidth: 0, borderColor: "rgba(209, 213, 219, 0.4)" }}
       animate={{
-        borderBottomWidth: isOpen ? 1.5 : 0,
-        borderColor: isOpen ? "rgba(209, 213, 219, 0.4)" : '',
+        borderBottomWidth: isOpen ? 1.5 : 1,
+        borderColor: isOpen ? "rgba(209, 213, 219, 0.4)" : '#000000',
       }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
       className="border-gray-300"
