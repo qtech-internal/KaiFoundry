@@ -7,10 +7,9 @@ interface ContactInfoProps {
 
 const ContactInfo: React.FC<ContactInfoProps> = ({ phone, email }) => {
   return (
-    <div className="text-gray-300 ">
+    <div className="text-gray-300 flex flex-col items-start">
       {/* Horizontal Separator */}
-      <hr className="border-t border-black w-14 my-6 mt-12" />
-
+      <hr className="border-t border-white sm:border-black w-20 border-[1px] my-6" />
       <p>{phone}</p>
       <p>
         <a href={`mailto:${email}`} className="hover:text-white">

@@ -3,9 +3,9 @@ import FAQItem from "./FAQItem";
 
 const FAQSection = () => {
   const faqs = [
-    { question: "What is Kai Foundry?", answer: "Kai Foundry is a blockchain-based platform..." },
-    { question: "How does Kai Foundry differentiate itself from other blockchain companies?", answer: "Kai Foundry stands out by..." },
-    { question: "How can I get in touch with Kai Foundry?", answer: "You can contact us via email at..." },
+    { question: "What is Kai Foundry?", answer: "As a creative agency we work with you to develop solutions to address your brand needs. That includes various aspects of brand planning and strategy, marketing and design." },
+    { question: "How does Kai Foundry differentiate itself from other blockchain companies?", answer: "As a creative agency we work with you to develop solutions to address your brand needs. That includes various aspects of brand planning and strategy, marketing and design." },
+    { question: "How can I get in touch with Kai Foundry?", answer: "As a creative agency we work with you to develop solutions to address your brand needs. That includes various aspects of brand planning and strategy, marketing and design." },
     { question: "How does pricing work for Kai Foundry’s services?", answer: "Our pricing is based on..." },
   ];
 

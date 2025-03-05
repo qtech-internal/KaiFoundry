@@ -1,5 +1,7 @@
-"use client";
+'use client'
 import { useState } from "react";
+import Button from "../UI/Button";
+import Input from "../UI/Input";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -21,78 +23,16 @@ const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6 w-full max-w-lg mx-auto">
-      {/* First & Last Name */}
-      <div className="flex space-x-4">
-        <div className="w-full">
-          <label htmlFor="name" className="block text-black mb-1">Name*</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your Name"
-            className="w-full border border-gray-300 bg-transparent p-3 rounded-md text-black focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none"
-            onChange={handleChange}
-          />
-        </div>
-        <div className="w-full">
-          <label htmlFor="lastName" className="block text-black mb-1">Last Name</label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            placeholder="Enter your Name"
-            className="w-full border border-gray-300 bg-transparent p-3 rounded-md text-black focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none"
-            onChange={handleChange}
-          />
-        </div>
+      <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+        <Input label="Name*" type="text" name="name" placeholder="Enter your Name" value={formData.name} onChange={handleChange} className="w-full" />
+        <Input label="Last Name" type="text" name="lastName" placeholder="Enter your Last Name" value={formData.lastName} onChange={handleChange} className="w-full" />
       </div>
+      <Input label="Email*" type="email" name="email" placeholder="Enter your Email" value={formData.email} onChange={handleChange} />
+      <Input label="Phone Number*" type="tel" name="phone" placeholder="Enter your Contact Number" value={formData.phone} onChange={handleChange} />
+      <Input label="Message*" type="text" name="message" placeholder="Write your message here." value={formData.message} onChange={handleChange} textarea />
 
-      {/* Email */}
-      <div>
-        <label htmlFor="email" className="block text-black mb-1">Email*</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter your Email"
-          className="w-full border border-gray-300 bg-transparent p-3 rounded-md text-black focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none"
-          onChange={handleChange}
-        />
-      </div>
-
-      {/* Phone */}
-      <div>
-        <label htmlFor="phone" className="block text-black mb-1">Phone Number*</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          placeholder="Enter your Contact Number"
-          className="w-full border border-gray-300 bg-transparent p-3 rounded-md text-black focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none"
-          onChange={handleChange}
-        />
-      </div>
-
-      {/* Message */}
-      <div>
-        <label htmlFor="message" className="block text-black mb-1">Message*</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Write your message here."
-          className="w-full border border-gray-300 bg-transparent p-3 rounded-md text-black focus:border-purple-500 focus:ring-1 focus:ring-purple-500 outline-none h-32 resize-none"
-          onChange={handleChange}
-        />
-      </div>
-
-      {/* Submit Button */}
       <div className="flex justify-center">
-        <button
-          type="submit"
-          className="bg-fuchsia-500 text-black font-semibold px-6 py-3 rounded-md hover:opacity-90 transition duration-300"
-        >
-          Submit
-        </button>
+        <Button href="/" text="Submit" className="bg-fuchsia-800 text-white hover:bg-fuchsia-700" />
       </div>
     </form>
   );

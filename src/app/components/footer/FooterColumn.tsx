@@ -12,7 +12,7 @@ const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
       <h3 className="font-bold mb-2">{title}</h3>
       <ul>
         {links.map((link, index) => (
-          <li key={index} className="text-white hover:text-white">
+          <li key={index} className="text-white">
             <Link href={link.href}>{link.label}</Link>
           </li>
         ))}
