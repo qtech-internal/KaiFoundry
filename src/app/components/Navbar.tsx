@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link";
 import React, { useState } from "react";
+import CareersSection from "./CareersScreen/CareersSection";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,7 @@ const Navbar: React.FC = () => {
         </Link>
       </div>
 
-      {/* Hamburger Icon for Mobile */}
+
       <div className="md:hidden flex items-center">
         <button onClick={toggleMenu} className="focus:outline-none">
           <div className="flex flex-col space-y-1">
@@ -29,11 +30,10 @@ const Navbar: React.FC = () => {
         </button>
       </div>
 
-      {/* Navigation Links */}
       <ul className={`flex-col md:flex md:flex-row md:space-x-6 text-gray-700 absolute md:static bg-white md:bg-transparent transition-all duration-300 ease-in-out ${isOpen ? 'top-16 left-0 w-full md:w-auto' : 'top-[-200px] md:top-0'} md:top-0 md:flex md:items-center`}>
         <li className="py-2 md:py-0"><Link href="#">How We Help</Link></li>
         <li className="py-2 md:py-0"><Link href="#">Who We Are</Link></li>
-        <li className="py-2 md:py-0"><Link href="#">Careers</Link></li>
+        <li className="py-2 md:py-0"><Link href="/components/CareersScreen">Careers</Link></li> 
         <li className="py-2 md:py-0"><Link href="#">Services</Link></li>
         <li className="py-2 md:py-0"><Link href="#">Blogs</Link></li>
       </ul>
