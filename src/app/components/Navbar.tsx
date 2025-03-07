@@ -1,7 +1,6 @@
 "use client"
 import Link from "next/link";
 import React, { useState } from "react";
-import CareersSection from "./CareersScreen/CareersSection";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
