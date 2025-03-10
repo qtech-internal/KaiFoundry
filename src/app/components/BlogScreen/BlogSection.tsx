@@ -1,63 +1,22 @@
 'use client';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const blogs = [
-  {
-    id: 1,
-    image: "/assets/blogs/img1.png",
-    category: "Web3 Solution",
-    title: "Make a better website solution for your product",
-    link: "/components/BlogScreen/BlogPost",
-  },
-  {
-    id: 2,
-    image: "/assets/blogs/img2.png",
-    category: "Blockchain Solution",
-    title: "Let's develop blockchain solutions tailored to your needs",
-    link: "#",
-  },
-  {
-    id: 3,
-    image: "/assets/blogs/img3.png",
-    category: "UI Interface",
-    title: "The Science of Color Contrast - An Expert Designer's Guide",
-    link: "#",
-  },
-  {
-    id: 4,
-    image: "/assets/blogs/img4.png",
-    category: "AI Innovation",
-    title: "Harnessing AI to Improve User Experience",
-    link: "#",
-  },
-  {
-    id: 5,
-    image: "/assets/blogs/img5.png",
-    category: "Cybersecurity",
-    title: "How to Secure Your Digital Products in 2025",
-    link: "#",
-  },
-  {
-    id: 6,
-    image: "/assets/blogs/img6.png",
-    category: "Gaming",
-    title: "How to Secure Your Digital Products in 2025",
-    link: "#",
-  },
-  {
-    id: 7,
-    image: "/assets/blogs/img2.png",
-    category: "Blockchain",
-    title: "How to Secure Your Digital Products in 2025",
-    link: "#",
-  },
-];
-
 export default function BlogCarousel() {
+  const [blogs, setBlogs] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsToShow = 3; 
   const totalSlides = Math.ceil(blogs.length / itemsToShow); 
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const response = await fetch('/assets/blogs/blogs.json');
+      const data = await response.json();
+      setBlogs(data);
+    };
+
+    fetchBlogs();
+  }, []);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);

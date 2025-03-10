@@ -30,11 +30,11 @@ const Navbar: React.FC = () => {
       </div>
 
       <ul className={`flex-col md:flex md:flex-row md:space-x-6 text-gray-700 absolute md:static bg-white md:bg-transparent transition-all duration-300 ease-in-out ${isOpen ? 'top-16 left-0 w-full md:w-auto' : 'top-[-200px] md:top-0'} md:top-0 md:flex md:items-center`}>
-        <li className="py-2 md:py-0"><Link href="#">How We Help</Link></li>
+        <li className="py-2 md:py-0"><Link href="/components/HowWeHelpScreen">How We Help</Link></li>
         <li className="py-2 md:py-0"><Link href="#">Who We Are</Link></li>
         <li className="py-2 md:py-0"><Link href="/components/CareersScreen">Careers</Link></li> 
         <li className="py-2 md:py-0"><Link href="#">Services</Link></li>
-        <li className="py-2 md:py-0"><Link href="#">Blogs</Link></li>
+        <li className="py-2 md:py-0"><Link href="/components/BlogScreen">Blogs</Link></li>
       </ul>
 
       {/* Contact Us Button */}
