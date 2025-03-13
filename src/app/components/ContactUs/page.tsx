@@ -5,7 +5,7 @@ import SocialIcons from "./SocialIcons";
 
 const ContactUs = () => {
     return (
-        <section className="container sm:p-20 p-4 bg-white">
+        <section className="container sm:p-20 p-4">
             <h2 className="text-3xl font-bold text-center mb-10">
                 Let's Get <span className="text-fuchsia-600">In Touch</span>
             </h2>

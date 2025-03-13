@@ -50,13 +50,13 @@ const Services = () => {
     <section
       className="py-20 bg-white relative"
       style={{
-        backgroundImage: "url('/assets/background/bg2.gif')",
+        backgroundImage: "url('/assets/background/bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "left",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="container mx-auto px-6 md:px-12 text-center text-black">
+      <div className="container mx-auto px-6 md:px-12 text-center">
         {/* Heading */}
         <motion.h2
           className="text-4xl md:text-6xl font-bold text-gray-900"

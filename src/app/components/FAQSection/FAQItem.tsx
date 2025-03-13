@@ -19,7 +19,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
         borderColor: isOpen ? "rgba(209, 213, 219, 0.4)" : '#000000',
       }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="border-gray-300 bg-white"
+      className="border-gray-300"
     >
       <button
         className="w-full flex justify-between items-center py-4 text-left text-gray-700 font-medium"
