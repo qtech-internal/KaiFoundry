@@ -1,10 +1,13 @@
 "use client";
 import Image from "next/image";
 import { useEffect } from "react";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const EcosystemCard = ({ name, icon }: { name: string; icon: string }) => {
-
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   return (
     <div

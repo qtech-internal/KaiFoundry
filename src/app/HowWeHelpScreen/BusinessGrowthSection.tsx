@@ -6,7 +6,7 @@ const steps = [
   {
     title: "Understanding Your Business",
     description: "We listen to your goals and challenges to see how blockchain can help.",
-    icon: "/assets/HowWeHelp/icons/handshake.png",
+    icon: "/assets/HowWeHelp/icons/handshake.png", // Replace with your actual icon path
   },
   {
     title: "Building The Right Solution",
@@ -61,13 +61,7 @@ const BusinessGrowth = () => {
           >
             {/* Icon with Background */}
             <div className="bg-gradient-to-r from-[#E95DFF] to-[#D680FF] p-4 rounded-2xl shadow-lg">
-              <Image
-                src={step.icon}
-                alt={step.title}
-                width={60}
-                height={60}
-                loading="lazy" // Lazy loading added
-              />
+              <Image src={step.icon} alt={step.title} width={60} height={60} />
             </div>
 
             {/* Title */}

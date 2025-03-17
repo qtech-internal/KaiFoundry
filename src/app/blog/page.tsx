@@ -1,12 +1,21 @@
 'use client';
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 export default function BlogCarousel() {
-  const [blogs, setBlogs] = useState([]);
+  interface Blog {
+    id: number;
+    image: string;
+    title: string;
+    category: string;
+    link: string;
+  }
+
+  const [blogs, setBlogs] = useState<Blog[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsToShow = 3; 
-  const totalSlides = Math.ceil(blogs.length / itemsToShow); 
+  const itemsToShow = 3;
+  const totalSlides = Math.ceil(blogs.length / itemsToShow);
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -27,8 +36,8 @@ export default function BlogCarousel() {
   };
 
   return (
-    <div className="relative max-w-full mx-auto py-40 px-6 bg-white">
-      <h2 className="text-5xl font-bold text-left mb-6 text-black">
+    <div className="relative max-w-full mx-auto py-40 px-6">
+      <h2 className="text-5xl font-bold text-left mb-6">
         Our Latest <br /> Blogs
       </h2>
 
@@ -37,7 +46,7 @@ export default function BlogCarousel() {
         {/* Left Arrow */}
         <button
           onClick={prevSlide}
-          style={{ backgroundColor: '#BA24D5' }} 
+          style={{ backgroundColor: '#BA24D5' }}
           className="absolute left-0 top-1/2 transform -translate-y-1/2 p-4 rounded-full text-white text-3xl hover:bg-purple-700 transition z-10"
         >
           <FaChevronLeft />
@@ -46,7 +55,7 @@ export default function BlogCarousel() {
         {/* Right Arrow */}
         <button
           onClick={nextSlide}
-          style={{ backgroundColor: '#BA24D5' }} 
+          style={{ backgroundColor: '#BA24D5' }}
           className="absolute right-0 top-1/2 transform -translate-y-1/2 p-4 rounded-full text-white text-3xl hover:bg-purple-700 transition z-10"
         >
           <FaChevronRight />
@@ -68,9 +77,9 @@ export default function BlogCarousel() {
                   <div className="p-5">
                     <p className="text-sm font-semibold text-gray-500">{blog.category}</p>
                     <h3 className="text-lg font-bold mt-2">{blog.title}</h3>
-                    <a href={blog.link} className="text-black font-medium mt-3 block underline hover:text-purple-600">
-                      Read Blog
-                    </a>
+                    <Link href={`/blog/${blog.id}`} className="text-black font-medium underline hover:text-purple-600">
+                      Read More
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -85,7 +94,7 @@ export default function BlogCarousel() {
               key={index}
               className="w-3 h-3 rounded-full transition cursor-pointer"
               style={{
-                backgroundColor: index === currentIndex ? '#BA24D5' : 'gray', 
+                backgroundColor: index === currentIndex ? '#BA24D5' : 'gray',
               }}
               onClick={() => setCurrentIndex(index)}
             ></div>
@@ -106,9 +115,10 @@ export default function BlogCarousel() {
                 <div className="p-5">
                   <p className="text-sm font-semibold text-gray-500">{blog.category}</p>
                   <h3 className="text-lg font-bold mt-2">{blog.title}</h3>
-                  <a href={blog.link} className="text-black font-medium mt-3 block underline hover:text-purple-600">
-                    Read Blog
-                  </a>
+                  <Link href={`/blog/${blog.id}`} className="text-black font-medium underline hover:text-purple-600">
+                    Read More
+                  </Link>
+
                 </div>
               </div>
             </div>

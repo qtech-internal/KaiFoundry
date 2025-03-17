@@ -1,24 +1,20 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
+import Button from "./UI/Button";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const pathname = usePathname();
   let lastScrollY = 0;
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight) {
-        if (window.scrollY > lastScrollY) {
-          setIsVisible(false);
-        } else {
-          setIsVisible(true);
-        }
+        setIsVisible(window.scrollY < lastScrollY);
       } else {
         setIsVisible(true);
       }
@@ -29,97 +25,163 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
+  const isActive = (path: string) => pathname === path;
+
   return (
-    <div
-      className={`fixed top-0 ${
-        isVisible ? "pt-5" : ""
-      } w-full z-50 grid grid-cols-12`}
-    >
-      <nav
-        className={`col-span-12 mx-10 z-50 rounded-full transition-all duration-300 ease-in-out backdrop-blur-md ${
+    <>
+      {/* Navbar */}
+      <header
+        className={`fixed top-0 w-full pt-5 z-50 transition-transform duration-500 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
-        style={{
-          background:
-            "linear-gradient(white, white) padding-box, linear-gradient(to right, #F6D0FE, #ffffff) border-box",
-          border: "2px solid transparent",
-          borderRadius: "9999px", // Ensures a fully rounded navbar
-        }}
       >
-        {/* Grid structure for navbar content */}
-        <div className="grid grid-cols-12 items-center py-4 px-6 md:px-10 lg:px-12">
-          {/* Logo (2 columns) */}
-          <div className="hidden md:block col-span-2">
+        <nav className="md:mx-10 py-2 px-2 md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-md md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out">
+          {/* Mobile: Hamburger Menu on Left */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden focus:outline-none p-2 rounded-sm"
+          >
+            <div className="flex flex-col space-y-1">
+              <span className="block w-8 h-1 bg-gray-700"></span>
+              <span className="block w-8 h-1 bg-gray-700"></span>
+              <span className="block w-8 h-1 bg-gray-700"></span>
+            </div>
+          </button>
+          <div className="hidden md:flex flex-shrink-0">
             <Link href="/">
-              <img src="assets/logo.png" alt="Logo" className="h-10" />
+              <img src="/assets/logo.svg" alt="Logo" />
             </Link>
           </div>
-
-          {/* Menu Items (7 columns) */}
-          <ul className="col-span-7 md:flex hidden justify-center space-x-6 text-gray-700">
+          {/* Desktop: Navigation Links */}
+          <ul className="hidden md:flex space-x-6 text-gray-700 flex-1 justify-center transition-all duration-500 ease-in-out">
             <li>
-              <Link href="./HowWeHelpScreen">How We Help</Link>
+              <Link
+                href="/HowWeHelpScreen"
+                className={
+                  isActive("/HowWeHelpScreen")
+                    ? "text-fuchsia-500 font-bold"
+                    : "text-gray-700"
+                }
+              >
+                How We Help
+              </Link>
             </li>
             <li>
-              <Link href="/components/WhoAreWe">Who We Are</Link>
+              <Link href="/WhoAreWe" className="text-gray-700">
+                Who We Are
+              </Link>
             </li>
             <li>
-              <Link href="./CareersScreen">Careers</Link>
+              <Link
+                href="/CareersScreen"
+                className={
+                  isActive("/CareersScreen")
+                    ? "text-fuchsia-500 font-bold"
+                    : "text-gray-700"
+                }
+              >
+                Careers
+              </Link>
             </li>
             <li>
-              <Link href="#">Services</Link>
+              <Link href="#" className="text-gray-700">
+                Services
+              </Link>
             </li>
             <li>
-              <Link href="./BlogScreen">Blogs</Link>
+              <Link
+                href="/blog"
+                className={
+                  isActive("/blog")
+                    ? "text-fuchsia-500 font-bold"
+                    : "text-gray-700"
+                }
+              >
+                Blogs
+              </Link>
             </li>
           </ul>
 
-          {/* Contact Button (3 columns) */}
-          <div className="col-span-3 hidden md:flex justify-end">
-            <button className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600">
-              Contact Us
-            </button>
-          </div>
+          {/* Contact Us Button (Visible on all screens) */}
+          <Button
+            className="bg-fuchsia-500 text-white"
+            text="Contact Us"
+            href="/contact"
+          />
+        </nav>
+      </header>
 
-          {/* Mobile Menu Button (2 columns) */}
-          <div className="col-span-2 md:hidden flex justify-end">
-            <button onClick={toggleMenu} className="focus:outline-none">
-              <div className="flex flex-col space-y-1">
-                <span className="block w-8 h-1 bg-gray-700"></span>
-                <span className="block w-8 h-1 bg-gray-700"></span>
-                <span className="block w-8 h-1 bg-gray-700"></span>
-              </div>
-            </button>
-          </div>
+      {/* Sidebar Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-500 ease-in-out"
+          onClick={closeMenu}
+        ></div>
+      )}
 
-          {/* Mobile Menu Items */}
-          {isOpen && (
-            <ul className="col-span-12 flex flex-col items-center space-y-2 bg-white mt-2 py-2 rounded-lg md:hidden">
-              <li>
-                <Link href="/components/HowWeHelpScreen">How We Help</Link>
-              </li>
-              <li>
-                <Link href="#">Who We Are</Link>
-              </li>
-              <li>
-                <Link href="/components/CareersScreen">Careers</Link>
-              </li>
-              <li>
-                <Link href="#">Services</Link>
-              </li>
-              <li>
-                <Link href="/components/BlogScreen">Blogs</Link>
-              </li>
-              <li>
-                <button className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600">
-                  Contact Us
-                </button>
-              </li>
-            </ul>
-          )}
-        </div>
-      </nav>
-    </div>
+      {/* Sidebar Menu */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-500 ease-in-out ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Sidebar Close Button */}
+        <button
+          onClick={closeMenu}
+          className="absolute top-4 right-4 text-gray-700 text-2xl"
+        >
+          &times;
+        </button>
+
+        {/* Sidebar Links */}
+        <nav className="flex flex-col items-start px-6 py-10 space-y-4 text-gray-700">
+          <Link href="/">
+            <img src="/assets/logo.svg" alt="Logo" />
+          </Link>
+          <Link
+            href="/HowWeHelpScreen"
+            className={
+              isActive("/HowWeHelpScreen")
+                ? "text-fuchsia-500 font-bold"
+                : "text-gray-700"
+            }
+          >
+            How We Help
+          </Link>
+          <Link href="#" className="text-gray-700">
+            Who We Are
+          </Link>
+          <Link
+            href="/CareersScreen"
+            className={
+              isActive("/CareersScreen")
+                ? "text-fuchsia-500 font-bold"
+                : "text-gray-700"
+            }
+          >
+            Careers
+          </Link>
+          <Link href="#" className="text-gray-700">
+            Services
+          </Link>
+          <Link
+            href="/blog"
+            className={
+              isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"
+            }
+          >
+            Blogs
+          </Link>
+
+          {/* Sidebar Contact Button */}
+          <button className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 mt-4 w-full transition-all duration-500 ease-in-out">
+            Contact Us
+          </button>
+        </nav>
+      </div>
+    </>
   );
 };
 

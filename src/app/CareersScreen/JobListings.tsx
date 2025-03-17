@@ -41,7 +41,7 @@ const JobListings = () => {
               {job.type} - {job.company} / {job.location}
             </p>
             <p className="text-gray-600 mb-4">{job.description}</p>
-            <a href="/CareersScreen/JobApplication">
+            <a href="/components/CareersScreen/JobApplication">
               <button
                 style={{ backgroundColor: '#D444F1' }}
                 className="mt-4 px-4 py-2 text-white font-semibold rounded-lg hover:bg-purple-700 transition duration-300"

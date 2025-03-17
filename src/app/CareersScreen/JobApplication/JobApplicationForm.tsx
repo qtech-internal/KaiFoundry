@@ -12,7 +12,7 @@ const JobApplicationForm = () => {
   };
 
   return (
-    <div className="max-w-full mx-auto p-6 bg-white">
+    <div className="max-w-full mx-auto p-6">
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Application Form</h1>
 
       <form className="space-y-5 w-full">
