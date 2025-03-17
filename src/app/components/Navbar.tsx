@@ -8,6 +8,7 @@ import Button from "./UI/Button";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State for dropdown
   const pathname = usePathname();
   let lastScrollY = 0;
 
@@ -27,6 +28,8 @@ const Navbar: React.FC = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen); // Toggle dropdown
+  const closeDropdown = () => setIsDropdownOpen(false); // Close dropdown
   const isActive = (path: string) => pathname === path;
 
   return (
@@ -63,8 +66,24 @@ const Navbar: React.FC = () => {
                 Careers
               </Link>
             </li>
-            <li>
-              <Link href="#" className="text-gray-700">Services</Link>
+            <li className="relative">
+              <button onClick={toggleDropdown} className="text-gray-700 focus:outline-none">
+                Services
+              </button>
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-50">
+                  <li>
+                    <Link href="/BlockChainService" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Block Chain</Link>
+                  </li>
+                  <li>
+                    <Link href="/GameDevelopment" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Game Development</Link>
+                  </li>
+                  <li>
+                    <Link href="/AIServices" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">AI Services</Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <Link href="/blog" className={isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"}>
@@ -100,7 +119,7 @@ const Navbar: React.FC = () => {
           <Link href="/HowWeHelpScreen" className={isActive("/HowWeHelpScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"}>
             How We Help
           </Link>
-          <Link href="#" className="text-gray-700">Who We Are</Link>
+          <Link href="/WhoAreWe" className="text-gray-700">Who We Are</Link>
           <Link href="/CareersScreen" className={isActive("/CareersScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"}>
             Careers
           </Link>
