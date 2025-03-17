@@ -7,7 +7,7 @@ import WhyChooseUs from './WhyChooseUs';
 import EcosystemsGrid from './Ecosystem';
 import FAQSection from './FAQ';
 
-const BlockChainServicePage: React.FC = () => {
+const AIServicesPage: React.FC = () => {
   return (
     <div>
    <HeroSection />
@@ -22,4 +22,4 @@ const BlockChainServicePage: React.FC = () => {
   );
 };
 
-export default BlockChainServicePage;
+export default AIServicesPage;

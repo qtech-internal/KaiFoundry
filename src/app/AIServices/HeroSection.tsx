@@ -5,7 +5,7 @@ import Link from "next/link";
 const HeroSection = () => {
   return (
     <section className="relative flex items-center h-screen w-full overflow-hidden px-6 md:px-20">
-      {/* Background GIF */}
+  
       <div className="absolute inset-0 z-0">
         <img 
           src="/assets/background/ai_bg.gif" 

@@ -16,7 +16,7 @@ export default function GameDevelopmentSection() {
     <section className="relative bg-gradient-to-b from-white to-[#FBE8FF] py-20 px-8 md:px-16 lg:px-32">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         
-        {/* Left Side Content */}
+
         <motion.div 
           initial={{ opacity: 0, x: -50 }} 
           animate={{ opacity: 1, x: 0 }} 
@@ -32,7 +32,7 @@ export default function GameDevelopmentSection() {
           </p>
         </motion.div>
 
-        {/* Right Side Features */}
+
         <div className="grid grid-cols-2 gap-6">
           {features.map((feature, index) => (
             <motion.div 

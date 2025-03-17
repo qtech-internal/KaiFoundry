@@ -30,7 +30,7 @@ const WhyChooseUs = () => {
   return (
    <section className="py-20 bg-purple-100">
          <div className="container mx-auto px-6 md:px-12 text-center">
-           {/* Heading */}
+     
            <motion.h2
              className="text-4xl font-bold text-gray-900"
              initial={{ opacity: 0, y: -20 }}
@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
              Why <span className="text-[#D444F1]">Choose</span> Us?
            </motion.h2>
    
-           {/* Grid */}
+     
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
              {features.map((feature, index) => (
                <motion.div
