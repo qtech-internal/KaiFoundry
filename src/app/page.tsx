@@ -6,6 +6,7 @@ import HeroSection from "./components/HeroSection/Page"
 import ServicesSection from "./components/ServicesSection";
 import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
+import AnimatedSection from "./components/AnimatedImageCard";
 export default function Home() {
   return (
     <main>
@@ -13,6 +14,7 @@ export default function Home() {
       <ServicesSection />
       <Services />
       <WhyChooseUs />
+      <AnimatedSection />
       <EcosystemsGrid />
       <CoolStuff />
       <FAQSection />
