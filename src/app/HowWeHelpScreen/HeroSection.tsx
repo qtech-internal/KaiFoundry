@@ -24,27 +24,27 @@ const HowWeHelp = () => {
         </Link>
       </div>
 
-      {/* Right Image Content with Background GIF */}
       <div className="md:w-1/2 flex justify-center relative mt-10 md:mt-0">
         <div className="absolute inset-0 flex items-center justify-center">
           <div
-            className="bg-cover bg-center opacity-20" // Reduced opacity
+            className="bg-cover bg-center opacity-20"
             style={{
-              backgroundImage: "url('/assets/HowWeHelp/bg.gif')", // Change this path to your actual GIF
-              width: '155%', // Set to 100% for responsiveness
-              height: '155%', // Set to 100% for responsiveness
-              position: 'absolute',
-              top: '10',
-              left: '3000',
+              backgroundImage: "url('/assets/HowWeHelp/bg.gif')",
+              width: "155%",
+              height: "155%",
+              position: "absolute",
+              top: "10",
+              left: "3000",
             }}
           />
         </div>
         <Image
-          src="/assets/HowWeHelp/blockchain.png" // Change this path to your actual image
+          src="/assets/HowWeHelp/blockchain.png"
           alt="Blockchain"
           width={450}
           height={450}
-          className="drop-shadow-lg relative z-10" // Ensure the image is above the background
+          loading="lazy"
+          className="drop-shadow-lg relative z-10"
         />
       </div>
     </section>

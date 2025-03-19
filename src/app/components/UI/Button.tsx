@@ -19,7 +19,8 @@ const Button: React.FC<CTAButtonProps> = ({
   type = "button",
 }) => {
   const baseClasses = "px-4 py-2 rounded-full transition-all";
-  const defaultClasses = disabled && "bg-gray-400 text-gray-700 cursor-not-allowed";
+  const defaultClasses =
+    disabled && "bg-gray-400 text-gray-700 cursor-not-allowed";
   const combinedClasses = `${baseClasses} ${defaultClasses} ${className}`;
 
   if (href) {
@@ -33,11 +34,7 @@ const Button: React.FC<CTAButtonProps> = ({
   }
 
   return (
-    <button
-      className={combinedClasses}
-      onClick={onClick}
-      disabled={disabled}
-    >
+    <button className={combinedClasses} onClick={onClick} disabled={disabled}>
       {text}
     </button>
   );
