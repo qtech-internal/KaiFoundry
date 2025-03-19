@@ -1,10 +1,10 @@
-'use client'
+"use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const content = [
   {
-    image: "/assets/img2.jpg", // Update with the correct path
+    image: "/assets/img2.jpg",
     title: "Leading in Blockchain Innovation and Decentralized Solutions",
     description:
       "From innovative solutions to enterprise adoption, Kai Foundry leads the way in delivering scalable, decentralized blockchain technologies.",
@@ -29,44 +29,38 @@ export default function AnimatedSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % content.length);
-    }, 4000); // Changes every 4 seconds
-
-    // Stop the interval after the last slide
-    if (index === content.length - 1) {
-      clearInterval(interval);
-    }
+    }, 4000);
 
     return () => clearInterval(interval);
-  }, [index]);
+  }, []);
 
   return (
-    <div className="flex items-center justify-center h-screen bg-white text-black p-10">
-      {/* Image Section (Left) */}
-      <div className="relative w-1/3 h-[500px] overflow-hidden"> {/* Increased height and reduced width */}
+    <div className="flex flex-col md:flex-row items-center sm:justify-center min-h-[85vh] sm:min-h-screen bg-white text-black p-6 md:p-10">
+      <div className="relative w-full md:w-2/5 h-[40vh] md:h-[60vh] flex sm:justify-center ">
         <AnimatePresence>
-          {content.map((item, i) => (
-            i <= index && ( // Show all images up to the current index
-              <motion.img
-                key={item.image}
-                src={item.image}
-                alt="Blockchain"
-                className="absolute w-full h-full object-cover rounded-lg shadow-lg"
-                initial={{ y: 100, opacity: 0, x: 20 * i }} // Move slightly to the right for each image
-                animate={{ y: 0, opacity: 1, x: 20 * i }} // Move slightly to the right for each image
-                exit={{ y: -100, opacity: 0 }}
-                transition={{ duration: 1 }}
-              />
-            )
-          ))}
+          {content.map(
+            (item, i) =>
+              i <= index && (
+                <motion.img
+                  key={item.image}
+                  src={item.image}
+                  alt="Blockchain"
+                  className="absolute w-[90%] md:w-[85%] h-full object-cover rounded-2xl shadow-2xl"
+                  initial={{ y: 100 + 10 * i, opacity: 0, x: 20 * i }}
+                  animate={{ y: 20 * i, opacity: 1, x: 20 * i }}
+                  exit={{ y: -100 - 20 * i, opacity: 0 }}
+                  transition={{ duration: 1 }}
+                />
+              )
+          )}
         </AnimatePresence>
       </div>
 
-      {/* Text Section (Right) */}
-      <div className="w-2/3 pl-10">
+      <div className="w-full md:w-1/2 mt-20 md:mt-0 md:pl-10 text-center md:text-left">
         <AnimatePresence mode="wait">
           <motion.h2
             key={content[index].title}
-            className="text-3xl font-bold"
+            className="text-3xl md:text-5xl font-bold"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -50, opacity: 0 }}
@@ -76,7 +70,7 @@ export default function AnimatedSection() {
           </motion.h2>
           <motion.p
             key={content[index].description}
-            className="mt-4 text-lg text-gray-600"
+            className="mt-5 md:mt-10 text-lg text-gray-600"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -50, opacity: 0 }}
