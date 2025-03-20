@@ -1,9 +1,14 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+<<<<<<< HEAD
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import Button from "./UI/Button";
+=======
+import React, { useState } from "react";
+import CareersSection from "./CareersScreen/CareersSection";
+>>>>>>> 2a87e1d (added carreres)
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,6 +40,7 @@ const Navbar: React.FC = () => {
   return (
     <>
 
+<<<<<<< HEAD
       <header className={`fixed top-0 w-full pt-5 z-50 transition-transform duration-500 ease-in-out ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
         <nav className="md:mx-10 py-2 px-2 md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-md md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out">
 
@@ -50,6 +56,15 @@ const Navbar: React.FC = () => {
             <Link href="/">
               <img src="/assets/logo.svg" alt="Logo" />
             </Link>
+=======
+
+      <div className="md:hidden flex items-center">
+        <button onClick={toggleMenu} className="focus:outline-none">
+          <div className="flex flex-col space-y-1">
+            <span className="block w-8 h-1 bg-gray-700"></span>
+            <span className="block w-8 h-1 bg-gray-700"></span>
+            <span className="block w-8 h-1 bg-gray-700"></span>
+>>>>>>> 2a87e1d (added carreres)
           </div>
 
           <ul className="hidden md:flex space-x-6 text-gray-700 flex-1 justify-center transition-all duration-500 ease-in-out">
@@ -132,7 +147,29 @@ const Navbar: React.FC = () => {
           </button>
         </nav>
       </div>
+<<<<<<< HEAD
     </>
+=======
+
+      <ul className={`flex-col md:flex md:flex-row md:space-x-6 text-gray-700 absolute md:static bg-white md:bg-transparent transition-all duration-300 ease-in-out ${isOpen ? 'top-16 left-0 w-full md:w-auto' : 'top-[-200px] md:top-0'} md:top-0 md:flex md:items-center`}>
+        <li className="py-2 md:py-0"><Link href="#">How We Help</Link></li>
+        <li className="py-2 md:py-0"><Link href="#">Who We Are</Link></li>
+        <li className="py-2 md:py-0"><Link href="/components/CareersScreen">Careers</Link></li> 
+        <li className="py-2 md:py-0"><Link href="#">Services</Link></li>
+        <li className="py-2 md:py-0"><Link href="#">Blogs</Link></li>
+      </ul>
+
+      {/* Contact Us Button */}
+      <button className="hidden md:block bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600">
+        Contact Us
+      </button>
+
+      {/* Mobile Contact Us Button */}
+      <button className="md:hidden bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600">
+        Contact Us
+      </button>
+    </nav>
+>>>>>>> 2a87e1d (added carreres)
   );
 };
 

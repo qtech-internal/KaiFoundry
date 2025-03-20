@@ -22,3 +22,10 @@ export default function Home() {
     </main>
   );
 }
+<<<<<<< HEAD
+=======
+
+
+
+
+>>>>>>> 2a87e1d (added carreres)
