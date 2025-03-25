@@ -1,3 +1,4 @@
+
 import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { FaGamepad, FaRobot } from "react-icons/fa";
@@ -61,6 +62,7 @@ const ServiceItem: React.FC<{
   return (
     <div className="flex items-center gap-3">
       <div className="bg-purple-100 p-3 rounded-full">{icon}</div>
+
       <div>
         <h3 className="text-lg font-semibold">{title}</h3>
         <p className="text-gray-500">{description}</p>

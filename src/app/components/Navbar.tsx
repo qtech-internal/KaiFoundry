@@ -12,6 +12,7 @@ const Navbar: React.FC = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   const pathname = usePathname();
   let lastScrollY = 0;
 
@@ -43,7 +44,6 @@ const Navbar: React.FC = () => {
         }`}
       >
         <nav className="md:mx-10 py-2 px-2 md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-md md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out">
-          {/* Mobile Menu */}
           <button
             onClick={toggleMenu}
             className="md:hidden focus:outline-none p-2 rounded-sm"
@@ -94,6 +94,7 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
 
+
             {/* Custom Services Dropdown */}
             <div className="relative">
               <button
@@ -119,7 +120,6 @@ const Navbar: React.FC = () => {
             </li>
           </ul>
 
-          {/* Contact Us Button */}
           <Button
             className="bg-fuchsia-500 text-white"
             text="Contact Us"
@@ -128,8 +128,10 @@ const Navbar: React.FC = () => {
         </nav>
       </header>
 
+
       {/* Services Popup Component */}
       {isPopupOpen && <ServicesPopup onClose={togglePopup} />}
+
     </>
   );
 };
