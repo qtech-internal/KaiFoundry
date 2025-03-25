@@ -7,6 +7,7 @@ interface CTAButtonProps {
   className?: string;
   onClick?: () => void;
   disabled?: boolean;
+  type?: "button" | "submit" | "reset";
 }
 
 const Button: React.FC<CTAButtonProps> = ({
@@ -15,15 +16,17 @@ const Button: React.FC<CTAButtonProps> = ({
   className = "",
   onClick,
   disabled = false,
+  type = "button",
 }) => {
   const baseClasses = "px-4 py-2 rounded-full transition-all";
-  const defaultClasses = disabled && "bg-gray-400 text-gray-700 cursor-not-allowed";
+  const defaultClasses =
+    disabled && "bg-gray-400 text-gray-700 cursor-not-allowed";
   const combinedClasses = `${baseClasses} ${defaultClasses} ${className}`;
 
   if (href) {
     return (
       <Link href={href} passHref>
-        <button className={combinedClasses} disabled={disabled}>
+        <button type={type} className={combinedClasses} disabled={disabled}>
           {text}
         </button>
       </Link>
@@ -31,11 +34,7 @@ const Button: React.FC<CTAButtonProps> = ({
   }
 
   return (
-    <button
-      className={combinedClasses}
-      onClick={onClick}
-      disabled={disabled}
-    >
+    <button className={combinedClasses} onClick={onClick} disabled={disabled}>
       {text}
     </button>
   );

@@ -10,8 +10,10 @@ import ServicesPopup from "./NavbarPopup";
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   const pathname = usePathname();
   let lastScrollY = 0;
 
@@ -37,13 +39,16 @@ const Navbar: React.FC = () => {
 
   return (
     <>
+
       <header
         className={`fixed top-0 w-full pt-5 z-50 transition-transform duration-500 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <nav className="md:mx-10 py-2 px-2 md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-md md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out">
+
           {/* Mobile Menu */}
+
           <button
             onClick={toggleMenu}
             className="md:hidden focus:outline-none p-2 rounded-sm"
@@ -62,8 +67,10 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
+
           {/* Navbar Links */}
           <ul className="hidden md:flex space-x-6 text-gray-700 flex-1 justify-center">
+
             <li>
               <Link
                 href="/HowWeHelpScreen"
@@ -77,7 +84,9 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
             <li>
+
               <Link href="/WhoAreWe" className="text-gray-700">
+
                 Who We Are
               </Link>
             </li>
@@ -93,6 +102,7 @@ const Navbar: React.FC = () => {
                 Careers
               </Link>
             </li>
+
 
             {/* Custom Services Dropdown */}
             <div className="relative">
@@ -119,7 +129,7 @@ const Navbar: React.FC = () => {
             </li>
           </ul>
 
-          {/* Contact Us Button */}
+
           <Button
             className="bg-fuchsia-500 text-white"
             text="Contact Us"
@@ -128,8 +138,10 @@ const Navbar: React.FC = () => {
         </nav>
       </header>
 
+
       {/* Services Popup Component */}
       {isPopupOpen && <ServicesPopup onClose={togglePopup} />}
+
     </>
   );
 };
