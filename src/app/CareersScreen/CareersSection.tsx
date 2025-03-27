@@ -51,7 +51,7 @@ const CareersSection = () => {
         </p>
 
         {/* Image Grid */}
-        <div className="grid grid-cols-4 gap-4 mt-10 mx-auto max-w-6xl">
+        <div className="hidden md:grid md:grid-cols-4 gap-4 mt-10 mx-auto max-w-6xl">
           {/* 1st Column */}
           <div className="col-span-1 relative h-[500px]">
             <Image
@@ -117,9 +117,81 @@ const CareersSection = () => {
               />
             </div>
           </div>
+          
         </div>
+
+
+<div className="flex flex-col gap-2 mt-10 mx-auto max-w-xs sm:hidden">
+  {/* First Row with First Image and Second/Third Images */}
+  <div className="flex">
+    <div className="flex-1">
+      <Image
+        src={images[0].src}
+        alt="Career Image 1"
+        width={150}
+        height={250}
+        className="rounded-lg object-cover"
+      />
+    </div>
+    <div className="flex flex-col">
+      <div className="flex-1">
+        <Image
+          src={images[1].src}
+          alt="Career Image 2"
+          width={160}
+          height={200}
+          className="rounded-lg object-cover"
+        />
+      </div>
+      <div className="flex-1">
+        <Image
+          src={images[2].src}
+          alt="Career Image 3"
+          width={160}
+          height={100}
+          className="rounded-lg object-cover"
+        />
+      </div>
+    </div>
+  </div>
+  
+
+  <div className="flex">
+    <div className="flex-1 ">
+      <Image
+        src={images[3].src}
+        alt="Career Image 4"
+        width={750}
+        height={150}
+        className="rounded-lg object-cover"
+      />
+    </div>
+    <div className="flex flex-col">
+      <div className="flex-1">
+        <Image
+          src={images[5].src}
+          alt="Career Image 5"
+          width={125}
+          height={120}
+          className="rounded-lg object-cover"
+        />
+      </div>
+      <div className="flex-1">
+        <Image
+          src={images[4].src}
+          alt="Career Image 6"
+          width={130}
+          height={20}
+          className="rounded-lg object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
       </div>
     </section>
+    
   );
 };
 
