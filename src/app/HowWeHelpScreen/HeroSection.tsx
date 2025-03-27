@@ -28,7 +28,7 @@ const HowWeHelp = () => {
           className="drop-shadow-lg"
         />
       </div>
-
+     
       {/* Text Section */}
       <div className="w-full md:w-1/2 mt-10 md:mt-0 z-10">
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900">
