@@ -6,7 +6,7 @@ const steps = [
   {
     title: "Understanding Your Business",
     description: "We listen to your goals and challenges to see how blockchain can help.",
-    icon: "/assets/HowWeHelp/icons/handshake.png", // Replace with your actual icon path
+    icon: "/assets/HowWeHelp/icons/handshake.png",
   },
   {
     title: "Building The Right Solution",
@@ -59,8 +59,20 @@ const BusinessGrowth = () => {
             viewport={{ once: true }}
             className="flex flex-col items-center w-full md:w-1/4 px-4 md:px-6 text-center relative"
           >
+         
+            {index < steps.length - 1 && (
+              <div className="absolute top-[-0px] left-1/2 transform -translate-x-1/9">
+                <Image
+                  src={index % 2 === 0 ? "/svg/arrow2.svg" : "/svg/arrow.svg"} 
+                  alt="Arrow"
+                  width={1900} 
+                  height={960} 
+                />
+              </div>
+            )}
+
             {/* Icon with Background */}
-            <div className="bg-gradient-to-r from-[#E95DFF] to-[#D680FF] p-4 rounded-2xl shadow-lg">
+            <div className="bg-gradient-to-r from-[#E95DFF] to-[#D680FF] p-4 rounded-2xl shadow-lg relative">
               <Image src={step.icon} alt={step.title} width={60} height={60} />
             </div>
 
@@ -69,17 +81,6 @@ const BusinessGrowth = () => {
 
             {/* Description */}
             <p className="text-gray-600 text-sm md:text-base mt-2">{step.description}</p>
-
-            {/* Dotted Line with Arrow */}
-            {index < steps.length - 1 && (
-              <div className="absolute flex items-center justify-center w-full" style={{ top: '100%', left: '50%', transform: 'translateX(-50%)' }}>
-                <div className="flex items-center">
-                  <div className="w-16 h-1 border-t-2 border-dotted border-[#E95DFF] relative">
-                    <div className="absolute right-[-10px] top-[-5px] w-0 h-0 border-l-4 border-l-[#E95DFF] border-b-4 border-b-transparent border-t-4 border-t-transparent"></div>
-                  </div>
-                </div>
-              </div>
-            )}
           </motion.div>
         ))}
       </div>
