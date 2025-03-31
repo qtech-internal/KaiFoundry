@@ -5,14 +5,24 @@ interface InputProps {
     type?: string;
     name: string;
     placeholder?: string;
-    value: string;
-    onChange: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
+    value?: string; // Now optional
+    onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void;
     textarea?: boolean;
+    className?: string; // Allow custom class names
 }
 
-const Input: React.FC<InputProps> = ({ label, type = "text", name, placeholder, value, onChange, textarea }) => {
+const Input: React.FC<InputProps> = ({
+    label,
+    type = "text",
+    name,
+    placeholder = "",
+    value,
+    onChange,
+    textarea = false,
+    className = "",
+}) => {
     return (
-        <div className="w-full">
+        <div className={`w-full ${className}`}>
             <label htmlFor={name} className="block text-black mb-1">
                 {label}
             </label>

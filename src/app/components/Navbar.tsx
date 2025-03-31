@@ -1,8 +1,7 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Button from "./UI/Button";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import ServicesPopup from "./NavbarPopup";
@@ -14,16 +13,16 @@ const Navbar: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const pathname = usePathname();
-  let lastScrollY = 0;
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight) {
-        setIsVisible(window.scrollY < lastScrollY);
+        setIsVisible(window.scrollY < lastScrollY.current);
       } else {
         setIsVisible(true);
       }
-      lastScrollY = window.scrollY;
+      lastScrollY.current = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -58,12 +57,14 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="hidden md:flex flex-shrink-0">
             <Link href="/">
-              <img src="/assets/logo.svg" alt="Logo" />
+              <Image src="/assets/logo.svg" alt="Logo" width={120} height={40} />
             </Link>
           </div>
 
-          {/* Navbar Links */}
-          <ul className="hidden md:flex space-x-6 text-gray-700 flex-1 justify-center">
+
+          {/* Desktop: Navigation Links */}
+          <ul className="hidden md:flex space-x-6 text-gray-700 flex-1 justify-center transition-all duration-500 ease-in-out">
+
             <li>
               <Link
                 href="/HowWeHelpScreen"
@@ -127,6 +128,69 @@ const Navbar: React.FC = () => {
           />
         </nav>
       </header>
+
+
+      {/* Sidebar Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-500 ease-in-out"
+          onClick={closeMenu}
+        ></div>
+      )}
+
+      {/* Sidebar Menu */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-500 ease-in-out ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Sidebar Close Button */}
+        <button
+          onClick={closeMenu}
+          className="absolute top-4 right-4 text-gray-700 text-2xl"
+        >
+          &times;
+        </button>
+
+        {/* Sidebar Links */}
+        <nav className="flex flex-col items-start px-6 py-10 space-y-4 text-gray-700">
+          <Link href="/">
+            <Image src="/assets/logo.svg" alt="Logo" width={120} height={40} />
+          </Link>
+          <Link
+            href="/HowWeHelpScreen"
+            className={
+              isActive("/HowWeHelpScreen")
+                ? "text-fuchsia-500 font-bold"
+                : "text-gray-700"
+            }
+          >
+            How We Help
+          </Link>
+          <Link href="#" className="text-gray-700">
+            Who We Are
+          </Link>
+          <Link
+            href="/CareersScreen"
+            className={
+              isActive("/CareersScreen")
+                ? "text-fuchsia-500 font-bold"
+                : "text-gray-700"
+            }
+          >
+            Careers
+          </Link>
+          <Link href="#" className="text-gray-700">
+            Services
+          </Link>
+          <Link
+            href="/blog"
+            className={
+              isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"
+            }
+          >
+            Blogs
+          </Link>
 
 
       {/* Services Popup Component */}

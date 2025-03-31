@@ -28,7 +28,7 @@ export async function POST(req: Request) {
     console.log("reCAPTCHA verified successfully.");
 
     // Setup Nodemailer transporter
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
       host: "smtp.zoho.com",
       port: 465,
       secure: true,
@@ -47,7 +47,7 @@ export async function POST(req: Request) {
     });
 
     // Email content
-    let mailOptions = {
+    const mailOptions = {
       from: process.env.ZOHO_EMAIL_USER,
       to: process.env.ZOHO_EMAIL_USER,
       subject: `New Contact Query from ${name}`,
@@ -65,12 +65,13 @@ export async function POST(req: Request) {
       `,
     };
 
-    let info = await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
     console.log("Email sent successfully:", info);
 
     return NextResponse.json({ message: "Email sent successfully" }, { status: 200 });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("API Error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    const errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }

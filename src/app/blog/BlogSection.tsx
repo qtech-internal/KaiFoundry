@@ -1,9 +1,19 @@
 'use client';
 import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import Image from "next/image";
+
+// Define the Blog type
+type Blog = {
+  id: string;  // Assuming id is a string, change to number if needed
+  image: string;
+  title: string;
+  category: string;
+  link: string;
+};
 
 export default function BlogCarousel() {
-  const [blogs, setBlogs] = useState([]);
+  const [blogs, setBlogs] = useState<Blog[]>([]); // Explicit type here
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsToShow = 3; 
   const totalSlides = Math.ceil(blogs.length / itemsToShow); 
@@ -11,7 +21,7 @@ export default function BlogCarousel() {
   useEffect(() => {
     const fetchBlogs = async () => {
       const response = await fetch('/assets/blogs/blogs.json');
-      const data = await response.json();
+      const data: Blog[] = await response.json(); // Ensure TypeScript knows the shape
       setBlogs(data);
     };
 
@@ -64,7 +74,7 @@ export default function BlogCarousel() {
                 className="flex-shrink-0 w-1/3 p-3"
               >
                 <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105">
-                  <img src={blog.image} alt={blog.title} className="w-full h-[400px] object-cover" />
+                  <Image src={blog.image} alt={blog.title} className="w-full h-[400px] object-cover" />
                   <div className="p-5">
                     <p className="text-sm font-semibold text-gray-500">{blog.category}</p>
                     <h3 className="text-lg font-bold mt-2">{blog.title}</h3>
@@ -102,7 +112,7 @@ export default function BlogCarousel() {
               className="w-full"
             >
               <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105">
-                <img src={blog.image} alt={blog.title} className="w-full h-[300px] object-cover" />
+                <Image src={blog.image} alt={blog.title} className="w-full h-[300px] object-cover" />
                 <div className="p-5">
                   <p className="text-sm font-semibold text-gray-500">{blog.category}</p>
                   <h3 className="text-lg font-bold mt-2">{blog.title}</h3>
