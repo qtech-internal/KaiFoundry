@@ -1,24 +1,24 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Button from "./UI/Button";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const pathname = usePathname();
-  let lastScrollY = 0;
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight) {
-        setIsVisible(window.scrollY < lastScrollY);
+        setIsVisible(window.scrollY < lastScrollY.current);
       } else {
         setIsVisible(true);
       }
-      lastScrollY = window.scrollY;
+      lastScrollY.current = window.scrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -49,11 +49,14 @@ const Navbar: React.FC = () => {
               <span className="block w-8 h-1 bg-gray-700"></span>
             </div>
           </button>
+
+          {/* Logo */}
           <div className="hidden md:flex flex-shrink-0">
             <Link href="/">
-              <img src="/assets/logo.svg" alt="Logo" />
+              <Image src="/assets/logo.svg" alt="Logo" width={120} height={40} />
             </Link>
           </div>
+
           {/* Desktop: Navigation Links */}
           <ul className="hidden md:flex space-x-6 text-gray-700 flex-1 justify-center transition-all duration-500 ease-in-out">
             <li>
@@ -138,7 +141,7 @@ const Navbar: React.FC = () => {
         {/* Sidebar Links */}
         <nav className="flex flex-col items-start px-6 py-10 space-y-4 text-gray-700">
           <Link href="/">
-            <img src="/assets/logo.svg" alt="Logo" />
+            <Image src="/assets/logo.svg" alt="Logo" width={120} height={40} />
           </Link>
           <Link
             href="/HowWeHelpScreen"

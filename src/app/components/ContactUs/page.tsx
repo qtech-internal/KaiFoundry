@@ -7,8 +7,9 @@ const ContactUs = () => {
     return (
         <section className="container sm:p-20 p-4">
             <h2 className="text-3xl font-bold text-center mb-10">
-                Let's Get <span className="text-fuchsia-600">In Touch</span>
+                Let&apos;s Get <span className="text-fuchsia-600">In Touch</span>
             </h2>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 p-4 min-h-screen">
                 {/* Box 1 */}
                 <div className="md:row-span-1 flex-col">
