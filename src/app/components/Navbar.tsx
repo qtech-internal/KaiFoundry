@@ -3,11 +3,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState, useEffect, useRef } from "react";
 import Button from "./UI/Button";
-import Image from "next/image";
+import { RiArrowDropDownLine } from "react-icons/ri";
+import ServicesPopup from "./NavbarPopup";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
   const pathname = usePathname();
   const lastScrollY = useRef(0);
 
@@ -28,17 +32,17 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
   const isActive = (path: string) => pathname === path;
+  const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
+  const togglePopup = () => setIsPopupOpen(!isPopupOpen); // Toggle popup
 
   return (
     <>
-      {/* Navbar */}
       <header
         className={`fixed top-0 w-full pt-5 z-50 transition-transform duration-500 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
         <nav className="md:mx-10 py-2 px-2 md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-md md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out">
-          {/* Mobile: Hamburger Menu on Left */}
           <button
             onClick={toggleMenu}
             className="md:hidden focus:outline-none p-2 rounded-sm"
@@ -57,8 +61,10 @@ const Navbar: React.FC = () => {
             </Link>
           </div>
 
+
           {/* Desktop: Navigation Links */}
           <ul className="hidden md:flex space-x-6 text-gray-700 flex-1 justify-center transition-all duration-500 ease-in-out">
+
             <li>
               <Link
                 href="/HowWeHelpScreen"
@@ -72,7 +78,7 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
             <li>
-              <Link href="#" className="text-gray-700">
+              <Link href="/WhoAreWe" className="text-gray-700">
                 Who We Are
               </Link>
             </li>
@@ -88,11 +94,19 @@ const Navbar: React.FC = () => {
                 Careers
               </Link>
             </li>
-            <li>
-              <Link href="#" className="text-gray-700">
+
+
+            {/* Custom Services Dropdown */}
+            <div className="relative">
+              <button
+                onClick={togglePopup} // Open the popup instead of dropdown
+                className="text-gray-700 focus:outline-none flex items-center gap-1"
+              >
                 Services
-              </Link>
-            </li>
+                <RiArrowDropDownLine className="w-4 h-4 transition-transform duration-200" />
+              </button>
+            </div>
+
             <li>
               <Link
                 href="/blog"
@@ -107,7 +121,6 @@ const Navbar: React.FC = () => {
             </li>
           </ul>
 
-          {/* Contact Us Button (Visible on all screens) */}
           <Button
             className="bg-fuchsia-500 text-white"
             text="Contact Us"
@@ -115,6 +128,7 @@ const Navbar: React.FC = () => {
           />
         </nav>
       </header>
+
 
       {/* Sidebar Overlay */}
       {isOpen && (
@@ -178,12 +192,10 @@ const Navbar: React.FC = () => {
             Blogs
           </Link>
 
-          {/* Sidebar Contact Button */}
-          <button className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 mt-4 w-full transition-all duration-500 ease-in-out">
-            Contact Us
-          </button>
-        </nav>
-      </div>
+
+      {/* Services Popup Component */}
+      {isPopupOpen && <ServicesPopup onClose={togglePopup} />}
+
     </>
   );
 };
