@@ -74,7 +74,17 @@ export default function BlogCarousel() {
                 className="flex-shrink-0 w-1/3 p-3"
               >
                 <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105">
-                  <Image src={blog.image} alt={blog.title} className="w-full h-[400px] object-cover" />
+                  {/* <Image src={blog.image} alt={blog.title} className="w-full h-[400px] object-cover" /> */}
+                  <div className="relative w-full h-[400px]">
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+
                   <div className="p-5">
                     <p className="text-sm font-semibold text-gray-500">{blog.category}</p>
                     <h3 className="text-lg font-bold mt-2">{blog.title}</h3>
@@ -112,7 +122,17 @@ export default function BlogCarousel() {
               className="w-full"
             >
               <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105">
-                <Image src={blog.image} alt={blog.title} className="w-full h-[300px] object-cover" />
+                {/* <Image src={blog.image} alt={blog.title} className="w-full h-[300px] object-cover" /> */}
+                <div className="relative w-full h-[400px]">
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+
                 <div className="p-5">
                   <p className="text-sm font-semibold text-gray-500">{blog.category}</p>
                   <h3 className="text-lg font-bold mt-2">{blog.title}</h3>
