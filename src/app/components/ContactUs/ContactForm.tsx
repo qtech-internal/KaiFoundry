@@ -85,7 +85,7 @@ const ContactForm = () => {
           placeholder="Enter your Name"
           value={formData.name}
           onChange={handleChange}
-          className="w-full"
+          // className="w-full"
         />
         <Input
           label="Last Name"
@@ -94,7 +94,7 @@ const ContactForm = () => {
           placeholder="Enter your Last Name"
           value={formData.lastName}
           onChange={handleChange}
-          className="w-full"
+          // className="w-full"
         />
       </div>
       <Input

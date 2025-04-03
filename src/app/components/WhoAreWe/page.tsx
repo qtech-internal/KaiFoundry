@@ -1,6 +1,4 @@
-import { div } from "framer-motion/client";
 import Navbar from "../Navbar";
-// import Footer from "../footer/page";
 import Home from "./Home";
 import FeaturesSection from "./Features";
 import CoreValuesSection from "./Core";

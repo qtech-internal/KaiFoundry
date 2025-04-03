@@ -3,8 +3,10 @@ import { useRouter, useParams } from "next/navigation";
 import { IoMdArrowBack } from 'react-icons/io';
 import { FaArrowUp, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface Post {
+    id: string; // Added id to the interface
     image: string;
     title: string;
     author: string;
@@ -15,38 +17,46 @@ interface Post {
 
 export default function BlogPost() {
     const router = useRouter();
-    const { id } = useParams(); // Extract dynamic ID
+    const { id } = useParams() as { id?: string };
     const [post, setPost] = useState<Post | null>(null);
 
     useEffect(() => {
         const fetchPost = async () => {
-            const response = await fetch("/assets/blogs/blogs.json"); // Load blogs
-            const data = await response.json();
-            const foundPost = data.find((blog: any) => blog.id.toString() === id); // Find by ID
-            setPost(foundPost);
+            try {
+                const response = await fetch("/assets/blogs/blogs.json");
+                if (!response.ok) {
+                    throw new Error("Failed to load blogs.");
+                }
+                const data: Post[] = await response.json(); 
+                const foundPost = data.find((blog) => blog.id === id); // Use id directly as a string
+                setPost(foundPost || null);
+            } catch (error) {
+                console.error("Error fetching blog post:", error);
+            }
         };
 
         if (id) fetchPost();
     }, [id]);
 
-
-    if (!post) return <div>Loading...</div>;
+    if (!post) return <div className="text-center text-gray-600 text-lg mt-10">Loading...</div>;
 
     return (
         <div className="w-full min-h-screen flex flex-col items-center bg-cover bg-fill" style={{ backgroundImage: "url('/assets/blogs/background.gif')" }}>
             {/* Back Button */}
             <button
                 onClick={() => router.back()}
-                className="flex items-center space-x-2 absolute top-6 left-6 text-gray-600 hover:underline  px-4 py-2 rounded-lg"
+                className="flex items-center space-x-2 absolute top-6 left-6 text-gray-600 hover:underline px-4 py-2 rounded-lg"
             >
-                <IoMdArrowBack size={20} /> {/* Back icon */}
-                <span className="text-lg">Back</span> {/* Increased text size */}
+                <IoMdArrowBack size={20} />
+                <span className="text-lg">Back</span>
             </button>
 
-            <img
+            <Image
                 src={post.image}
                 alt="Blog Cover"
-                className="w-full h-72 object-cover rounded-lg mb-6 mt-20 px-22"
+                width={1200}
+                height={400}
+                className="w-full h-72 object-cover rounded-lg mb-6 mt-20"
             />
 
             <div className="w-full max-w-4xl px-4 sm:px-10">
@@ -54,7 +64,6 @@ export default function BlogPost() {
                 <p className="text-gray-500 text-sm mt-2">
                     <strong>Written by {post.author}</strong> &nbsp; | &nbsp; {post.date}
                 </p>
-
                 <div className="border-b border-gray-300 my-4"></div>
             </div>
 

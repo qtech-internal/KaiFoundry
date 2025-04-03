@@ -1,5 +1,3 @@
-import { div } from "framer-motion/client";
-
 import Home from "./Home";
 import FeaturesSection from "./Features";
 import CoreValuesSection from "./Core";
