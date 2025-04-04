@@ -40,7 +40,7 @@ const Footer: FC = () => {
       <div className="container mx-auto grid grid-cols-12 md:grid-cols-12 gap-6 sm:grid-cols-2 sm:gap-4">
         {/* Logo - Start Aligned */}
         <div className="sm:col-span-3 flex justify-start order-1 col-span-6">
-          <p>Logo</p>
+          <img src="/svg/Logo.svg" alt="Logo" className="h-10" /> {/* Use the SVG logo here */}
         </div>
 
         {/* Offerings - Centered on Large Screens, Full Width on Mobile */}
@@ -71,7 +71,6 @@ const Footer: FC = () => {
           <ContactInfo phone="123456789" email="kaifoundry@gmail.com" />
         </div>
       </div>
-
     </footer>
   );
 };

@@ -60,33 +60,33 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-6 text-gray-700 flex-1 justify-center transition-all duration-500 ease-in-out">
             <li>
-              <Link href="/HowWeHelpScreen" className={isActive("/HowWeHelpScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"}>
+              <Link href="/HowWeHelpScreen" className={`${isActive("/HowWeHelpScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
                 How We Help
               </Link>
             </li>
             <li>
-              <Link href="/WhoAreWe" className="text-gray-700">
+              <Link href="/WhoAreWe" className="text-gray-700 font-bold">
                 Who We Are
               </Link>
             </li>
             <li>
-              <Link href="/CareersScreen" className={isActive("/CareersScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"}>
+              <Link href="/CareersScreen" className={`${isActive("/CareersScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
                 Careers
               </Link>
             </li>
             <li>
-              <button onClick={togglePopup} className="text-gray-700 flex items-center gap-1 focus:outline-none">
+              <button onClick={togglePopup} className="text-gray-700 flex items-center gap-1 focus:outline-none font-bold">
                 Services <RiArrowDropDownLine className="w-4 h-4 transition-transform duration-200" />
               </button>
             </li>
             <li>
-              <Link href="/blog" className={isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"}>
+              <Link href="/blog" className={`${isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
                 Blogs
               </Link>
             </li>
           </ul>
 
-          <Button className="bg-fuchsia-500 text-white" text="Contact Us" href="/contact" />
+          <Button className="bg-fuchsia-500 text-white font-bold" text="Contact Us" href="/contact" />
         </nav>
       </header>
 
@@ -100,22 +100,22 @@ const Navbar: React.FC = () => {
           <Link href="/">
             <Image src="/assets/logo.svg" alt="Logo" width={120} height={40} />
           </Link>
-          <Link href="/HowWeHelpScreen" className={isActive("/HowWeHelpScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"}>
+          <Link href="/HowWeHelpScreen" className={`${isActive("/HowWeHelpScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
             How We Help
           </Link>
-          <Link href="/WhoAreWe" className="text-gray-700">
+          <Link href="/WhoAreWe" className="text-gray-700 font-bold">
             Who We Are
           </Link>
-          <Link href="/CareersScreen" className={isActive("/CareersScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"}>
+          <Link href="/CareersScreen" className={`${isActive("/CareersScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
             Careers
           </Link>
-          <button onClick={togglePopup} className="text-gray-700 focus:outline-none">
+          <button onClick={togglePopup} className="text-gray-700 focus:outline-none font-bold">
             Services
           </button>
-          <Link href="/blog" className={isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"}>
+          <Link href="/blog" className={`${isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
             Blogs
           </Link>
-          <button className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 mt-4 w-full transition-all duration-500 ease-in-out">
+          <button className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 mt-4 w-full transition-all duration-500 ease-in-out font-bold">
             Contact Us
           </button>
         </nav>
@@ -128,4 +128,3 @@ const Navbar: React.FC = () => {
 };
 
 export default Navbar;
-
