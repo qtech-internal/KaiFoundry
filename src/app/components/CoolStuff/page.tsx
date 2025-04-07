@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Badge from './Badges';
 import Button from '../UI/Button';
+import Link from 'next/link'; // Import Link from next/link
 
 const CoolStuff = () => {
     return (
@@ -15,10 +16,12 @@ const CoolStuff = () => {
                     <p className='text-sm text-gray-700 max-w-md'>
                         Be part of something big—innovate, grow, and shape the future with us. Join a team that values creativity, collaboration, and cutting-edge technology to drive meaningful change.
                     </p>
-                    <Button
-                        text="Join Us"
-                        className="hidden sm:inline-block mt-4 px-6 py-2 border border-[#6F1877] text-[#6F1877] rounded-full hover:bg-[#6F1877] hover:text-white transition"
-                    />
+                    <Link href="/ContactUs"> {/* Wrap the Button with Link */}
+                        <Button
+                            text="Join Us"
+                            className="hidden sm:inline-block mt-4 px-6 py-2 border border-[#6F1877] text-[#6F1877] rounded-full hover:bg-[#6F1877] hover:text-white transition"
+                        />
+                    </Link>
                 </div>
 
                 <div className='relative flex justify-center sm:px-0 px-5'>
@@ -30,20 +33,21 @@ const CoolStuff = () => {
                         className='rounded-lg sm:w-[300px] w-[250px]'
                     />
 
+                    {/* Badges without animation */}
                     <Badge text="100+" subText={`Projects\nDelivered`} position="top-[5%] right-[5%]" width='w-[150]' />
                     <Badge text="" subText="Shape Your Tomorrow" position="left-[20%] top-[10%] translate-x-[-50%]" width="w-28" />
                     <Badge text="" subText="24/7 Learning" position="left-[-5%] bottom-[30%]" bgColor="bg-[#D444F1]" textColor="text-white" width="w-24" />
                     <Badge text="" subText="Break Boundaries" position="left-[10%] bottom-[15%]" width="w-24" />
                     <Badge text="50+" subText={`Experts\nDriving Change`} position="bottom-[5%] right-[0%]" bgColor="bg-[#D444F1]" textColor="text-white" width="w-40 p-4" />
                 </div>
-
             </div>
 
-            <Button
-                text="Join Us"
-                className="sm:hidden mt-4 px-6 py-1 border border-[#6F1877] text-[#6F1877] rounded-full hover:bg-[#6F1877] hover:text-white transition justify-center items-center mx-auto block"
-            />
-
+            <Link href="/ContactUs"> {/* Wrap the Button with Link for mobile view */}
+                <Button
+                    text="Join Us"
+                    className="sm:hidden mt-4 px-6 py-1 border border-[#6F1877] text-[#6F1877] rounded-full hover:bg-[#6F1877] hover:text-white transition justify-center items-center mx-auto block"
+                />
+            </Link>
         </section>
     );
 };

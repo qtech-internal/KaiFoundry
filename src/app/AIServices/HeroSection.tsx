@@ -11,7 +11,10 @@ const HeroSection = () => {
         <Image
           src="/assets/background/ai_bg.gif" 
           alt="Background" 
+          
           className="w-full h-full object-cover"
+          width={1920} 
+          height={1080} 
           
         />
       </div>
