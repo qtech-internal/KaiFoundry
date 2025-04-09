@@ -35,7 +35,7 @@ const WhyWorkWithUs = () => {
       <div className="container mx-auto px-6">
         {/* Title */}
         <motion.h2 
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900"
+          className="text-6xl md:text-6xl lg:text-6xl font-bold text-gray-900"
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.6 }}
@@ -45,7 +45,7 @@ const WhyWorkWithUs = () => {
         </motion.h2>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10 mx-auto max-w-6xl">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10 mx-auto max-w-6xl py-10">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}
@@ -58,7 +58,7 @@ const WhyWorkWithUs = () => {
               <div className="w-1 h-full mr-3" style={{ height: 'calc(100% + 30px)', backgroundColor: '#D444F1' }}></div>
               <div>
                 <h3 className="text-xl md:text-2xl font-semibold text-gray-900">{benefit.title}</h3>
-                <p className="text-sm md:text-base text-gray-600">{benefit.description}</p>
+                <p className="text-lg md:text-base text-gray-600">{benefit.description}</p>
               </div>
             </motion.div>
           ))}

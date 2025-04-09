@@ -4,41 +4,82 @@ import { UploadCloud } from "lucide-react";
 
 const JobApplicationForm = () => {
   const [file, setFile] = useState<File | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    whyJoin: ''
+  });
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files) {
+    if (event.target.files && event.target.files.length > 0) {
       setFile(event.target.files[0]);
     }
+  };
+
+  const handleRemoveFile = () => {
+    setFile(null);
+  };
+
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    const formatted = value.replace(/\s{2,}/g, ' ');
+    setFormData((prev) => ({ ...prev, [name]: formatted }));
+  };
+
+  const handleBlur = (
+    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    const trimmed = value.replace(/\s+/g, ' ').trim();
+    setFormData((prev) => ({ ...prev, [name]: trimmed }));
+  };
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    console.log("Form submitted with data:", formData, "and file:", file);
   };
 
   return (
     <div className="max-w-full mx-auto p-6">
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Application Form</h1>
 
-      <form className="space-y-5 w-full">
+      <form className="space-y-6 w-full" onSubmit={handleSubmit}>
         {/* Name & Email Fields */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block text-gray-700 font-medium">
-              Name <span className="text-red-500">*</span>
+              Name <span className="text-green-500">*</span>
             </label>
             <input
               type="text"
+              name="name"
               placeholder="Enter your Name"
               className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D444F1]"
               required
+              value={formData.name}
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              onFocus={(e) => e.target.placeholder = ''}
             />
           </div>
 
           <div>
             <label className="block text-gray-700 font-medium">
-              Email <span className="text-red-500">*</span>
+              Email <span className="text-green-500">*</span>
             </label>
             <input
               type="email"
+              name="email"
               placeholder="Enter your E-mail"
               className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D444F1]"
               required
+              value={formData.email}
+              onChange={handleInputChange}
+              onBlur={handleBlur}
+              onFocus={(e) => e.target.placeholder = ''}
             />
           </div>
         </div>
@@ -46,20 +87,25 @@ const JobApplicationForm = () => {
         {/* Phone Number Field */}
         <div>
           <label className="block text-gray-700 font-medium">
-            Phone Number <span className="text-red-500">*</span>
+            Phone Number <span className="text-green-500">*</span>
           </label>
           <input
             type="tel"
+            name="phone"
             placeholder="Enter your Contact Number"
             className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D444F1]"
             required
+            value={formData.phone}
+            onChange={handleInputChange}
+            onBlur={handleBlur}
+            onFocus={(e) => e.target.placeholder = ''}
           />
         </div>
 
         {/* Resume Upload */}
         <div>
           <label className="block text-gray-700 font-medium">
-            Resume upload <span className="text-red-500">*</span>
+            Resume upload <span className="text-green-500">*</span>
           </label>
           <div className="border-dashed border-2 border-gray-300 rounded-lg p-6 flex flex-col items-center justify-center cursor-pointer hover:bg-gray-100">
             <input
@@ -67,23 +113,40 @@ const JobApplicationForm = () => {
               className="hidden"
               onChange={handleFileChange}
               accept=".pdf,.doc,.docx"
+              id="resume-upload"
             />
-            <UploadCloud className="text-gray-500 h-32" size={32} />
-            <p className="text-gray-600 mt-2">
-              {file ? file.name : "Upload Your Resume Here"}
-            </p>
+            <label htmlFor="resume-upload" className="flex flex-col items-center cursor-pointer">
+              <UploadCloud className="text-gray-500 h-32" size={32} />
+              <p className="text-gray-600 mt-2">
+                {file ? file.name : "Upload Your Resume Here"}
+              </p>
+            </label>
+            {file && (
+              <button
+                type="button"
+                onClick={handleRemoveFile}
+                className="mt-2 text-red-500 hover:underline"
+              >
+                Remove File
+              </button>
+            )}
           </div>
         </div>
 
         {/* Why Join Field */}
         <div>
           <label className="block text-gray-700 font-medium">
-            Why do you want to join? <span className="text-red-500">*</span>
+            Why do you want to join? <span className="text-green-500">*</span>
           </label>
           <textarea
+            name="whyJoin"
             placeholder="Write your answer here."
             className="w-full p-3 border rounded-lg h-32 focus:outline-none focus:ring-2 focus:ring-[#D444F1]"
             required
+            value={formData.whyJoin}
+            onChange={handleInputChange}
+            onBlur={handleBlur}
+            onFocus={(e) => e.target.placeholder = ''}
           ></textarea>
         </div>
 
@@ -91,7 +154,7 @@ const JobApplicationForm = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="w-2/18 bg-[#D444F1] text-white py-3 rounded-lg font-semibold hover:bg-[#D444F1]/80 transition"
+            className="w-full md:w-1/4 bg-[#D444F1] text-white py-3 rounded-lg font-semibold hover:bg-[#D444F1]/80 transition"
           >
             Submit
           </button>
