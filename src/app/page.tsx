@@ -14,8 +14,9 @@ export default function Home() {
       <ServicesSection />
       <Services />
       <WhyChooseUs />
-      <AnimatedSection />
       <EcosystemsGrid />
+      <AnimatedSection />
+    
       <CoolStuff />
       <FAQSection />
       <ContactUs />

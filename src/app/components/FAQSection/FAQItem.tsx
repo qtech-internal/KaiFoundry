@@ -22,7 +22,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
       className="border-gray-300"
     >
       <button
-        className="w-full flex justify-between items-center py-4 text-left text-gray-700 font-medium"
+        className="w-full flex justify-between items-center py-4 text-left text-gray-700 font-medium text-xl font-inter" // Increased font size to text-xl
         onClick={() => setIsOpen(!isOpen)}
       >
         {question}
@@ -42,7 +42,9 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer }) => {
         transition={{ duration: 0.5, ease: "easeInOut" }}
         className="overflow-hidden"
       >
-        <p className="text-gray-600 pb-4">{answer}</p>
+        <p className="text-gray-600 pb-4 text-xl font-inter"> {/* Increased font size to text-xl */}
+          {answer}
+        </p>
       </motion.div>
     </motion.div>
   );

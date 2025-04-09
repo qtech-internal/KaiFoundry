@@ -36,38 +36,43 @@ const navs = [
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-fuchsia-800 text-white p-8">
+    <footer
+      className="bg-[#821890] text-white p-8"
+      style={{ fontFamily: "Inter, sans-serif", minHeight: "500px" }}
+    >
       <div className="container mx-auto grid grid-cols-12 md:grid-cols-12 gap-6 sm:grid-cols-2 sm:gap-4">
         {/* Logo - Start Aligned */}
         <div className="sm:col-span-3 flex justify-start order-1 col-span-6">
-          <img src="/svg/Logo.svg" alt="Logo" className="h-10" /> {/* Use the SVG logo here */}
+          <img src="/svg/Logo.svg" alt="Logo" className="h-10" />
         </div>
 
-        {/* Offerings - Centered on Large Screens, Full Width on Mobile */}
+        {/* Offerings */}
         <div className="sm:col-span-2 flex sm:order-2 order-3 col-span-12">
           <FooterColumn title={navs[0].title} links={navs[0].links} />
         </div>
 
-        {/* Services - Centered on Large Screens, Half Width on Mobile */}
+        {/* Services */}
         <div className="sm:col-span-2 flex sm:order-3 order-4 col-span-6">
           <FooterColumn title={navs[1].title} links={navs[1].links} />
         </div>
 
-        {/* About - Centered on Large Screens, Half Width on Mobile */}
+        {/* About */}
         <div className="sm:col-span-2 flex sm:order-4 order-5 col-span-6">
           <FooterColumn title={navs[2].title} links={navs[2].links} />
         </div>
 
-        {/* CTA Button - End Aligned */}
+        {/* CTA Button */}
         <div className="sm:col-span-3 flex sm:order-6 justify-end order-2 col-span-6">
-          <Button className="bg-white text-black" text="Get In Touch" href="/" />
-        </div>
+    <Button className="bg-white text-black font-inter" text="Get In Touch" href="/" />
+</div>
       </div>
-      <div className="container mx-auto grid grid-cols-12 gap-6 sm:gap-4 sm:mt-28 mt-12 items-center text-center sm:text-left">
-        <div className="col-span-12 sm:col-span-3 flex justify-start">
+
+      {/* Bottom Section: Social Icons & Contact Info */}
+      <div className="container mx-auto grid grid-cols-12 gap-6 sm:gap-4 mt-50 items-center text-center sm:text-left">
+        <div className="col-span-12 sm:col-span-6 flex justify-center sm:justify-start">
           <SocialIcons />
         </div>
-        <div className="col-span-12 sm:col-span-3 flex justify-start">
+        <div className="col-span-12 sm:col-span-6 flex justify-center sm:justify-start leading-6">
           <ContactInfo phone="123456789" email="kaifoundry@gmail.com" />
         </div>
       </div>

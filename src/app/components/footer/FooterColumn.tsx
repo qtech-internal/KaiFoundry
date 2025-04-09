@@ -9,10 +9,10 @@ interface FooterColumnProps {
 const FooterColumn: React.FC<FooterColumnProps> = ({ title, links }) => {
   return (
     <div>
-      <h3 className="font-bold mb-2">{title}</h3>
-      <ul>
+      <h3 className="font-bold mb-4">{title}</h3>
+      <ul className="flex flex-col gap-2">
         {links.map((link, index) => (
-          <li key={index} className="text-white">
+          <li key={index} className="text-white hover:underline transition duration-200">
             <Link href={link.href}>{link.label}</Link>
           </li>
         ))}

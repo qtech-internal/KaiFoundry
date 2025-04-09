@@ -12,9 +12,10 @@ const HeroSection = () => {
           src="/assets/background/gd_bg.gif" 
           alt="Background" 
           className="w-full h-full object-cover"
+          width={1920} 
+          height={1080} 
         />
       </div>
-
 
       <motion.div
         initial={{ x: '-100%' }} 
@@ -22,7 +23,6 @@ const HeroSection = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="absolute inset-y-0 left-0 w-1/2 bg-white/30 backdrop-blur-md z-10"
       ></motion.div>
-
 
       <motion.div
         initial={{ x: -100, opacity: 0 }}

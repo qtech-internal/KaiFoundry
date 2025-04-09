@@ -1,67 +1,47 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
+import Link from "next/link"; 
 
 const services = [
   {
     title: "BLOCKCHAIN DEVELOPMENT",
     description:
       "We create blockchain solutions that help businesses grow whether it’s smart contracts, digital tokens, or decentralized apps.",
-    image: "/assets/services/img1.png",
-  },
-  {
-    title: "INDUSTRIES SOLUTION",
-    description:
-      "We create blockchain solutions that help businesses grow whether it’s smart contracts, digital tokens, or decentralized apps.",
-    image: "/assets/services/img2.png",
+    image: "/svg/img3.svg", 
+    link: "/BlockChainService", 
   },
   {
     title: "GAME DEVELOPMENT",
     description:
       "We create blockchain solutions that help businesses grow whether it’s smart contracts, digital tokens, or decentralized apps.",
-    image: "/assets/services/img1.png",
+    image: "/svg/img2.svg", 
+    link: "/GameDevelopment", 
   },
   {
     title: "AI SERVICES",
     description:
       "We create blockchain solutions that help businesses grow whether it’s smart contracts, digital tokens, or decentralized apps.",
-    image: "/assets/services/img2.png",
-  },
-  {
-    title: "AI",
-    description:
-      "We create blockchain solutions that help businesses grow whether it’s smart contracts, digital tokens, or decentralized apps.",
-    image: "/assets/services/img2.png",
-  },
-  {
-    title: "WEB3 SOLUTIONS",
-    description:
-      "We build user-friendly decentralized applications that empower businesses in the decentralized ecosystem.",
-    image: "/assets/services/img3.png",
+    image: "/svg/img1.svg", 
+    link: "/AIServices", 
   },
 ];
 
 const ServicesSection = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const { ref, inView } = useInView({ threshold: 0.1 });
 
   useEffect(() => {
-    if (currentIndex >= 3) return; // Stop at the 3rd slide (index 2)
-
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex < 3 ? prevIndex + 1 : prevIndex // Stop at index 2
-      );
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return (
-    <section ref={ref} className="py-20 bg-white">
+    <section ref={ref} className="py-40 bg-white">
       <div className="container mx-auto flex flex-col md:flex-row px-6 md:px-12">
         {/* Left Side */}
         <motion.div
@@ -74,41 +54,74 @@ const ServicesSection = () => {
             WHAT <br />
             WE <span className="text-[#D444F1]">PROVIDE</span>
           </h2>
-          <p className="text-lg md:text-2xl text-gray-600 mt-4">
+          <p className="text-lg md:text-3xl font-bold text-gray-600 mt-4">
             Services That Drive Your Success
           </p>
         </motion.div>
 
         {/* Cards Section */}
         <div className="relative w-full md:w-2/3 overflow-hidden">
-          <motion.div
-            className="flex flex-col md:flex-row transition-transform duration-700 ease-in-out"
-            animate={{ x: `-${currentIndex * 90}%` }}
-          >
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                className="min-w-full md:min-w-[500px] bg-white rounded-xl shadow-lg overflow-hidden mx-2 mb-4 md:mb-0"
-                initial={{ opacity: 0, y: 20 }} // Initial state for card animation
-                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }} // Animate to visible state
-                transition={{ duration: 0.5, delay : index * 0.1 }} // Delay for staggered effect
-              >
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={500}
-                  height={300}
-                  className="w-full h-90 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg md:text-xl font-bold">{service.title}</h3>
-                  <p className="text-gray-600 mt-2">{service.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+          {isMobile ? (
+            <div className="flex flex-col gap-6">
+              {services.map((service, index) => (
+                <Link key={index} href={service.link} passHref>
+                  <div className="w-full bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer">
+                    <img
+                      src={service.image} 
+                      alt={service.title}
+                      className="w-full h-80 object-cover" 
+                    />
+                    <div className="p-4">
+                      <h3 className="text-lg md:text-xl font-bold">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600 mt-2">{service.description}</p>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className="flex overflow-hidden">
+              <div className={`flex flex-row ${inView ? 'animate-slide' : ''}`}>
+                {services.map((service, index) => (
+                  <Link key={index} href={service.link} passHref>
+                    <div className="min-w-full md:min-w-[500px] bg-white rounded-xl shadow-lg overflow-hidden mx-2 cursor-pointer">
+                      <img
+                        src={service.image} 
+                        alt={service.title}
+                        className="w-full h-80 object-cover" 
+                      />
+                      <div className="p-4">
+                        <h3 className="text-lg md:text-xl font-bold">
+                          {service.title}
+                        </h3>
+                        <p className="text-gray-600 mt-2">{service.description}</p>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes slide {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-${(services.length - 1) * 516}px); // Adjusted for new width
+          }
+        }
+
+        .animate-slide {
+          display: flex;
+          animation: slide 20s linear forwards;
+        }
+      `}</style>
     </section>
   );
 };

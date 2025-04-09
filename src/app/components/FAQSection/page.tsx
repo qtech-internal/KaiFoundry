@@ -10,13 +10,15 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="max-w-2xl mx-auto px-6 flex-col py-24">
+    <div className="max-w-3xl mx-auto px-6 flex-col py-24">
       <h2 className="text-3xl font-bold text-center text-gray-900">
         <span className="text-fuchsia-800">Frequently</span> Asked Questions
       </h2>
       <div className="mt-6">
         {faqs.map((faq, index) => (
-          <FAQItem key={index} question={faq.question} answer={faq.answer} />
+          <div className="mb-5" key={index}> {/* Added margin-bottom for spacing */}
+            <FAQItem question={faq.question} answer={faq.answer} />
+          </div>
         ))}
       </div>
     </div>

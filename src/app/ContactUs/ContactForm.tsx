@@ -1,8 +1,8 @@
 "use client";
 import { useState, useRef } from "react";
-import Button from "../UI/Button";
-import Input from "../UI/Input";
-import Loader from "../UI/Loader";
+import Button from "../components/UI/Button";
+import Input from "../components/UI/Input";
+import Loader from "../components/UI/Loader";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
