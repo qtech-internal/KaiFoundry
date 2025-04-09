@@ -26,9 +26,9 @@ const navs = [
   {
     title: "About",
     links: [
-      { label: "Who We Are", href: "/about" },
+      { label: "Who We Are", href: "/WhoAreWe" },
       { label: "What We Do", href: "/services" },
-      { label: "Career", href: "/career" },
+      { label: "Career", href: "/CareersScreen" },
       { label: "Portfolio", href: "/portfolio" },
     ],
   },
@@ -36,11 +36,11 @@ const navs = [
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-fuchsia-800 text-white p-8">
+    <footer className="bg-[#821890] text-white p-8">
       <div className="container mx-auto grid grid-cols-12 md:grid-cols-12 gap-6 sm:grid-cols-2 sm:gap-4">
         {/* Logo - Start Aligned */}
         <div className="sm:col-span-3 flex justify-start order-1 col-span-6">
-          <img src="/svg/Logo.svg" alt="Logo" className="h-10" /> {/* Use the SVG logo here */}
+          <img src="/svg/Logo.svg" alt="Logo" className="h-10" /> 
         </div>
 
         {/* Offerings - Centered on Large Screens, Full Width on Mobile */}

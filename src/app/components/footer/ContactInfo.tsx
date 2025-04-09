@@ -10,9 +10,9 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ phone, email }) => {
     <div className="text-gray-300 flex flex-col items-start">
       {/* Horizontal Separator */}
       <hr className="border-t border-white sm:border-black w-20 border-[1px] my-6" />
-      <p>{phone}</p>
+      <p className="text-white text-[16.9px] font-[400] opacity-90">{phone}</p>
       <p>
-        <a href={`mailto:${email}`} className="hover:text-white">
+        <a href={`mailto:${email}`} className=" text-white text-[16.9px] font-[400] opacity-90">
           {email}
         </a>
       </p>

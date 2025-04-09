@@ -37,12 +37,12 @@ const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 w-full pt-5 z-50 transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 w-full pt-5 z-50 transition-transform duration-500 ease-in-out  zoom-affected ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <nav className="md:mx-10 py-2 px-2 md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-md md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out">
-          <button onClick={toggleMenu} className="md:hidden focus:outline-none p-2 rounded-sm">
+        <nav className="md:mx-10 py-2 px-2  md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-md md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out">
+          <button onClick={toggleMenu} className="md:hidden focus:outline-none p-2 rounded-sm" aria-label="hamburger icon">
             <div className="flex flex-col space-y-1">
               <span className="block w-8 h-1 bg-gray-700"></span>
               <span className="block w-8 h-1 bg-gray-700"></span>
@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
             </li>
           </ul>
 
-          <Button className="bg-fuchsia-500 text-white font-bold" text="Contact Us" href="/contact" />
+          <Button className="bg-[#D444F1] text-white font-bold" text="Contact Us" href="/contact" />
         </nav>
       </header>
 
@@ -115,7 +115,7 @@ const Navbar: React.FC = () => {
           <Link href="/blog" className={`${isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
             Blogs
           </Link>
-          <button className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 mt-4 w-full transition-all duration-500 ease-in-out font-bold">
+          <button className="bg-[#D444F1] text-white px-4 py-2 rounded-full  mt-4 w-full transition-all duration-500 ease-in-out font-bold">
             Contact Us
           </button>
         </nav>

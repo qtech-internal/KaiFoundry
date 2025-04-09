@@ -3,14 +3,17 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/footer/page";
 import Navbar from "./components/Navbar";
+import ZoomResponsiveWrapper from "./components/ZoomResponsiveWrapper"; 
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
+  weight: ['400', '500'],
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  weight: ['400', '500'],
   subsets: ["latin"],
 });
 
@@ -40,12 +43,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Navbar />
-        {children}
-        <Footer />
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <ZoomResponsiveWrapper />
+        <div
+          id="zoom-wrapper"
+          className="relative"
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

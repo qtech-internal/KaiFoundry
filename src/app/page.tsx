@@ -7,6 +7,7 @@ import ServicesSection from "./components/ServicesSection";
 import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
 import AnimatedSection from "./components/AnimatedImageCard";
+import './globals.css';
 export default function Home() {
   return (
     <main>

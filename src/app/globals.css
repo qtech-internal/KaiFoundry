@@ -1,2 +1,10 @@
 @import "tailwindcss";
+/* src/app/globals.css or src/styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+  #zoom-wrapper {
+    transform: scale(var(--zoom-level));
+    transform-origin: top center;
+  }
