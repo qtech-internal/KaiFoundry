@@ -2,7 +2,6 @@
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import bg from "./../../../public/assets/background/bg.png";
 import img1 from "./../../../public/assets/WhoAreWe/FeaturesImg1.svg";
 import img2 from "./../../../public/assets/WhoAreWe/FeaturesImg2.svg";
 import img3 from "./../../../public/assets/WhoAreWe/FeaturesImg3.svg";
@@ -12,19 +11,19 @@ const features = [
     img: img1,
     title: "Make Blockchain Accessible",
     description:
-      "We simplify blockchain technology, making it easier for businesses to integrate and benefit from it.",
+      "We Simplify Blockchain Technology, Making It Easier For Businesses To Integrate And Benefit From It.",
   },
   {
     img: img2,
     title: "Secure And Trustworthy",
     description:
-      "Our goal is to make blockchain safer, so businesses and users can trust their data and transactions.",
+      "Our Goal Is To Make Blockchain Safer, So Businesses And Users Can Trust Their Data And Transactions.",
   },
   {
     img: img3,
     title: "Champion Decentralization",
     description:
-      "We believe people should own their digital assets and data without depending on big companies.",
+      "We Believe People Should Own Their Digital Assets And Data Without Depending On Big Companies.",
   },
 ];
 
@@ -34,11 +33,11 @@ const FeaturesSection = () => {
   return (
     <section
       ref={ref}
-      className="px-6 lg:px-20 py-16 bg-white min-h-screen w-full flex items-center"
+      className="px-6 lg:px-20 py-16 bg-white min-h-screen w-full flex items-center pt-24 relative z-10"
       style={{
-        backgroundImage: `url(${bg.src})`,
-        backgroundSize: "fit",
-        backgroundPosition: "left",
+        backgroundImage: `url('/assets/background/bg3.gif')`, 
+        backgroundSize: "cover",
+        backgroundPosition: "inverted",
         backgroundRepeat: "no-repeat",
       }}
     >
@@ -47,7 +46,7 @@ const FeaturesSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-6xl font-bold text-center lg:text-left lg:w-1/2"
+          className="text-5xl font-bold text-center lg:text-left lg:w-1/2"
         >
           What
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA24D5] to-[#EA83FF]">
@@ -69,18 +68,18 @@ const FeaturesSection = () => {
               }}
               className="grid grid-rows-[auto_1fr_2fr] items-start gap-4"
             >
-              <div className="w-16 h-16 flex-shrink-0">
+              <div className="w-20 h-20 flex-shrink-0"> 
                 <Image
                   src={feature.img}
                   alt={feature.title}
-                  width={64}
-                  height={64}
+                  width={80} 
+                  height={80} 
                 />
               </div>
 
-              <h3 className="text-2xl font-semibold">{feature.title}</h3>
+              <h3 className="text-2xl font-semibold mt-3">{feature.title}</h3> 
 
-              <p className="text-black text-lg">{feature.description}</p>
+              <p className="text-black text-lg mt-2">{feature.description}</p> 
             </motion.div>
           ))}
         </div>
