@@ -47,7 +47,7 @@ const FeaturesSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-6xl font-bold text-center lg:text-left lg:w-1/2"
+          className="text-[24px] lg:text-6xl font-bold text-center lg:text-left lg:w-1/2"
         >
           What
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA24D5] to-[#EA83FF]">
@@ -67,7 +67,7 @@ const FeaturesSection = () => {
                 duration: 0.8,
                 delay: inView ? 0.8 + 0.2 * index : 0,
               }}
-              className="grid grid-rows-[auto_1fr_2fr] items-start gap-4"
+              className="flex flex-col items-center lg:items-start justify-center gap-2 lg:gap-4"
             >
               <div className="w-16 h-16 flex-shrink-0">
                 <Image
@@ -75,12 +75,13 @@ const FeaturesSection = () => {
                   alt={feature.title}
                   width={64}
                   height={64}
+                  className="w-[48px] h-[48px] lg:w-[64px] lg:h-[64px]"
                 />
               </div>
 
-              <h3 className="text-2xl font-semibold">{feature.title}</h3>
+              <h3 className="text-[16px] lg:text-2xl text-[#333333] font-[600] text-center lg:text-left">{feature.title}</h3>
 
-              <p className="text-black text-lg">{feature.description}</p>
+              <p className="text-[12px] text-[#333333]  lg:text-lg text-center lg:text-left">{feature.description}</p>
             </motion.div>
           ))}
         </div>
