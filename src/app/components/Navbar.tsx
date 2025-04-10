@@ -90,17 +90,17 @@ const Navbar: React.FC = () => {
         </nav>
       </header>
 
-      {/* Sidebar Overlay */}
+      
       {isOpen && <div className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-500 ease-in-out" onClick={closeMenu}></div>}
 
-      {/* Sidebar Menu */}
+      
       <div className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"}`}>
         <button onClick={closeMenu} className="absolute top-4 right-4 text-gray-700 text-2xl">&times;</button>
         <nav className="flex flex-col items-start px-6 py-10 space-y-4 text-gray-700">
           <Link href="/">
             <Image src="/assets/logo.svg" alt="Logo" width={120} height={40} />
           </Link>
-          <Link href="/HowWeHelpScreen" className={`${isActive("/HowWeHelpScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
+          <Link href="/HowWeHelpScreen" className={`${isActive("/HowWeHelpScreen")  ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
             How We Help
           </Link>
           <Link href="/WhoAreWe" className="text-gray-700 font-bold">
@@ -121,7 +121,7 @@ const Navbar: React.FC = () => {
         </nav>
       </div>
 
-      {/* Services Popup */}
+      
       {isPopupOpen && <ServicesPopup onClose={togglePopup} />}
     </>
   );

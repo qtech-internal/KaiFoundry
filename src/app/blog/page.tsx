@@ -60,22 +60,37 @@ export default function BlogCarousel() {
   }, []);
 
   useEffect(() => {
-    if (blogs.length === 0) return;
-
-    const interval = setInterval(() => {
-      setCurrentIndex(prev => (prev + 1) % (blogs.length - visibleCards + 1));
-    }, 3000);
-
-    return () => clearInterval(interval);
+    let interval: NodeJS.Timeout | null = null;
+  
+    const setupAutoScroll = () => {
+      if (window.innerWidth >= 768 && blogs.length > 0) {
+        interval = setInterval(() => {
+          setCurrentIndex(prev => (prev + 1) % (blogs.length - visibleCards + 1));
+        },3000);
+      }
+    };
+  
+    setupAutoScroll();
+    window.addEventListener("resize", setupAutoScroll);
+  
+    return () => {
+      if (interval) clearInterval(interval);
+      window.removeEventListener("resize", setupAutoScroll);
+    };
   }, [blogs.length, visibleCards]);
 
   useEffect(() => {
     if (carouselRef.current) {
       const cardWidth = carouselRef.current.children[0]?.clientWidth || 0;
-      const gap = 32; 
-      carouselRef.current.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+      const gap = 32;
+      if (window.innerWidth >= 768) {
+        carouselRef.current.style.transform = `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+      } else {
+        carouselRef.current.style.transform = `translateX(0px)`;
+      }
     }
   }, [currentIndex, visibleCards]);
+  
 
   const handleImageLoad = (id: number) => {
     setLoadedImages(prev => ({ ...prev, [id]: true }));
@@ -96,8 +111,8 @@ export default function BlogCarousel() {
   return (
     <div className="relative max-w-full mx-auto py-32 px-6">
       <div className="flex flex-col">
-        <div className="text-[50px] w-[300px] font-[500] text-[#414141] text-left">Our Latest</div>
-        <div className="text-[50px] w-[300px] font-[500] text-[#414141] text-left -mt-4 mb-6">Blogs</div>
+        <div className="text-[30px] lg:text-[50px] w-[300px] font-[500] text-[#414141] text-left">Our Latest</div>
+        <div className="text-[30px] lg:text-[50px] w-[300px] font-[500] text-[#414141] text-left -mt-4 mb-6">Blogs</div>
       </div>
     
       <div className="relative overflow-hidden">
@@ -105,7 +120,7 @@ export default function BlogCarousel() {
           <button
             onClick={prevSlide}
             style={{ backgroundColor: '#BA24D5' }}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 p-3 rounded-lg cursor-pointer text-white text-3xl hover:bg-purple-700 transition z-10"
+            className="absolute left-0 top-1/2 hidden lg:block md:block transform -translate-y-1/2 p-3 rounded-lg cursor-pointer text-white text-3xl hover:bg-purple-700 transition z-10"
             disabled={currentIndex === 0}
             aria-label="Previous blog posts"
             aria-disabled={currentIndex === 0}
@@ -118,7 +133,7 @@ export default function BlogCarousel() {
           <button
             onClick={nextSlide}
             style={{ backgroundColor: '#BA24D5' }}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 p-3 rounded-lg cursor-pointer text-white text-3xl hover:bg-purple-700 transition z-10"
+            className="absolute right-0 top-1/2 hidden lg:block transform -translate-y-1/2 p-3 rounded-lg cursor-pointer text-white text-3xl hover:bg-purple-700 transition z-10"
             disabled={currentIndex >= blogs.length - visibleCards}
             aria-label="Next blog posts"
             aria-disabled={currentIndex >= blogs.length - visibleCards}
@@ -140,7 +155,8 @@ export default function BlogCarousel() {
           <div className="overflow-visible">
             <div 
               ref={carouselRef}
-              className="flex gap-8 transition-transform duration-500 ease-in-out"
+              className="flex flex-col md:flex-row gap-8 transition-transform duration-500 ease-in-out"
+
               style={{ width: `${blogs.length * (426 + 32)}px` }} 
             >
               {blogs.map((blog, index) => (
@@ -178,7 +194,7 @@ export default function BlogCarousel() {
           </div>
         )}
         
-        <div className="flex items-center justify-center mt-8 space-x-4">
+        <div className="lg:flex md:flex hidden items-center justify-center mt-8 space-x-4">
           {blogs.length > 0 && [...Array(Math.max(blogs.length - visibleCards + 1, 1))].map((_, index) => (
             <div
               key={index}
