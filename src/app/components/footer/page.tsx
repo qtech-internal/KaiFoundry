@@ -59,7 +59,7 @@ const Footer: FC = () => {
         </div>
 
         {/* CTA Button - End Aligned */}
-        <div className="sm:col-span-3 flex sm:order-6 justify-end order-2 col-span-6">
+        <div className="sm:col-span-3 flex sm:order-6 font-[500] justify-end order-2 col-span-6">
           <Button className="bg-white text-black" text="Get In Touch" href="/" />
         </div>
       </div>

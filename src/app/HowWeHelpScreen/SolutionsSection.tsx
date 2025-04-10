@@ -19,6 +19,26 @@ const solutions = [
     title: "Decentralized Exchange",
     description: "Trade directly from your wallet with our DEX solutions."
   },
+  {
+    title: "Arbitrage Bots",
+    description: "Trade directly from your wallet with our DEX solutions."
+  },
+  {
+    title: "Derivatives Exchange",
+    description: "Trade directly from your wallet with our DEX solutions."
+  },
+  {
+    title: "Centralized Exchange",
+    description: "Trade directly from your wallet with our DEX solutions."
+  },
+  {
+    title: "P2 Exchange",
+    description: "Trade directly from your wallet with our DEX solutions."
+  },
+  {
+    title: "Market Making Exchange",
+    description: "Trade directly from your wallet with our DEX solutions."
+  },
 ];
 
 const SolutionsSection = () => {
@@ -28,10 +48,10 @@ const SolutionsSection = () => {
   return (
     <div className="py-12 w-full">
       {/* Title */}
-      <h2 className="text-3xl md:text-4xl font-bold text-black text-center px-4 md:px-10">
-        Solutions <span style={{ color: '#D444F1' }}>Built For</span> <span style={{ color: '#D444F1' }}>The Future</span>
+      <h2 className="text-[24px] md:text-4xl font-bold text-[#D444F1] text-center px-4 md:px-10">
+        Solutions <span className='text-black'>Built For</span> The Future
       </h2>
-      <p className="text-gray-500 mt-2 text-center px-4 md:px-10 text-base md:text-lg">
+      <p className="text-[#666666] mt-2 text-center px-4 md:px-10 text-[14px] md:text-lg">
         Blockchain solutions designed to power your business with security, efficiency, and scalability.
       </p>
 
@@ -59,12 +79,12 @@ const SolutionsSection = () => {
                 }} // Light background color for hover effect
               />
               
-              <span className="relative z-10 block w-full">
+              <span className="relative z-10 block text-[18px] w-full">
                 {index + 1}. {solution.title}
               </span>
 
-              {/* Always Visible Bottom Border Line */}
-              <div className="absolute bottom-0 h-0.5" style={{ backgroundColor: '#D444F1', width: '100%' }} /> {/* Line at the bottom */}
+              
+              <div className="absolute bottom-0 h-[0.5px]" style={{ backgroundColor: '#D444F1', width: '100%' }} /> {/* Line at the bottom */}
             </div>
 
             {/* Description Section (Smooth Slide Down) */}
@@ -77,7 +97,7 @@ const SolutionsSection = () => {
             >
               <div className="p-4 text-left"> {/* Added text-left for description */}
                 <h3 className="text-lg md:text-2xl font-semibold" style={{ color: '#D444F1' }}>{solution.title}</h3>
-                <p className="text-gray-700 mt-2 text-base md:text-lg"> {/* Increased text size */}
+                <p className="text-gray-700 mt-2 text-[12px] md:text-lg"> {/* Increased text size */}
                   {solution.description}
                 </p>
               </div>

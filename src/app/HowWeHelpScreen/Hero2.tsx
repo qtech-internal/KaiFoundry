@@ -4,14 +4,14 @@ import Image from "next/image";
 
 const HeroSection2 = () => {
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-16 bg-[#FFFFFF]"> 
+    <section className="relative flex flex-col-reverse gap-4 lg:gap-0 md:flex-row items-center justify-between px-4 md:px-20 py-16 bg-[#FFFFFF]"> 
       {/* Left Content */}
       <div className="text-center md:text-left max-w-2xl">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight" 
+          className="text-[24px] md:text-5xl font-bold text-gray-900 leading-tight" 
         >
           Kai Foundry’s <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA24D5] to-[#EA83FF]">Filecoin Wallet</span> for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA24D5] to-[#EA83FF]">KaiOS</span> device
         </motion.h1>
@@ -19,7 +19,7 @@ const HeroSection2 = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-gray-600 text-base md:text-lg mt-4" 
+          className="text-[#808080] text-[14px] md:text-lg mt-4" 
         >
           It is specially designed to facilitate the storage, sending, and receiving of Filecoin (FIL) on devices running the KaiOS operating system.
         </motion.p>
@@ -30,18 +30,18 @@ const HeroSection2 = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-white pt-2 bg-gradient-to-r from-purple-100 to-white px-4 md:px-10 py-4 rounded-lg" // Adjusted grid for mobile
+            className="grid grid-cols-3 gap-4 border-t border-white pt-2 bg-gradient-to-r from-purple-100 to-white px-4 md:px-10 py-4 rounded-lg" // Adjusted grid for mobile
           >
             {/* Feature 1 */}
-            <div className="text-gray-600 text-center border-b md:border-b-0 md:border-r border-white pr-4 text-lg md:text-3xl">
+            <div className="text-gray-600 text-center border-r  lg:border-r border-white pr-4 text-sm lg:text-3xl">
               Secure storage
             </div>
             {/* Feature 2 */}
-            <div className="text-gray-600 text-center border-b md:border-b-0 md:border-r border-white pr-4 text-lg md:text-2xl">
+            <div className="text-gray-600 text-center border-r  lg:border-r border-white pr-4 text-sm lg:text-3xl">
               Send and receive FIL tokens
             </div>
             {/* Feature 3 */}
-            <div className="text-gray-600 text-center text-lg md:text-3xl">
+            <div className="text-gray-600 text-center text-sm lg:text-3xl">
               Recovery phrase protection
             </div>
           </motion.div>
