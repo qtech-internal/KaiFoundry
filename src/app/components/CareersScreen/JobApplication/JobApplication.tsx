@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { CheckSquare, ArrowLeft } from "lucide-react";
+import {  ArrowLeft } from "lucide-react";
 
 const eligibilityCriteria = [
   "Eger Tincidunt Dolor. Morbi Fames Venenatis Egestas Imperdiet Elit.",

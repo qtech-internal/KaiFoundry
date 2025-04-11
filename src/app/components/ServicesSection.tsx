@@ -45,16 +45,16 @@ const ServicesSection = () => {
       <div className="container mx-auto flex flex-col md:flex-row px-6 md:px-12">
         {/* Left Side */}
         <motion.div
-          className="w-full md:w-1/3 mb-10 md:mb-0 pr-0 md:pr-6"
+          className="w-full text-center  lg:text-left md:w-1/3 mb-10  md:mb-0 pr-0 md:pr-6"
           initial={{ opacity: 0, x: -50 }}
           animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900">
-            WHAT <br />
-            WE <span className="text-[#D444F1]">PROVIDE</span>
+          <h2 className="text-[24px] flex gap-2 justify-center items-center lg:block  w-full lg:max-w-[250px] md:text-6xl font-bold text-gray-900">
+            WHAT 
+            <p className="flex gap-2 lg:gap-3">WE<span className="text-[#D444F1]">PROVIDE</span></p>
           </h2>
-          <p className="text-lg md:text-3xl font-bold text-gray-600 mt-4">
+          <p className="text-[#333333] text-[14px] md:text-3xl font-[400]  mt-4">
             Services That Drive Your Success
           </p>
         </motion.div>

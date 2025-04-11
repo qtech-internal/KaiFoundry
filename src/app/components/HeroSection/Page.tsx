@@ -16,11 +16,11 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-black pt-16"> 
+    <div className="h-[800px] lg:min-h-screen bg-white text-black pt-4 lg:pt-16"> 
       {/* Main Content */}
-      <div className={`flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-16 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-        <div className="md:w-1/2 text-center md:text-left">
-          <h1 className={`text-6xl md:text-7xl font-bold transition-transform duration-1000 ${isVisible ? 'translate-y-0' : 'translate-y-10'}`}>
+      <div className={`flex flex-col-reverse md:flex-row items-center justify-between px-2 md:px-12 py-16 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+        <div className="md:w-1/2 text-center mt-12 lg:mt-0 md:text-left z-10">
+          <h1 className={` text-[24px] md:text-7xl font-bold transition-transform duration-1000 ${isVisible ? 'translate-y-0' : 'translate-y-10'}`}>
             Building Your{" "}
             <span className="bg-gradient-to-r from-[#821890] to-[#D444F1] bg-clip-text text-transparent">
               BUSINESSES
@@ -30,13 +30,13 @@ export default function HeroSection() {
               WEB3
             </span>
           </h1>
-          <p className={`text-gray-600 mt-7 text-3xl transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <p className={`text-[#808080]  mt-7 text-[14px] lg:text-3xl z-10 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             We help businesses grow with smart strategies and the latest Web3
             technology, making success easier to achieve.
           </p>
-          <div className={`flex items-center relative top-6 hidden md:flex transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={`flex items-center justify-center lg:justify-start relative top-6 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
             <div
-              className="absolute inset-y-0 left-0 right-0 bg-[#D444F1] rounded-full"
+              className="absolute inset-y-0 left-1/2 lg:left-0 right-0  bg-[#D444F1] rounded-full"
               style={{ width: "calc(42% - 10px)" }}
             ></div>
             <Link href="/HowWeHelp">
@@ -54,24 +54,87 @@ export default function HeroSection() {
             </Link>
           </div>
         </div>
-        <div className="md:w-1/2 mt-8 md:mt-5 relative">
-          <div className="absolute top-0 right-0 w-full h-175 bg-gradient-to-r from-[#A5C0EE] to-[#FBC5EC] rounded-lg z-0"></div>
+        <div className="lg:w-1/2 w-full mt-8 md:mt-5 relative h-full mx-auto lg:h-auto">
+          <div className="absolute top-0 right-0 w-full h-200 lg:h-175  bg-gradient-to-b lg:bg-gradient-to-r from-[#A5C0EE] to-[#FBC5EC] rounded-lg z-0 flex lg:block justify-center items-center"></div>
           <Image
             src="/assets/cube.png"
             alt="Web3 Cube"
             width={500}
             height={500}
-            className={`mx-auto relative z-10 hidden md:block transition-transform duration-1000 ${isVisible ? 'translate-y-0' : 'translate-y-60'}`} // Animate from bottom to top
+            className={`relative z-10 w-[300px] mx-auto h-[300px] lg:w-[500px] mt-16 lg:mt-0 lg:h-[500px] transition-transform duration-1000 ${
+              isVisible ? 'translate-y-0' : 'translate-y-60'
+            }`}
           />
+          <div className="relative z-20   lg:hidden bg-white/10 backdrop-blur-md shadow-[0_0_30px_#D444F1] border border-white/20 w-[300px] rounded-xl p-[3px] flex left-2/9 -mt-8">
+              <motion.div
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="bg-white shadow-lg rounded-xl flex gap-2 p-1 relative z-10 overflow-hidden  md:flex"
+              >
+            
+                <Image
+                  src="/assets/abstract.png"
+                  alt="Abstract Design"
+                  width={40}
+                  height={25}
+                  className="object-cover w-[40px] h-[40px] rounded-md"
+                />
+              
+              <div className="flex-1">
+                <h2 className="text-[10.8px] font-[500] text-black">Uncover our identity</h2>
+                <p className="text-[10px]">
+                  We are a creative hub shaping the future of digital design and
+                  technology.
+                </p>
+              </div>
+              <Link href="/WhoAreWe">
+                <div className="w-5 h-5 flex items-center justify-center self-start bg-white rounded-full shadow-md cursor-pointer">
+                  <span className="text-purple-500 text-[10px] flex justify-center items-center">→</span>
+                </div>
+              </Link>
+            </motion.div> 
+          </div>
+          <div className="flex items-end absolute h-full">
+            <div className="relative w-full z-20 lg:hidden rounded-lg  ">
+              <div
+                className="absolute inset-0 rounded-lg border-2 border-[#BA24D5] mx-5 pointer-events-none"
+                style={{
+                  background: "linear-gradient(to right, transparent, #FBE8FF, transparent)",
+                  maskImage: "linear-gradient(to right, transparent 0%, #BA24D5 20%, #BA24D5 80%, transparent 100%)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent 0%, #BA24D5 20%, #BA24D5 80%, transparent 100%)",
+                  borderRadius:'20px',
+                  marginLeft:'6px',
+                  marginRight:'6px'
+                }}
+              />
+              <div className="flex justify-between px-8 py-2 gap-4 rounded-lg relative z-10">
+                <div className="flex gap-2 items-center">
+                  <div className="text-[20px] font-[600] text-[#414141]">30+</div>
+                  <div className="text-[14px] text-[#6E6E6E]">Projects</div>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <div className="text-[20px] font-[600] text-[#414141]">40+</div>
+                  <div className="text-[14px] text-[#6E6E6E]">Developers</div>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <div className="text-[20px] font-[600] text-[#414141]">10+</div>
+                  <div className="text-[14px] text-[#6E6E6E]">Ecosystems</div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
         </div>
+        
       </div>
 
-      <div className="relative flex flex-col items-center justify-center px-16 md:px-14 pb-0">
+      <div className="relative lg:flex lg:flex-col hidden items-center justify-center px-16 md:px-14 pb-0">
       <motion.div
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="bg-white shadow-lg rounded-2xl flex items-center p-6 space-x-4 relative z-10 overflow-hidden hidden md:flex"
+        className="bg-white shadow-lg rounded-2xl flex items-center p-6 space-x-4 relative z-10 overflow-hidden  md:flex"
         style={{
           background: "linear-gradient(to right, #f8f5ff, #fce7f3)",
           borderRadius: "20px",
@@ -100,7 +163,11 @@ export default function HeroSection() {
           </div>
         </Link>
       </motion.div>
+      
     </div>
+    
+    
+
     </div>
   );
 }

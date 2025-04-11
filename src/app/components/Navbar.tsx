@@ -7,9 +7,11 @@ import Button from "./UI/Button";
 import Image from "next/image";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import ServicesPopup from "./NavbarPopup";
+import { BsChevronCompactDown } from "react-icons/bs";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isOpenMenu, setIsOpenMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const pathname = usePathname();
@@ -100,6 +102,9 @@ const Navbar: React.FC = () => {
           <Link href="/">
             <Image src="/assets/logo.svg" alt="Logo" width={120} height={40} />
           </Link>
+          <Link href="/" className={`${isActive("/HowWeHelpScreen")  ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
+            Home
+          </Link>
           <Link href="/HowWeHelpScreen" className={`${isActive("/HowWeHelpScreen")  ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
             How We Help
           </Link>
@@ -109,12 +114,34 @@ const Navbar: React.FC = () => {
           <Link href="/CareersScreen" className={`${isActive("/CareersScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
             Careers
           </Link>
-          <button onClick={togglePopup} className="text-gray-700 focus:outline-none font-bold">
-            Services
-          </button>
           <Link href="/blog" className={`${isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
             Blogs
           </Link>
+          <div className="relative w-full max-w-sm mx-auto">
+            <button
+              onClick={(e) =>{ e.preventDefault(); setIsOpenMenu(!isOpenMenu)}}
+              className="text-gray-700 flex w-full items-center justify-between font-bold focus:outline-none "
+            >
+              <div>Services</div>
+              <BsChevronCompactDown
+                className={`transition-transform duration-300 ${isOpenMenu ? "rotate-180" : ""}`}
+              />
+
+            </button>
+
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                isOpenMenu ? "max-h-60 opacity-100" : "max-h-0 opacity-0"
+              }`}
+            >
+              <ul className="bg-white mt-2 rounded-md shadow-lg p-2 space-y-2 text-sm font-medium text-gray-700">
+                <li className="hover:text-[#D444F1] cursor-pointer">Blockchain Development</li>
+                <li className="hover:text-[#D444F1] cursor-pointer">Game Development</li>
+                <li className="hover:text-[#D444F1] cursor-pointer">AI Services</li>
+              </ul>
+            </div>
+          </div>
+          
           <button className="bg-[#D444F1] text-white px-4 py-2 rounded-full  mt-4 w-full transition-all duration-500 ease-in-out font-bold">
             Contact Us
           </button>

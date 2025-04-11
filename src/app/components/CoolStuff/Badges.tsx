@@ -13,6 +13,7 @@ interface BadgeProps {
     bgColor?: string;
     textColor?: string;
     width?: string;
+    zIndex?: string;
 }
 
 const Badge: React.FC<BadgeProps> = ({
@@ -22,13 +23,14 @@ const Badge: React.FC<BadgeProps> = ({
     bgColor = "bg-white",
     textColor = "text-black",
     width = "w-auto",
+    zIndex
 }) => {
     useEffect(() => {
         AOS.init({ duration: 1000, once: true });
     }, []);
     return (
         <div
-            className={`absolute ${position} ${bgColor} ${textColor} p-2 rounded-xl text-center shadow-md ${width}`}
+            className={`absolute ${position} ${bgColor} ${textColor} p-2 rounded-xl text-center shadow-md ${width} ${zIndex}`}
             data-aos="zoom-in"
         >
             <p className='text-center'>

@@ -7,6 +7,7 @@ import ServicesSection from "./components/ServicesSection";
 import Services from "./components/Services";
 import WhyChooseUs from "./components/WhyChooseUs";
 import AnimatedSection from "./components/AnimatedImageCard";
+import AnimatedImageMobile from "./components/AnimatedImageMobile";
 import './globals.css';
 export default function Home() {
   return (
@@ -15,8 +16,13 @@ export default function Home() {
       <ServicesSection />
       <Services />
       <WhyChooseUs />
-      <AnimatedSection />
       <EcosystemsGrid />
+      <div className="hidden lg:block">
+      <AnimatedSection />
+      </div>
+      <div className="block lg:hidden">
+      <AnimatedImageMobile/>
+      </div>
       <CoolStuff />
       <FAQSection />
       <ContactUs />

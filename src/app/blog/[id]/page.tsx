@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 interface Post {
-    id: string; // Added id to the interface
+    id: string; 
     image: string;
     title: string;
     author: string;
@@ -28,7 +28,7 @@ export default function BlogPost() {
                     throw new Error("Failed to load blogs.");
                 }
                 const data: Post[] = await response.json(); 
-                const foundPost = data.find((blog) => blog.id === id); // Use id directly as a string
+                const foundPost = data.find((blog) => blog.id === id); 
                 setPost(foundPost || null);
             } catch (error) {
                 console.error("Error fetching blog post:", error);
