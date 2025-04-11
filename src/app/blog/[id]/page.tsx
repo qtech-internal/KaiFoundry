@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 interface Post {
-    id: string; 
+    id: number; // Change to number to match your JSON data
     image: string;
     title: string;
     author: string;
@@ -28,7 +28,7 @@ export default function BlogPost() {
                     throw new Error("Failed to load blogs.");
                 }
                 const data: Post[] = await response.json(); 
-                const foundPost = data.find((blog) => blog.id === id); 
+                const foundPost = data.find((blog) => blog.id === Number(id)); 
                 setPost(foundPost || null);
             } catch (error) {
                 console.error("Error fetching blog post:", error);
@@ -41,8 +41,7 @@ export default function BlogPost() {
     if (!post) return <div className="text-center text-gray-600 text-lg mt-10">Loading...</div>;
 
     return (
-        <div className="w-full min-h-screen flex flex-col items-center bg-cover bg-fill" style={{ backgroundImage: "url('/assets/blogs/background.gif')" }}>
-            {/* Back Button */}
+        <div className="w-full min-h-screen flex flex-col items-center bg-cover bg-fill mt-10 lg:mt-0" style={{ backgroundImage: "url('/assets/blogs/background.gif')" }}>
             <button
                 onClick={() => router.back()}
                 className="flex items-center space-x-2 absolute top-6 left-6 text-gray-600 hover:underline px-4 py-2 rounded-lg"
@@ -54,14 +53,14 @@ export default function BlogPost() {
             <Image
                 src={post.image}
                 alt="Blog Cover"
-                width={1200}
-                height={400}
-                className="w-full h-72 object-cover rounded-lg mb-6 mt-20"
+                width={900}
+                height={800}
+                className="w-[900px] h-[400px] lg:h-[500px] object-cover rounded-lg mb-6 mt-20 px-2 lg:px-0"
             />
 
             <div className="w-full max-w-4xl px-4 sm:px-10">
-                <h1 className="text-6xl font-bold">{post.title}</h1>
-                <p className="text-gray-500 text-sm mt-2">
+                <h1 className="text-[24px] text-[#2D3748] lg:text-5xl font-bold">{post.title}</h1>
+                <p className="text-[27px] text-[#2D3748] mt-2">
                     <strong>Written by {post.author}</strong> &nbsp; | &nbsp; {post.date}
                 </p>
                 <div className="border-b border-gray-300 my-4"></div>
@@ -79,7 +78,7 @@ export default function BlogPost() {
 
             <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow-md hover:bg-purple-700 transition"
+                className="fixed bottom-6 right-6 bg-purple-600 text-white p-3 rounded-full shadow -md hover:bg-purple-700 transition"
             >
                 <FaArrowUp />
             </button>
