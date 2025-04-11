@@ -41,10 +41,10 @@ const JobListings = () => {
               {job.type} - {job.company} / {job.location}
             </p>
             <p className="text-gray-600 mb-4">{job.description}</p>
-            <a href="/components/CareersScreen/JobApplication">
+            <a href="/components/CareersScreen/JobApplication" className="flex justify-between items-center">
               <button
                 style={{ backgroundColor: '#D444F1' }}
-                className="mt-4 px-4 py-2 text-white font-semibold rounded-lg hover:bg-purple-700 transition duration-300"
+                className="mt-4 px-6 py-1 text-white font-semibold rounded-full flex justify-center items-center bg-[#D444F1]  transition duration-300"
               >
                 Apply
               </button>

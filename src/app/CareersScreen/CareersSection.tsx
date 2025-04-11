@@ -43,10 +43,10 @@ const CareersSection = () => {
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
           Careers
         </h2>
-        <p className="text-lg md:text-xl text-gray-600 mt-2">
+        <p className="text-[#808080] text-[14px] md:text-xl font-[400] mt-2">
           Join A Team That Turns Ideas Into Impact
         </p>
-        <p className="text-lg md:text-xl font-semibold text-gray-900">
+        <p className="text-[#808080] text-[14px] md:text-xl font-[500] ">
           One Block At A Time!
         </p>
 
@@ -121,35 +121,35 @@ const CareersSection = () => {
         </div>
 
 
-<div className="flex flex-col gap-2 mt-10 mx-auto max-w-xs sm:hidden">
+<div className="flex flex-col gap-2 mt-10 mx-auto w-full sm:hidden">
   {/* First Row with First Image and Second/Third Images */}
   <div className="flex">
     <div className="flex-1">
       <Image
         src={images[0].src}
         alt="Career Image 1"
-        width={150}
-        height={250}
-        className="rounded-lg object-cover"
+        width={350}
+        height={350}
+        className=" object-cover"
       />
     </div>
-    <div className="flex flex-col">
+    <div className="flex flex-col ml-4 gap-4">
       <div className="flex-1">
         <Image
           src={images[1].src}
           alt="Career Image 2"
-          width={160}
+          width={173}
           height={200}
-          className="rounded-lg object-cover"
+          className=" object-cover"
         />
       </div>
       <div className="flex-1">
         <Image
           src={images[2].src}
           alt="Career Image 3"
-          width={160}
-          height={100}
-          className="rounded-lg object-cover"
+          width={173}
+          height={110}
+          className=" object-cover"
         />
       </div>
     </div>
@@ -161,28 +161,28 @@ const CareersSection = () => {
       <Image
         src={images[3].src}
         alt="Career Image 4"
-        width={750}
-        height={150}
-        className="rounded-lg object-cover"
+        width={550}
+        height={250}
+        className=" object-cover"
       />
     </div>
-    <div className="flex flex-col">
+    <div className="flex flex-col ml-4 gap-4">
       <div className="flex-1">
         <Image
           src={images[5].src}
           alt="Career Image 5"
-          width={125}
+          width={135}
           height={120}
-          className="rounded-lg object-cover"
+          className=" object-cover"
         />
       </div>
       <div className="flex-1">
         <Image
           src={images[4].src}
           alt="Career Image 6"
-          width={130}
+          width={140}
           height={20}
-          className="rounded-lg object-cover"
+          className=" object-cover"
         />
       </div>
     </div>

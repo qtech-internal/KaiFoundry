@@ -29,10 +29,10 @@ const JobApplication = () => {
         Back
       </button>
 
-      <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 text-center">Job Application</h1>
+      <h1 className="text-[24px] md:text-6xl font-bold text-[#333333] mb-6 text-center">Job Application</h1>
 
-      <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">About The Job</h2>
-      <p className="text-gray-600 mb-6 text-lg md:text-xl">
+      <h2 className="text-[20px] md:text-3xl font-semibold text-[#333333] mb-2">About The Job</h2>
+      <p className="text-[#4D4D4D]  mb-6 text-[20px] md:text-xl">
         Ullamcorper Sit. Aliquam Sed Senectus Varius Nulla Risus Aliquet. Nunc
         Sit Scelerisque Mauris Sit Scelerisque Donec Aliquam. Commodo Eros Leo
         Quisque Integer. Vitae Luctus Non Habitant In At Sed. Sapien Suspendisse
@@ -40,17 +40,32 @@ const JobApplication = () => {
         Est.
       </p>
 
-      <h2 className="text-xl font-semibold text-gray-800 mb-2">
+      <h2 className="text-[16px] lg:text-xl font-semibold text-[#333333] mb-2">
         Eligibility Criteria
       </h2>
 
       <ul className="list-disc pl-5 space-y-6"> 
         {eligibilityCriteria.map((criteria, index) => (
-          <li key={index} className="flex items-start space-x-3">
-            <div className="w-6 h-6 flex items-center justify-center rounded-lg bg-[#D444F1]">
-              <CheckSquare className="text-white" size={18} />
-            </div>
-            <span className="text-gray-700">{criteria}</span>
+          <li key={index} className="flex items-start space-x-3 -ml-3">
+            <label className="relative cursor-pointer">
+    <input
+      type="checkbox"
+      className="sr-only peer"
+      required
+    />
+    <div className="w-6 h-6 bg-[#D444F1] rounded-md flex items-center justify-center peer-checked:bg-[#D444F1]">
+      <svg
+        className="w-4 h-4 text-white peer-checked:visible"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+  </label>
+            <span className="text-[#333333] text-[14px]">{criteria}</span>
           </li>
         ))}
       </ul>
@@ -62,9 +77,24 @@ const JobApplication = () => {
       <ul className="list-disc pl-5 space-y-5"> 
         {perksAndBenefits.map((perk, index) => (
           <li key={index} className="flex items-start space-x-3">
-            <div className="w-6 h-6 flex items-center justify-center rounded-lg bg-[#D444F1]">
-              <CheckSquare className="text-white" size={18} />
-            </div>
+            <label className="relative cursor-pointer -ml-3">
+    <input
+      type="checkbox"
+      className="sr-only peer"
+      required
+    />
+    <div className="w-6 h-6 bg-[#D444F1] rounded-md flex items-center justify-center peer-checked:bg-[#D444F1]">
+      <svg
+        className="w-4 h-4 text-white peer-checked:visible"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="3"
+        viewBox="0 0 24 24"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+      </svg>
+    </div>
+  </label>
             <span className="text-gray-700">{perk}</span>
           </li>
         ))}
