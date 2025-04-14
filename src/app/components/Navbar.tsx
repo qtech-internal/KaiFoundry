@@ -86,7 +86,7 @@ const Navbar: React.FC = () => {
             </li>
           </ul>
 
-          <Button className="bg-fuchsia-500 text-white font-bold" text="Contact Us" href="/contact" />
+          <Button className="bg-fuchsia-500 text-white font-bold" text="Contact Us" href="/ContactUs" />
         </nav>
       </header>
 

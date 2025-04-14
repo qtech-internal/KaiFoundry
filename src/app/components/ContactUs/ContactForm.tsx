@@ -22,8 +22,13 @@ const ContactForm = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-    setError(null); // Clear error when user types
+    const { name, value } = e.target;
+
+    // Prevent leading spaces and multiple continuous spaces
+    const sanitizedValue = value.replace(/^\s+|\s{2,}/g, " ");
+
+    setFormData({ ...formData, [name]: sanitizedValue });
+    setError(null);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -130,11 +135,11 @@ const ContactForm = () => {
       />
 
       <div className="flex justify-center">
-      <Button
-  type="submit"
-  text="Submit"
-  className="bg-[#D444F1] text-white hover:bg-[#B33BC1] rounded-lg py-2 px-4 w-40 transition duration-300" // Fixed width example
-/>
+        <Button
+          type="submit"
+          text="Submit"
+          className="bg-[#D444F1] text-white hover:bg-[#B33BC1] rounded-lg py-2 px-4 w-40 transition duration-300"
+        />
       </div>
     </form>
   );

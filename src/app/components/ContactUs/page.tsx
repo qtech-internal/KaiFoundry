@@ -18,7 +18,7 @@ const ContactUs = () => {
                 </div>
                 {/* Box 3 (Placed in second column in desktop view, but second in mobile) */}
                 <div className="md:col-start-2 row-span-2 flex-col">
-                    <h3 className="text-xl font-semibold mb-6 sm:mb-10">Leave A Message</h3>
+                    <h3 className="text-4xl font-semibold mb-6 sm:mb-10">Leave A Message</h3>
                     <ContactForm />
                 </div>
                 {/* Box 2 */}

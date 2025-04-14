@@ -104,7 +104,7 @@ const SolutionsSection = () => {
             </motion.div>
           </div>
         ))}
-      </div>
+      </div> 
     </div>
   );
 };
