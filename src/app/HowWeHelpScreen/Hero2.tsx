@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const HeroSection2 = () => {
   return (
-    <section className="relative flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-16 bg-[#FFFFFF]"> 
+    <section className="font-inter pt-20 relative flex flex-col md:flex-row items-center justify-between px-4 md:px-20 py-16 bg-[#FFFFFF]"> 
       {/* Left Content */}
       <div className="text-center md:text-left max-w-2xl">
         <motion.h1
@@ -13,7 +13,7 @@ const HeroSection2 = () => {
           transition={{ duration: 0.6 }}
           className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight" 
         >
-          Kai Foundry’s <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA24D5] to-[#EA83FF]">Filecoin Wallet</span> for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA24D5] to-[#EA83FF]">KaiOS</span> device
+          Kai Foundry’s <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EA83FF] to-[#EA83FF]">Filecoin </span><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA24D5] to-[#BA24D5]">Wallet </span>   for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EA83FF] to-[#BA24D5]">KaiOS</span> device
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -61,11 +61,11 @@ const HeroSection2 = () => {
         {/* GIF Background */}
         <div className="absolute inset-0 w-full h-full rounded-full overflow-hidden">
   <Image
-    src="/assets/HowWeHelp/bg.gif" // Replace with your actual GIF path
+    src="/assets/HowWeHelp/bg.gif" 
     alt="Background GIF"
     layout="fill"
     objectFit="cover"
-    className="absolute inset-0 transform scale-820 opacity-30" // Increased size and reduced opacity
+     className="opacity-20 scale-[3.9]" // Increased size and reduced opacity
   />
 </div>
 
@@ -73,9 +73,10 @@ const HeroSection2 = () => {
         <Image
           src="/assets/HowWeHelp/phone.png" // Replace with your actual image path
           alt="KaiOS Phone"
-          width={300} // Adjusted width for mobile
-          height={300} // Adjusted height for mobile
+          width={550} // Adjusted width for mobile
+          height={550} // Adjusted height for mobile
           className="relative z-10" // Ensure the phone image is above the GIF
+          draggable={false}
         />
       </motion.div>
     </section>

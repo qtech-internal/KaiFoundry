@@ -19,6 +19,26 @@ const solutions = [
     title: "Decentralized Exchange",
     description: "Trade directly from your wallet with our DEX solutions."
   },
+  {
+    title: "Arbitrage Bots",
+    description: "Automated tools that capitalize on price differences across multiple exchanges."
+  },
+  {
+    title: "Derivatives Exchange",
+    description: "A platform for trading futures, options, and other financial instruments."
+  },
+  {
+    title: "Centralized Exchange ",
+    description: "A regulated, high-liquidity exchange with seamless trading experiences."
+  },
+  {
+    title: "P2P Exchange ",
+    description: "A direct buyer-to-seller trading platform with secure escrow services."
+  },
+  {
+    title: "Market Making Exchange ",
+    description: "A liquidity-optimized exchange ensuring smooth and efficient trading."
+  },
 ];
 
 const SolutionsSection = () => {
@@ -28,10 +48,10 @@ const SolutionsSection = () => {
   return (
     <div className="py-12 w-full">
       {/* Title */}
-      <h2 className="text-3xl md:text-4xl font-bold text-black text-center px-4 md:px-10">
-        Solutions <span style={{ color: '#D444F1' }}>Built For</span> <span style={{ color: '#D444F1' }}>The Future</span>
+      <h2 className="text-3xl md:text-5xl font-bold text-black text-center px-4 md:px-10">
+      <span style={{ color: '#BA24D5' }}>Solutions  </span>  Built For <span style={{ color: '#BA24D5' }}>The Future</span>
       </h2>
-      <p className="text-gray-500 mt-2 text-center px-4 md:px-10 text-base md:text-lg">
+      <p className="text-gray-800 mt-2 text-center px-4 md:px-110  0 text-base md:text-xl font-bold">
         Blockchain solutions designed to power your business with security, efficiency, and scalability.
       </p>
 
@@ -40,8 +60,8 @@ const SolutionsSection = () => {
         {solutions.map((solution, index) => (
           <div key={index} className="relative w-full px-4 md:px-40"> {/* Added consistent padding here */}
             <div
-              className="relative overflow-hidden text-lg md:text-xl font-semibold" 
-              style={{ color: '#D444F1', padding: '2rem 0' }} // Set text color and padding
+              className="relative overflow-hidden text-2xl md:text-4xl font-semibold" 
+              style={{ color: '#BA24D5', padding: '2rem 0' }} // Set text color and padding
               onMouseEnter={() => setHoverIndex(index)}
               onMouseLeave={() => setHoverIndex(null)}
               onClick={() => setSelectedSolution(selectedSolution === index ? null : index)} // Toggle selection
@@ -64,7 +84,7 @@ const SolutionsSection = () => {
               </span>
 
               {/* Always Visible Bottom Border Line */}
-              <div className="absolute bottom-0 h-0.5" style={{ backgroundColor: '#D444F1', width: '100%' }} /> {/* Line at the bottom */}
+              <div className="absolute bottom-0 h-0.5" style={{ backgroundColor: '#BA24D5', width: '100%' }} /> {/* Line at the bottom */}
             </div>
 
             {/* Description Section (Smooth Slide Down) */}
@@ -76,15 +96,15 @@ const SolutionsSection = () => {
               className="overflow-hidden bg-purple-50 rounded-lg" // Removed border
             >
               <div className="p-4 text-left"> {/* Added text-left for description */}
-                <h3 className="text-lg md:text-2xl font-semibold" style={{ color: '#D444F1' }}>{solution.title}</h3>
-                <p className="text-gray-700 mt-2 text-base md:text-lg"> {/* Increased text size */}
+                
+                <p className="text-gray-700 mt-2 text-base md:text-2xl"> {/* Increased text size */}
                   {solution.description}
                 </p>
               </div>
             </motion.div>
           </div>
         ))}
-      </div>
+      </div> 
     </div>
   );
 };

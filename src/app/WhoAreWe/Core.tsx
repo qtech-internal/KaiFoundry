@@ -21,7 +21,7 @@ const coreValues = [
   },
   {
     img: img3,
-    title: "User-Centric Approach",
+    title: "User -Centric Approach",
     description:
       "We design with people in mind, making blockchain technology accessible and seamless.",
   },
@@ -31,24 +31,24 @@ const CoreValuesSection = () => {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   return (
-    <section ref={ref} className="px-6 lg:px-20 py-16 bg-[#FCEBFF]">
-      <div className="max-w-6xl mx-auto flex flex-col items-center">
-        {/* Heading Animation */}
+    <section ref={ref} className="pt-24 px-6 lg:px-20 py-16 bg-[#FCEBFF] relative z-10 overflow-hidden">
+      <div className="max-w-7xl mx-auto flex flex-col items-center">
+        {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-6xl font-bold text-center mb-12"
+          className="text-4xl md:text-6xl font-bold text-center mb-12"
         >
           Our{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#9C27B0] to-[#EA83FF]">
+          <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#821890] to-[#821890]">
             Core
           </span>{" "}
           Values
         </motion.h2>
 
-        {/* Cards Animation */}
-        <div className="flex flex-col md:flex-row justify-center gap-8">
+        {/* Cards */}
+        <div className="flex flex-wrap justify-center gap-8 w-full">
           {coreValues.map((value, index) => (
             <motion.div
               key={index}
@@ -59,17 +59,19 @@ const CoreValuesSection = () => {
                 delay: inView ? index * 0.3 + 0.5 : 0,
                 ease: "easeOut",
               }}
-              className="bg-white shadow-lg rounded-2xl p-8 flex flex-col items-center text-center max-w-sm"
+              className="bg-white shadow-lg rounded-2xl py-10 p-8 flex flex-col items-center text-center w-full sm:w-[300px] md:w-[280px] lg:w-[400px]"
             >
               <Image
                 src={value.img}
                 alt={value.title}
-                width={200}
-                height={200}
+                width={index === 0 || index === coreValues.length - 1 ? 250 : 300} height={index === 0 || index === coreValues.length - 1 ? 250 : 300}
                 className="mb-6"
+                draggable="false"
               />
-              <h3 className="text-2xl font-semibold mb-4">{value.title}</h3>
-              <p className="text-gray-700">{value.description}</p>
+              <h3 className={`text-xl md:text-2xl font-semibold mb-4 ${value.title === "Grow Together" ? "mt-[-10px]" : ""}`}>
+                {value.title}
+              </h3>
+              <p className="text-gray-700 text-base md:text-lg mt-2">{value.description}</p>
             </motion.div>
           ))}
         </div>

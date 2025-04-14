@@ -9,17 +9,18 @@ const FounderSection = () => {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   return (
-    <section ref={ref} className="px-6 lg:px-20 py-16">
+    <section ref={ref} className="px-6 lg:px-20 py-16 font-inter">
+
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Heading Animation */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-5xl font-bold text-center mb-6"
+          className="text-6xl font-bold text-center mb-6"
         >
           Meet{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-b from-[#9C27B0] to-[#EA83FF]">
+          <span className="text-[#821890] bg-clip-text">
             Our Founder
           </span>
         </motion.h2>
@@ -27,7 +28,7 @@ const FounderSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-gray-600 text-center max-w-3xl mb-12"
+          className="text-gray-600 text-center max-w-3xl mb-12 text-xl" // Increased font size
         >
           We focus on the details of everything we do. All to help businesses
           around the world.
@@ -57,13 +58,13 @@ const FounderSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-            className="w-full md:w-1/2 md:h-[380px] lg:h-[550px] lg:pt-[150px] px-12 bg-[#F8E6FF] rounded-lg p-8 shadow-lg"
+            className="w-full md:w-1/2 md:h-[380px] lg:h-[550px] lg:pt-[150px] px-12 bg-[#FBE8FF]"
           >
             <h3 className="text-2xl font-bold text-gray-800 pb-3">
               VINAYAK KALRA
             </h3>
-            <p className="text-[#9C27B0] font-semibold text-lg mt-1">Founder</p>
-            <div className="w-12 border-b-2 border-[#9C27B0] my-3"></div>
+            <p className="text-[#821890] font-semibold text-lg mt-1">Founder</p>
+            <div className="w-12 border-b-2 border-[#821890] my-3"></div>
             <p className="text-gray-700 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
