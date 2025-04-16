@@ -58,7 +58,7 @@ const FounderSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-            className="w-full md:w-1/2 md:h-[380px] lg:h-[550px] lg:pt-[150px] px-12 bg-[#FBE8FF]"
+            className="w-full md:w-1/2 md:h-[380px] lg:h-[520px] lg:pt-[150px] px-12 bg-[#FAE3FF]"
           >
             <h3 className="text-2xl font-bold text-gray-800 pb-3">
               VINAYAK KALRA

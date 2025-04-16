@@ -45,7 +45,7 @@ const WhyWorkWithUs = () => {
         </motion.h2>
 
         {/* Benefits Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mt-10 mx-auto max-w-6xl py-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-20 mt-10 mx-auto py-10  w-[85%]">
           {benefits.map((benefit, index) => (
             <motion.div
               key={index}

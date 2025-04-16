@@ -41,8 +41,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <div className="container overflow-x-hidden mx-auto">
         <ClientLayout>{children}</ClientLayout>
-        <Footer />
+          <Footer />
+          </div>
       </body>
     </html>
   );

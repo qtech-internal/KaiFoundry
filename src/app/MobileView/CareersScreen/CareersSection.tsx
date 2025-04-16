@@ -1,38 +1,31 @@
 "use client";
 
 import Image from "next/image";
-
 const images = [
   {
     src: "/assets/careers/img1.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  }, // Image for 1st column
+    alt: "Career Image 1",
+  },
   {
     src: "/assets/careers/img2.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  }, // Image for 2nd column (1st image)
+    alt: "Career Image 2",
+  },
   {
     src: "/assets/careers/img3.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  }, // Image for 2nd column (2nd image)
+    alt: "Career Image 3",
+  },
   {
     src: "/assets/careers/img4.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  }, // Wider image for 3rd column
+    alt: "Career Image 4",
+  },
   {
     src: "/assets/careers/img5.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  }, // Image for 4th column (1st image)
+    alt: "Career Image 5",
+  },
   {
     src: "/assets/careers/img6.png",
-    colSpan: "col-span-1",
-    rowSpan: "row-span-1",
-  }, // Image for 4th column (2nd image)
+    alt: "Career Image 6",
+  },
 ];
 
 const CareersSection = () => {
@@ -50,143 +43,73 @@ const CareersSection = () => {
           One Block At A Time!
         </p>
 
-        {/* Image Grid */}
-        <div className="hidden md:grid md:grid-cols-4 gap-4 mt-10 mx-auto max-w-6xl">
-          {/* 1st Column */}
-          <div className="col-span-1 relative h-[500px]">
-            <Image
-              src={images[0].src}
-              alt="Career Image 1"
-              fill
-              className="rounded-lg object-cover"
-              priority // Load this image first
-            />
-          </div>
+        <div className="flex flex-col gap-2 mt-10 mx-auto max-w-xs block lg:hidden">
 
-          {/* 2nd Column (2 images) */}
-          <div className="col-span-1 grid grid-rows-2 gap-2">
-            <div className="relative h-[240px]">
-              <Image
-                src={images[1].src}
-                alt="Career Image 2"
-                fill
-                className="rounded-lg object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="relative h-[240px]">
-              <Image
-                src={images[2].src}
-                alt="Career Image 3"
-                fill
-                className="rounded-lg object-cover"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          {/* 3rd Column (Wider Image) */}
-          <div className="col-span-1 relative h-[500px]">
-            <Image
-              src={images[3].src}
-              alt="Career Image 4"
-              fill
-              className="rounded-lg object-cover"
-              loading="lazy"
-            />
-          </div>
-
-          {/* 4th Column (2 images) */}
-          <div className="col-span-1 grid grid-rows-2 gap-2">
-            <div className="relative h-[240px]">
-              <Image
-                src={images[4].src}
-                alt="Career Image 5"
-                fill
-                className="rounded-lg object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="relative h-[240px]">
-              <Image
-                src={images[5].src}
-                alt="Career Image 6"
-                fill
-                className="rounded-lg object-cover"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          
-        </div>
-
-
-<div className="flex flex-col gap-2 mt-10 mx-auto w-full sm:hidden">
-  {/* First Row with First Image and Second/Third Images */}
-  <div className="flex">
+{/* First Row with First Image and Second/Third Images */}
+<div className="flex gap-2">
+  <div className="flex-1">
+    <Image
+      src={images[0].src}
+      alt={images[0].alt}
+      width={150}
+      height={250}
+      className="rounded-lg object-cover"
+    />
+  </div>
+  <div className="flex flex-col gap-2">
     <div className="flex-1">
       <Image
-        src={images[0].src}
-        alt="Career Image 1"
-        width={350}
-        height={350}
-        className=" object-cover"
+        src={images[1].src}
+        alt={images[1].alt}
+        width={160}
+        height={200}
+        className="rounded-lg object-cover"
       />
     </div>
-    <div className="flex flex-col ml-4 gap-4">
-      <div className="flex-1">
-        <Image
-          src={images[1].src}
-          alt="Career Image 2"
-          width={173}
-          height={200}
-          className=" object-cover"
-        />
-      </div>
-      <div className="flex-1">
-        <Image
-          src={images[2].src}
-          alt="Career Image 3"
-          width={173}
-          height={110}
-          className=" object-cover"
-        />
-      </div>
-    </div>
-  </div>
-  
-
-  <div className="flex">
-    <div className="flex-1 ">
+    <div className="flex-1">
       <Image
-        src={images[3].src}
-        alt="Career Image 4"
-        width={550}
-        height={250}
-        className=" object-cover"
+        src={images[2].src}
+        alt={images[2].alt}
+        width={160}
+        height={100}
+        className="rounded-lg object-cover"
       />
     </div>
-    <div className="flex flex-col ml-4 gap-4">
-      <div className="flex-1">
-        <Image
-          src={images[5].src}
-          alt="Career Image 5"
-          width={135}
-          height={120}
-          className=" object-cover"
-        />
-      </div>
-      <div className="flex-1">
-        <Image
-          src={images[4].src}
-          alt="Career Image 6"
-          width={140}
-          height={20}
-          className=" object-cover"
-        />
-      </div>
+  </div>
+</div>
+
+{/* Second Row */}
+<div className="flex gap-2">
+  <div className="flex-1">
+    <Image
+      src={images[3].src}
+      alt={images[3].alt}
+      width={750}
+      height={150}
+      className="rounded-lg object-cover"
+    />
+  </div>
+  <div className="flex flex-col gap-2">
+    <div className="flex-1">
+      <Image
+        src={images[5].src}
+        alt={images[5].alt}
+        width={125}
+        height={120}
+        className="rounded-lg object-cover"
+      />
+    </div>
+    <div className="flex-1">
+      <Image
+        src={images[4].src}
+        alt={images[4].alt}
+        width={130}
+        height={20}
+        className="rounded-lg object-cover"
+      />
     </div>
   </div>
+</div>
 </div>
 
       </div>
@@ -196,3 +119,107 @@ const CareersSection = () => {
 };
 
 export default CareersSection;
+
+// import Image from "next/image";
+
+// const images = [
+//   {
+//     src: "/assets/careers/img1.png",
+//     alt: "Career Image 1",
+//   },
+//   {
+//     src: "/assets/careers/img2.png",
+//     alt: "Career Image 2",
+//   },
+//   {
+//     src: "/assets/careers/img3.png",
+//     alt: "Career Image 3",
+//   },
+//   {
+//     src: "/assets/careers/img4.png",
+//     alt: "Career Image 4",
+//   },
+//   {
+//     src: "/assets/careers/img5.png",
+//     alt: "Career Image 5",
+//   },
+//   {
+//     src: "/assets/careers/img6.png",
+//     alt: "Career Image 6",
+//   },
+// ];
+
+// const MobileImageLayout = () => {
+//   return (
+//     <div className="flex flex-col gap-2 mt-10 mx-auto max-w-xs block lg:hidden">
+
+//       {/* First Row with First Image and Second/Third Images */}
+//       <div className="flex gap-2">
+//         <div className="flex-1">
+//           <Image
+//             src={images[0].src}
+//             alt={images[0].alt}
+//             width={150}
+//             height={250}
+//             className="rounded-lg object-cover"
+//           />
+//         </div>
+//         <div className="flex flex-col gap-2">
+//           <div className="flex-1">
+//             <Image
+//               src={images[1].src}
+//               alt={images[1].alt}
+//               width={160}
+//               height={200}
+//               className="rounded-lg object-cover"
+//             />
+//           </div>
+//           <div className="flex-1">
+//             <Image
+//               src={images[2].src}
+//               alt={images[2].alt}
+//               width={160}
+//               height={100}
+//               className="rounded-lg object-cover"
+//             />
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* Second Row */}
+//       <div className="flex gap-2">
+//         <div className="flex-1">
+//           <Image
+//             src={images[3].src}
+//             alt={images[3].alt}
+//             width={750}
+//             height={150}
+//             className="rounded-lg object-cover"
+//           />
+//         </div>
+//         <div className="flex flex-col gap-2">
+//           <div className="flex-1">
+//             <Image
+//               src={images[5].src}
+//               alt={images[5].alt}
+//               width={125}
+//               height={120}
+//               className="rounded-lg object-cover"
+//             />
+//           </div>
+//           <div className="flex-1">
+//             <Image
+//               src={images[4].src}
+//               alt={images[4].alt}
+//               width={130}
+//               height={20}
+//               className="rounded-lg object-cover"
+//             />
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default MobileImageLayout;

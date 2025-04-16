@@ -32,7 +32,7 @@ const CoreValuesSection = () => {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   return (
-    <section ref={ref} className="px-6 lg:px-20 py-16 bg-[#FCEBFF]">
+    <section ref={ref} className="px-6 lg:px-20 py-16 bg-[#FCEBFF] ">
       <div className="max-w-6xl mx-auto flex flex-col items-center">
         {/* Heading Animation */}
         <motion.h2
@@ -49,7 +49,7 @@ const CoreValuesSection = () => {
         </motion.h2>
 
         {/* Cards Animation */}
-        <div className="flex flex-col md:flex-row justify-center gap-2 lg:gap-8">
+        <div className="flex flex-col md:flex-row justify-center gap-8 lg:gap-8">
           {coreValues.map((value, index) => (
             <motion.div
               key={index}
@@ -60,7 +60,7 @@ const CoreValuesSection = () => {
                 delay: inView ? index * 0.3 + 0.5 : 0,
                 ease: "easeOut",
               }}
-              className={`bg-white shadow-lg rounded-2xl p-2 lg:p-8 flex ${index %2 === 0 ? 'flex-row':'flex-row-reverse'}  lg:flex-col items-center text-center max-w-sm`}
+              className={`bg-white shadow-lg rounded-2xl p-4 lg:p-8 flex ${index %2 === 0 ? 'flex-row':'flex-row-reverse'}  lg:flex-col items-center text-center max-w-sm`}
             >
               <Image
                 src={value.img}

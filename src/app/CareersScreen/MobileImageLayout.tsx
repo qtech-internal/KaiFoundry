@@ -98,3 +98,4 @@ const MobileImageLayout = () => {
 };
 
 export default MobileImageLayout;
+
