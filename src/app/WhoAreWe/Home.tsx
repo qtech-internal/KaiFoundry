@@ -12,10 +12,10 @@ const Home = () => {
   return (
     <section
       ref={ref}
-      className="w-full bg-white py-16 lg:mt-0 md:mt-[70px] overflow-x-hidden relative z-0"
+      className="w-full bg-white py-16 lg:mt-0 md:mt-[70px] overflow-x-hidden relative z-0 "
     >
-      <div className="w-full px-6 md:px-10 flex flex-col lg:flex-row items-center justify-between max-w-[1920px] mx-auto">
-        <div className="max-w-xl text-center lg:text-left mt-[-5%] lg:ml-5">
+      <div className="w-full px-6 md:px-10 flex flex-col lg:flex-row items-center justify-between max-w-[1728px] mx-auto  mt-10">
+        <div className="max-w-xl text-center lg:text-left mt-[-5%]  ">
           <motion.h2
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
@@ -32,7 +32,7 @@ const Home = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 1.0, ease: "easeInOut" }}
-            className="text-6xl font-bold text-gray-900 mt-2 leading-tight"
+            className="text-5xl font-bold text-gray-900 mt-2 leading-tight"
           >
             <span className="block">This Is</span>
             <span className="block">
@@ -67,7 +67,9 @@ const Home = () => {
 
         <div className="mt-10 lg:mt-0 lg:ml-10">
           <div className="rounded-3xl overflow-hidden shadow-lg">
-            <Image src={pic} alt="Team Working" width={650} height={400} />
+            <Image src={pic} alt="Team Working" width={650} height={400}
+              draggable="false" />
+          
           </div>
         </div>
       </div>

@@ -31,8 +31,8 @@ const CoreValuesSection = () => {
   const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.2 });
 
   return (
-    <section ref={ref} className="pt-24 px-6 lg:px-20 py-16 bg-[#FCEBFF] relative z-10 overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col items-center">
+    <section ref={ref} className="pt-24 px-6 lg:px-10 py-16 bg-[#FCEBFF] relative z-10 overflow-hidden ">
+      <div className="mx-auto flex flex-col items-center ">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
@@ -48,33 +48,41 @@ const CoreValuesSection = () => {
         </motion.h2>
 
         {/* Cards */}
-        <div className="flex flex-wrap justify-center gap-8 w-full">
-          {coreValues.map((value, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{
-                duration: 0.6,
-                delay: inView ? index * 0.3 + 0.5 : 0,
-                ease: "easeOut",
-              }}
-              className="bg-white shadow-lg rounded-2xl py-10 p-8 flex flex-col items-center text-center w-full sm:w-[300px] md:w-[280px] lg:w-[400px]"
-            >
-              <Image
-                src={value.img}
-                alt={value.title}
-                width={index === 0 || index === coreValues.length - 1 ? 250 : 300} height={index === 0 || index === coreValues.length - 1 ? 250 : 300}
-                className="mb-6"
-                draggable="false"
-              />
-              <h3 className={`text-xl md:text-2xl font-semibold mb-4 ${value.title === "Grow Together" ? "mt-[-10px]" : ""}`}>
-                {value.title}
-              </h3>
-              <p className="text-gray-700 text-base md:text-lg mt-2">{value.description}</p>
-            </motion.div>
-          ))}
-        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full justify-items-center">
+  {coreValues.map((value, index) => (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={inView ? { opacity: 1, scale: 1 } : {}}
+      transition={{
+        duration: 0.6,
+        delay: inView ? index * 0.3 + 0.5 : 0,
+        ease: "easeOut",
+      }}
+      className="bg-white shadow-lg rounded-2xl py-10 p-8 flex flex-col items-center text-center w-full sm:w-[300px] md:w-[280px] lg:w-[380px]"
+    >
+      <Image
+        src={value.img}
+        alt={value.title}
+        width={index === 0 || index === coreValues.length - 1 ? 250 : 300}
+        height={index === 0 || index === coreValues.length - 1 ? 250 : 300}
+        className="mb-6"
+        draggable="false"
+      />
+      <h3
+        className={`text-xl md:text-2xl font-semibold mb-4 ${
+          value.title === "Grow Together" ? "mt-[-10px]" : ""
+        }`}
+      >
+        {value.title}
+      </h3>
+      <p className="text-gray-700 text-base md:text-lg mt-2">
+        {value.description}
+      </p>
+    </motion.div>
+  ))}
+</div>
+
       </div>
     </section>
   );
