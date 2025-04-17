@@ -29,7 +29,6 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
   const isActive = (path: string) => pathname === path;
   const togglePopup = () => setIsPopupOpen(!isPopupOpen);
@@ -37,18 +36,11 @@ const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 w-full pt-5 z-50 transition-transform duration-500 ease-in-out ${
+        className={`top-0 w-full pt-5 z-50 transition-transform duration-500 ease-in-out ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <nav className="md:mx-10 py-2 px-2 md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-md md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out">
-          <button onClick={toggleMenu} className="md:hidden focus:outline-none p-2 rounded-sm">
-            <div className="flex flex-col space-y-1">
-              <span className="block w-8 h-1 bg-gray-700"></span>
-              <span className="block w-8 h-1 bg-gray-700"></span>
-              <span className="block w-8 h-1 bg-gray-700"></span>
-            </div>
-          </button>
+        <nav className="md:mx-10 py-2 px-2 md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-sm bg-white md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out">
 
           {/* Logo */}
           <div className="hidden md:flex flex-shrink-0">
@@ -60,33 +52,33 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <ul className="hidden md:flex space-x-6 text-gray-700 flex-1 justify-center transition-all duration-500 ease-in-out">
             <li>
-              <Link href="/HowWeHelpScreen" className={`${isActive("/HowWeHelpScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
+              <Link href="/HowWeHelpScreen" className={`${isActive("/HowWeHelpScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"}`}>
                 How We Help
               </Link>
             </li>
             <li>
-              <Link href="/WhoAreWe" className="text-gray-700 font-bold">
+              <Link href="/WhoAreWe" className="text-gray-700">
                 Who We Are
               </Link>
             </li>
             <li>
-              <Link href="/CareersScreen" className={`${isActive("/CareersScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
+              <Link href="/CareersScreen" className={`${isActive("/CareersScreen") ? "text-fuchsia-500 font-bold" : "text-gray-700"}`}>
                 Careers
               </Link>
             </li>
             <li>
-              <button onClick={togglePopup} className="text-gray-700 flex items-center gap-1 focus:outline-none font-bold">
+              <button onClick={togglePopup} className="text-gray-700 flex items-center gap-1 focus:outline-none">
                 Services <RiArrowDropDownLine className="w-4 h-4 transition-transform duration-200" />
               </button>
             </li>
             <li>
-              <Link href="/blog" className={`${isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"} font-bold`}>
+              <Link href="/blog" className={`${isActive("/blog") ? "text-fuchsia-500 font-bold" : "text-gray-700"}`}>
                 Blogs
               </Link>
             </li>
           </ul>
 
-          <Button className="bg-fuchsia-500 text-white font-bold" text="Contact Us" href="/ContactUs" />
+          <Button className="bg-fuchsia-500 text-white" text="Contact Us" href="/ContactUs" />
         </nav>
       </header>
 
