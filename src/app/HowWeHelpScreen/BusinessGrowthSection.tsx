@@ -49,7 +49,7 @@ const BusinessGrowth = () => {
       </motion.p>
 
       {/* Steps Section */}
-      <div className="flex flex-col md:flex-row items-center justify-between mt-12 relative">
+      <div className="flex flex-col md:flex-row items-center justify-between mt-12 relative ">
         {steps.map((step, index) => (
           <motion.div
             key={index}
@@ -61,7 +61,7 @@ const BusinessGrowth = () => {
           >
          
             {index < steps.length - 1 && (
-              <div className="absolute top-[-0px] left-1/2 transform -translate-x-1/9">
+              <div className="absolute top-[20px] left-1/2 transform -translate-x-1/40 ">
                 <Image
                   src={index % 2 === 0 ? "/svg/arrow2.svg" : "/svg/arrow.svg"} 
                   alt="Arrow"
@@ -77,10 +77,10 @@ const BusinessGrowth = () => {
             </div>
 
             {/* Title */}
-            <h3 className="text-lg md:text-xl font-semibold text-gray-900 mt-4">{step.title}</h3>
+            <h3 className="text-lg md:text-lg font-medium text-gray-900 mt-4 opacity-80">{step.title}</h3>
 
             {/* Description */}
-            <p className="text-gray-600 text-sm md:text-base mt-2">{step.description}</p>
+            <p className="text-gray-600 text-sm md:text-base mt-4 ">{step.description}</p>
           </motion.div>
         ))}
       </div>

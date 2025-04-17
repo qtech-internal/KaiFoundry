@@ -10,20 +10,22 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="container sm:p-20 p-4">
+        <section className="container sm:p-20 p-4 mt-14 ">
             {/* Back Button */}
             <button 
                 onClick={handleBackClick} 
-                className="absolute top-2 mt-20 left-4 flex items-center font-bold text-gray-700 hover:text-gray-900"
+                className=" top-2  left-4 flex items-center font-bold text-gray-700 hover:text-gray-900 "
             >
-                <span className="mr-3 font-bold">&larr;</span> {/* Arrow character */}
+                <span className="mr-3 font-bold">&larr;</span> 
                 Back
             </button>
 
-            <h2 className="text-5xl font-bold text-black text-center mb-2">
-                Let&apos;s Get In Touch
-            </h2>
-            <p className="text-2xl text-center text-gray-700 mb-10 px-80">
+            <h2 className="mt-6 sm:mt-14 text-[28px] sm:text-[32px] md:text-[48px] lg:text-[62px] font-bold text-[#333333] text-center mb-2">
+  Let&apos;s Get In Touch
+</h2>
+
+
+            <p className="text-[22px] text-center text-[#333333] mb-10 px-60 hidden lg:block md:block">
                 Have A Question Or A Big Idea? Let's Connect And Create Something Amazing Together!
             </p>
 

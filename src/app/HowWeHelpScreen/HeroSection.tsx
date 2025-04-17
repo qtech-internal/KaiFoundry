@@ -35,10 +35,17 @@ const HowWeHelp = () => {
      
       {/* Text Section */}
       <div className="w-full md:w-2/3 mt-10 md:mt-20 z-10">
-        <h2 className="text-5xl md:text-7xl font-bold text-gray-900">
-          How We Help <br />
+        <h2 className="text-5xl md:text-7xl font-bold ">
+          {/* How We Help <br /> */}
+   
+  <span className="text-black">Ho</span>
+  <span className="text-black opacity-70">w We Help <br /></span>
+
+
           <span className="bg-clip-text text-transparent bg-gradient-to-t from-[#BA24D5] to-[#E95DFF]">Businesses Grow</span> <br />
-          With <span className="bg-clip-text text-transparent bg-gradient-to-t from-[#BA24D5] to-[#E95DFF] italic">Blockchain</span>
+          <span className="text-black">Wi</span>
+  <span className="text-black opacity-70">th</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-t from-[#BA24D5] to-[#E95DFF] italic">Blockchain</span>
         </h2>
         <p className="text-gray-600 text-sm md:text-lg mt-4">
           At Kai Foundry, we craft blockchain solutions tailored to your

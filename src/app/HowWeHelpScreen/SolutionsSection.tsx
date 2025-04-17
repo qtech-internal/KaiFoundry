@@ -48,19 +48,19 @@ const SolutionsSection = () => {
   return (
     <div className="py-12 w-full">
       {/* Title */}
-      <h2 className="text-3xl md:text-5xl font-bold text-black text-center px-4 md:px-10">
+      <h2 className="text-4xl md:text-6xl font-bold text-black text-center px-4 md:px-10">
       <span style={{ color: '#BA24D5' }}>Solutions  </span>  Built For <span style={{ color: '#BA24D5' }}>The Future</span>
       </h2>
-      <p className="text-gray-800 mt-2 text-center px-4 md:px-110  0 text-base md:text-xl font-bold">
+      <p className="text-[#333333] mt-2 text-center px-4 md:px-70  0 text-base md:text-[22px] font-medium">
         Blockchain solutions designed to power your business with security, efficiency, and scalability.
       </p>
 
       {/* List of Solutions */}
-      <div className="mt-8 w-full flex flex-col space-y-4">
+      <div className="mt-8 w-full flex flex-col space-y-4 ">
         {solutions.map((solution, index) => (
-          <div key={index} className="relative w-full px-4 md:px-40"> {/* Added consistent padding here */}
+          <div key={index} className="relative w-full px-4 md:px-40 "> {/* Added consistent padding here */}
             <div
-              className="relative overflow-hidden text-2xl md:text-4xl font-semibold" 
+              className="relative overflow-hidden text-2xl md:text-3xl font-semibold" 
               style={{ color: '#BA24D5', padding: '2rem 0' }} // Set text color and padding
               onMouseEnter={() => setHoverIndex(index)}
               onMouseLeave={() => setHoverIndex(null)}

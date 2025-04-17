@@ -133,7 +133,7 @@ const ContactForm = () => {
       <Button
   type="submit"
   text="Submit"
-  className="bg-[#D444F1] text-white hover:bg-[#B33BC1] rounded-lg py-2 px-4 w-40 transition duration-300" // Fixed width example
+  className="bg-[#D444F1] text-white hover:bg-[#B33BC1] rounded-full py-2 px-4 w-40 transition duration-300" // Fixed width example
 />
       </div>
     </form>
