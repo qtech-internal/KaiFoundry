@@ -11,7 +11,7 @@ const HeroSection2 = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-5xl font-bold text-gray-900 leading-tight" 
+          className="text-3xl md:text-[62px] font-bold text-gray-900 leading-tight" 
         >
           Kai Foundry’s <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EA83FF] to-[#EA83FF]">Filecoin </span><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA24D5] to-[#BA24D5]">Wallet </span>   for <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#EA83FF] to-[#BA24D5]">KaiOS</span> device
         </motion.h1>
@@ -25,7 +25,7 @@ const HeroSection2 = () => {
         </motion.p>
 
         {/* Features */}
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center items-center mx-auto mt-8 ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,16 +33,16 @@ const HeroSection2 = () => {
             className="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-white pt-2 bg-gradient-to-r from-purple-100 to-white px-4 md:px-10 py-4 rounded-lg" // Adjusted grid for mobile
           >
             {/* Feature 1 */}
-            <div className="text-gray-600 text-center border-b md:border-b-0 md:border-r border-white pr-4 text-lg md:text-3xl">
-              Secure storage
+            <div className="text-[#808080] text-center border-b md:border-b-0 md:border-r border-white pr-4 text-[22px] mt-2 ">
+              Secure <br /> storage
             </div>
             {/* Feature 2 */}
-            <div className="text-gray-600 text-center border-b md:border-b-0 md:border-r border-white pr-4 text-lg md:text-2xl">
+            <div className="text-[#808080]  text-center border-b md:border-b-0 md:border-r border-white pr-4 text-[22px] ">
               Send and receive FIL tokens
             </div>
             {/* Feature 3 */}
-            <div className="text-gray-600 text-center text-lg md:text-3xl">
-              Recovery phrase protection
+            <div className="text-[#808080]  text-center text-[22px] ">
+              Recovery <br /> phrase <br /> protection
             </div>
           </motion.div>
         </div>
