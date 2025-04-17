@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex items-center h-screen w-full overflow-hidden px-6 md:px-20">
+    <section className="relative flex items-center py-50 w-full overflow-hidden px-6 md:px-20">
   
       <div className="absolute inset-0 z-0">
         <Image

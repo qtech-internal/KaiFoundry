@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Image from "next/image";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 // Define the Blog type
 type Blog = {
@@ -37,8 +39,8 @@ export default function BlogCarousel() {
   };
 
   return (
-    <div className="relative max-w-full mx-auto py-40 px-6">
-      <h2 className="text-5xl font-bold text-left mb-6">
+    <div className="relative max-w-full mx-auto py-40 px-6 container">
+      <h2 className="text-5xl font-bold text-left mb-6 text-[#414141]">
         Our Latest <br /> Blogs
       </h2>
 
@@ -93,7 +95,7 @@ export default function BlogCarousel() {
           {Array.from({ length: totalSlides }).map((_, index) => (
             <div
               key={index}
-              className="w-3 h-3 rounded-full transition cursor-pointer"
+              className="w-2 h-2 rounded-full transition cursor-pointer"
               style={{
                 backgroundColor: index === currentIndex ? '#BA24D5' : 'gray', 
               }}

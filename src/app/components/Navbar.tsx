@@ -1,4 +1,4 @@
-"use client";
+
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 w-full pt-5 z-50 transition-transform duration-500 ease-in-out ${
+        className={`fixed top-0 w-full pt-5 z-50 transition-transform duration-500 ease-in-out container ${
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >

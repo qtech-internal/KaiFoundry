@@ -41,10 +41,10 @@ export default function BlogPost() {
     if (!post) return <div className="text-center text-gray-600 text-lg mt-10">Loading...</div>;
 
     return (
-        <div className="w-full min-h-screen flex flex-col items-center bg-cover bg-fill mt-10 lg:mt-0" style={{ backgroundImage: "url('/assets/blogs/background.gif')" }}>
+        <div className="w-full p-5 flex flex-col items-center bg-cover bg-fill mt-10  lg:mt-0" style={{ backgroundImage: "url('/assets/blogs/background.gif')" }}>
             <button
                 onClick={() => router.back()}
-                className="flex items-center space-x-2 absolute top-6 left-6 text-gray-600 hover:underline px-4 py-2 rounded-lg"
+                className="flex items-center space-x-2 top-6 left-6 text-gray-600 hover:underline px-4 py-2 rounded-lg"
             >
                 <IoMdArrowBack size={20} />
                 <span className="text-lg">Back</span>
@@ -55,7 +55,7 @@ export default function BlogPost() {
                 alt="Blog Cover"
                 width={900}
                 height={800}
-                className="w-[900px] h-[400px] lg:h-[500px] object-cover rounded-lg mb-6 mt-20 px-2 lg:px-0"
+                className="w-full h-[400px] lg:h-[500px] object-cover  mb-6 mt-20 px-2 lg:px-10"
             />
 
             <div className="w-full max-w-4xl px-4 sm:px-10">

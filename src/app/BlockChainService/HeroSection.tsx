@@ -5,16 +5,16 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex items-center h-screen w-full overflow-hidden px-6 md:px-20">
+    <section className="relative flex items-center w-full py-50 overflow-hidden px-6 md:px-20">
       {/* Background GIF */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 container">
         <Image 
           src="/assets/background/bc_bg.gif" 
           alt="Background" 
           className="w-full h-full object-cover"
 
-          width={1920} 
-          height={1080} 
+          width={1920}
+          height={1080}
         />
       </div>
 
@@ -23,7 +23,7 @@ const HeroSection = () => {
         initial={{ x: '-100%' }} 
         animate={{ x: 0 }} 
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="absolute inset-y-0 left-0 w-1/2 bg-white/30 backdrop-blur-md z-10"
+        className="absolute inset-y-0 left-0 w-1/2 bg-white/30 backdrop-blur-md z-10 "
       ></motion.div>
 
 
