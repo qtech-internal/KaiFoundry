@@ -12,7 +12,7 @@ const features = [
 
 export default function BlockchainSection() {
   return (
-    <section className="relative bg-gradient-to-b from-white to-[#FBE8FF] py-32 px-8 md:px-16 lg:px-32">
+    <section className="relative bg-gradient-to-b from-white to-[#FBE8FF] py-32 px-8 md:px-16 lg:px-32 ">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center">
     
         <motion.div 

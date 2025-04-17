@@ -106,10 +106,10 @@ const BusinessGrowth = () => {
             <Image
                   src={
                     index % 2 === 0
-                    ? "/svg/Ellipse 81.svg"
-                    : "/svg/Ellipse 85.svg"} 
+                    ? "/svg/img_1.png"
+                    : "/svg/img_2.png"}
                   alt="Arrow"
-                  width={30} 
+                  width={50}
                   height={30} 
                   className={`block lg:hidden mt-8`}
                 />)}

@@ -26,7 +26,7 @@ const ServicesPopup: React.FC<ServicesPopupProps> = ({ onClose }) => {
   if (!isVisible) return null; // Don't render the popup if it's not visible
 
   return (
-    <div className="fixed inset-0 flex items-start mt-20 mx-5 justify-center z-50">
+    <div className="fixed inset-0 flex items-start mt-20 mx-auto z-50 container justify-center">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-8xl opacity-100 relative">
         <button
           onClick={onClose}
