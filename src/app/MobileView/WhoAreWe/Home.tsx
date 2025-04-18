@@ -3,6 +3,7 @@
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link"; 
 import pic from "./../../../../public/assets/WhoAreWe/Home.svg";
 
 const Home = () => {
@@ -50,15 +51,17 @@ const Home = () => {
         A team of innovators, creators, and problem-solvers shaping the future
         of blockchain.
       </motion.p>
-  
+      <Link href="/ContactUs">
       <motion.button
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.9 }}
         className="mt-6 px-6 py-3 bg-[#D444F1] text-white font-semibold rounded-full shadow-lg transition"
-      >
+        >
+          
         Contact Us
-      </motion.button>
+          </motion.button>
+          </Link>
     </div>
   
     {/* Image Block */}

@@ -29,7 +29,7 @@ const ContactUs = () => {
                 Have A Question Or A Big Idea? Let's Connect And Create Something Amazing Together!
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 p-4 min-h-screen">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 p-4 ">
                 {/* Box 1 */}
                 <div className="md:row-span-1 flex-col">
                     <h3 className="text-xl font-semibold mb-6 sm:mb-10">Where To Find Us</h3>

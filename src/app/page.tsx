@@ -19,6 +19,7 @@ import AnimatedSectionMob from "./MobileView/components/AnimatedImageMobile"; //
 import CoolStuffMob from "./MobileView/components/CoolStuff/page"; // Mobile version
 import FAQSectionMob from "./MobileView/components/FAQSection/page"; // Mobile version
 import ContactUsMob from "./MobileView/components/ContactUs/page"; // Mobile version
+import HeroSectionMob from "./components/HeroSectionMob/page";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
@@ -38,7 +39,9 @@ export default function Home() {
 
   return (
     <main>
-    <HeroSection />
+
+      {/* <HeroSection /> */}
+      {isMobile ? <HeroSectionMob /> : <HeroSection/>}
       {isMobile ? <ServicesSectionMob /> : <ServicesSection />}
       {isMobile ? <ServicesMob /> : <Services />}
       {isMobile ? <WhyChooseUsMob /> : <WhyChooseUs />}
