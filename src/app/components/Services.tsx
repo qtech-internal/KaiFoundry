@@ -59,12 +59,13 @@ const Services = () => {
       <div className="container mx-auto px-6 md:px-12 text-center">
         {/* Heading */}
         <motion.h2
-          className="text-3xl md:text-5xl font-bold text-gray-900" // Decreased text size
+          className="text-3xl md:text-5xl text-gray-800 font-semibold" // Decreased text size
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="text-[#D444F1]">What We Offer</span> - Our Specialized Features
+          <span className="text-[#D444F1]">What We Offer</span> - Our
+          <br />Specialized Features
         </motion.h2>
 
         {/* Grid */}
