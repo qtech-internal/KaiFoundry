@@ -178,6 +178,7 @@ export default function BlogCarousel() {
                         onLoadingComplete={() => handleImageLoad(blog.id)}
                         quality={75}
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        draggable="false"
                       />
                     </div>
                     <div className="pt-5 pb-10 px-5 grid grid-rows-[20%_50%_30%] gap-5">

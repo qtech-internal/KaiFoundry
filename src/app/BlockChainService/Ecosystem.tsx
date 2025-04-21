@@ -16,9 +16,10 @@ const EcosystemsGrid = () => {
       <h2 className="text-2xl font-bold text-gray-900">
         <span className="text-fuchsia-800">Ecosystems</span> We Work With
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 sm:gap-8 gap-4 mt-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 sm:gap-8 gap-4 mt-10" >
         {ecosystems.map((ecosystem, index) => (
-          <EcosystemCard key={index} name={ecosystem.name} icon={ecosystem.icon} />
+          <EcosystemCard  key={index} name={ecosystem.name} icon={ecosystem.icon}  />
+
         ))}
       </div>
     </div>

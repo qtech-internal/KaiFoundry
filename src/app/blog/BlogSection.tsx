@@ -114,7 +114,7 @@ export default function BlogCarousel() {
               className="w-full"
             >
               <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-105">
-                <Image src={blog.image} alt={blog.title} className="w-full h-[300px] object-cover" />
+                <Image src={blog.image} alt={blog.title} className="w-full h-[300px] object-cover" draggable={false}/>
                 <div className="p-5">
                   <p className="text-sm font-semibold text-gray-500">{blog.category}</p>
                   <h3 className="text-lg font-bold mt-2">{blog.title}</h3>

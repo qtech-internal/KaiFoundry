@@ -42,20 +42,24 @@ export default function BlogPost() {
 
     return (
         <div className="w-full p-5 flex flex-col items-center bg-cover bg-fill mt-10  lg:mt-0" style={{ backgroundImage: "url('/assets/blogs/background.gif')" }}>
-            <button
-                onClick={() => router.back()}
-                className="flex items-center space-x-2 top-6 left-6 text-gray-600 hover:underline px-4 py-2 rounded-lg"
-            >
-                <IoMdArrowBack size={20} />
-                <span className="text-lg">Back</span>
-            </button>
+            <div className="flex w-full md:px-5">
+                <button
+                    onClick={() => router.back()}
+                    className="flex items-center space-x-2 mx-auto text-gray-600 hover:underline px-4 py-2 rounded-lg absolute top-25 transition duration-300 ease-in-out"
+                >
+
+                    <span className="text-lg  flex justify-between items-center"><IoMdArrowBack size={20}  /> Back</span>
+                </button>
+
+            </div>
 
             <Image
                 src={post.image}
                 alt="Blog Cover"
                 width={900}
                 height={800}
-                className="w-full h-[400px] lg:h-[500px] object-cover  mb-6 mt-20 px-2 lg:px-10"
+                className="w-full h-[400px] lg:h-[500px] object-cover  mb-6 mt-30 px-2 lg:px-10"
+                draggable={false}
             />
 
             <div className="w-full max-w-4xl px-4 sm:px-10">

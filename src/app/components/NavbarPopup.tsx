@@ -26,7 +26,7 @@ const ServicesPopup: React.FC<ServicesPopupProps> = ({ onClose }) => {
   if (!isVisible) return null; // Don't render the popup if it's not visible
 
   return (
-    <div className="fixed inset-0 flex items-start mt-20 mx-auto z-50 container justify-center">
+    <div className="fixed inset-0 flex items-start mt-20 mx-auto z-50 container justify-center ">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-8xl opacity-100 relative">
         <button
           onClick={onClose}
@@ -44,7 +44,7 @@ const ServicesPopup: React.FC<ServicesPopupProps> = ({ onClose }) => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6 w-full md:w-1/2">
+          <div className="grid md:grid-cols-2 grid-cols-1 gap-6 w-full md:w-1/2">
             <Link href="/BlockChainService" passHref>
               <ServiceItem
                 icon={<SiBlockchaindotcom className="text-purple-600 text-4xl" />}
