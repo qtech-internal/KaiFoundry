@@ -51,7 +51,9 @@ const WhyChooseUs = () => {
               viewport={{ once: true }}
             >
               <div className="flex items-center justify-center w-24 h-24 mx-auto mb-6 bg-[#D444F1] rounded-full">
-                <img src={feature.icon} alt={feature.title} className="w-16 h-16" /> {/* Use img tag for SVG */}
+                <img src={feature.icon} alt={feature.title} className="w-16 h-16"
+                  draggable="false" // Prevent dragging of the image
+                /> {/* Use img tag for SVG */}
               </div>
               <h3 className="text-2xl font-semibold text-gray-900">{feature.title}</h3>
               <p className="text-gray-600 mt-4 text-base">{feature.description}</p>

@@ -17,7 +17,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className=" bg-white text-gray-800 pt-16 px-12">
+    <div className=" bg-white text-gray-800 pt-16 px-12 ">
       {/* Main Content */}
       <div
         className={`flex flex-col md:flex-row items-center justify-between transition-opacity duration-1000 ${
@@ -93,6 +93,7 @@ export default function HeroSection() {
             alt="Web3 Cube"
             width={400}
             height={400}
+            draggable="false"
             className={`mx-auto z-10 hidden md:block transition-transform duration-1000 md:h-auto ${
               isVisible ? "translate-y-0" : "translate-y-60"
             } -mt-20`} // Animate from bottom to top
@@ -100,24 +101,32 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="relative flex flex-col items-center justify-center px-16 md:px-14">
+      <div className="relative flex flex-col items-center justify-center px-16 md:px-14 ">
         <motion.div
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="bg-white shadow-lg rounded-2xl items-center px-8 relative z-10 overflow-hidden hidden md:flex -mt-16 space-x-16 -space-y-8 md:mr-60 lg:mr-0"
+          className="bg-white shadow-lg xl:ml-[520px] 2xl:ml-[710px] rounded-2xl items-center px-8 relative z-10 overflow-hidden hidden md:flex -mt-16 space-x-16 -space-y-2 md:mr-60 lg:mr-0"
+          // style={{
+          //   background: "linear-gradient(to right, #f8f5ff, #fce7f3)",
+          //   borderRadius: "20px",
+          //   marginLeft: "710px",
+          // }}
           style={{
             background: "linear-gradient(to right, #f8f5ff, #fce7f3)",
             borderRadius: "20px",
-            marginLeft: "710px",
+            // Default margin-left for screens smaller than 2xl
           }}
+       
+          
         >
           <div className="w-26 overflow-hidden rounded-lg rotate-90 border-8 border-rounded-full border-white flex items-center justify-center mx-10 -mt-6">
             <Image
               src="/assets/abstract.png"
               alt="Abstract Design"
               width={150}
-              height={64}
+              height={54}
+              draggable="false"
               className="object-cover"
             />
           </div>
@@ -135,6 +144,42 @@ export default function HeroSection() {
           </Link>
         </motion.div>
       </div>
+{/* <div className="relative flex justify-end px-4 md:px-14 border-2 ">
+  <motion.div
+    initial={{ y: 50, opacity: 0 }}
+    animate={{ y: 0, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    className="bg-white shadow-lg rounded-2xl flex flex-col md:flex-row items-center px-6 py-4 z-10 overflow-hidden space-y-4 md:space-y-0 md:space-x-6 mt-8 w-full sm:w-[90%] md:w-[500px] lg:w-[450px]"
+    style={{
+      background: "linear-gradient(to right, #f8f5ff, #fce7f3)",
+    }}
+  >
+    <div className="w-20 overflow-hidden rounded-lg rotate-90 border-8 border-white flex items-center justify-center">
+      <Image
+        src="/assets/abstract.png"
+        alt="Abstract Design"
+        width={120}
+        height={64}
+        draggable="false"
+        className="object-cover"
+      />
+    </div>
+    <div className="flex-1 text-center md:text-left">
+      <h2 className="font-semibold text-lg">Uncover our identity</h2>
+      <p className="text-gray-600 text-sm">
+        We are a creative hub shaping the future of digital design and
+        technology.
+      </p>
+    </div>
+    <Link href="/WhoAreWe">
+      <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md cursor-pointer">
+        <span className="text-purple-500 text-xl">→</span>
+      </div>
+    </Link>
+  </motion.div>
+</div> */}
+
+
       <div className="mt-18 max-w-7xl items-center ml-20">
         <div className="w-full max-w-7xl items-center sm:px-6 sm:py-4">
           <div className="bg-white rounded-full border border-fuchsia-300 shadow-sm flex items-center justify-around p-3 sm:p-4">

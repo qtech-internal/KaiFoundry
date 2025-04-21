@@ -41,7 +41,7 @@ const ServicesSection = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-40 bg-white">
+    <section ref={ref} className="py-40 bg-white ">
       <div className="container mx-auto flex flex-col md:flex-row px-6 md:px-12">
         {/* Left Side */}
         <motion.div

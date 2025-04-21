@@ -74,6 +74,7 @@ const FeaturesSection = () => {
                   alt={feature.title}
                   width={80} 
                   height={80} 
+                  draggable="false"
                 />
               </div>
 

@@ -65,7 +65,8 @@ const HeroSection2 = () => {
     alt="Background GIF"
     layout="fill"
     objectFit="cover"
-     className="opacity-20 scale-[3.9]" // Increased size and reduced opacity
+            className="opacity-20 scale-[3.9]"
+            draggable="false"// Increased size and reduced opacity
   />
 </div>
 

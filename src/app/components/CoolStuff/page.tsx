@@ -37,6 +37,7 @@ const CoolStuff = () => {
                             width={300}
                             height={500}
                             className='rounded-lg sm:w-[300px] w-[250px]'
+                            draggable="false" // Prevent dragging
                         />
                     </motion.div>
 

@@ -51,6 +51,7 @@ const FounderSection = () => {
               width={600}
               height={500}
               className="rounded-lg shadow-lg"
+              draggable="false"
             />
           </motion.div>
 
