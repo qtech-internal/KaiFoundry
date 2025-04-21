@@ -17,7 +17,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white text-gray-800 pt-16 px-12">
+    <div className=" bg-white text-gray-800 pt-16 px-12">
       {/* Main Content */}
       <div
         className={`flex flex-col md:flex-row items-center justify-between transition-opacity duration-1000 ${

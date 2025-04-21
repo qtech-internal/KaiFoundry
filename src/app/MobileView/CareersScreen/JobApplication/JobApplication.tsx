@@ -20,7 +20,7 @@ const JobApplication = () => {
   const router = useRouter();
 
   return (
-    <div className="max-w-full mx-auto p-6 pr-0">
+    <div className="w-full mx-auto p-6 px-8 pr-0 ">
       <button
         className="flex items-center text-gray-600 hover:text-gray-900 mb-4 py-2 px-2 text-lg font-semibold  rounded-md transition duration-200"
         onClick={() => router.back()}
@@ -29,7 +29,7 @@ const JobApplication = () => {
         Back
       </button>
 
-      <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 text-center">Job Application</h1>
+      <h1 className="text-3xl md:text-6xl font-bold text-gray-900 mb-6 text-center">Job Application</h1>
 
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">About The Job</h2>
       <p className="text-gray-600 mb-6 text-lg md:text-xl">

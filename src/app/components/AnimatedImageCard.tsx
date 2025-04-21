@@ -39,8 +39,8 @@ export default function AnimatedSection() {
   }, [index, inView]);
 
   return (
-    <div ref={ref} className="flex flex-col md:flex-row items-center sm:justify-center min-h-[85vh] sm:min-h-screen bg-white text-black p-6 md:p-10">
-      <div className="relative w-full md:w-1/2 h-[40vh] md:h-[85vh] flex sm:justify-center ">
+    <div ref={ref} className="flex flex-col md:flex-row items-center sm:justify-center  bg-white text-black p-6 md:p-10">
+      {/* <div className="relative w-full md:w-1/2 h-[40vh] md:h-[85vh] flex sm:justify-center ">
         <AnimatePresence>
           {inView && content.map((item, i) => (
             i <= index && (
@@ -57,9 +57,27 @@ export default function AnimatedSection() {
             )
           ))}
         </AnimatePresence>
-      </div>
+      </div> */}
+<div className="relative w-full md:w-1/2 h-[40vh] md:h-[85vh] flex sm:justify-center">
+  <AnimatePresence>
+    {inView && content.map((item, i) => (
+      i <= index && (
+        <motion.img
+          key={item.image}
+          src={item.image}
+          alt="Blockchain"
+          className="absolute max-w-[90%] md:max-w-[85%] h-auto object-contain rounded-4xl shadow-2xl border-2 border-white"
+          initial={{ y: 100 + 10 * i, opacity: 0, x: 20 * i }}
+          animate={{ y: 20 * i, opacity: 1, x: 20 * i }}
+          exit={{ y: -100 - 20 * i, opacity: 0 }}
+          transition={{ duration: 1 }}
+        />
+      )
+    ))}
+  </AnimatePresence>
+</div>
 
-      <div className="w-full md:w-1/2 mt-20 md:mt-0 md:pl-10 text-center md:text-left">
+      <div className="w-full md:w-1/2 mt-20 md:mt-0 md:pl-10 text-center md:text-left h-auto">
         <AnimatePresence mode="wait">
           {inView && (
             <>
