@@ -29,7 +29,7 @@ const jobListings = [
 
 const JobListings = () => {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-yellow-500">
       <div className="container mx-auto px-4 md:px-8 lg:px-36">
         {jobListings.map((job, index) => (
           <div
@@ -41,7 +41,7 @@ const JobListings = () => {
               {job.type} - {job.company} / {job.location}
             </p>
             <p className="text-gray-600 mb-4">{job.description}</p>
-            <a href="/components/CareersScreen/JobApplication">
+            <a href="/CareersScreen/JobApplication">
               <button
                 style={{ backgroundColor: '#D444F1' }}
                 className="mt-4 px-4 py-2 text-white font-semibold rounded-lg hover:bg-purple-700 transition duration-300"
