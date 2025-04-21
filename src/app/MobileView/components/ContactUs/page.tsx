@@ -10,12 +10,14 @@ const ContactUs = () => {
                 Let&apos;s Get <span className="text-fuchsia-600">In Touch</span>
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 p-4 min-h-screen">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-20 p-4 ">
                 {/* Box 1 */}
-                <div className="md:row-span-1 flex-col">
-                    <h3 className="text-xl font-semibold mb-6 sm:mb-10">Where To Find Us</h3>
-                    <MapLocation />
-                </div>
+              {/* Box 1 */}
+<div className="md:row-span-1 flex flex-col items-center md:items-start p-4">
+  <h3 className="text-xl font-semibold mb-6 sm:mb-10">Where To Find Us</h3>
+  <MapLocation />
+</div>
+
                 {/* Box 3 (Placed in second column in desktop view, but second in mobile) */}
                 <div className="md:col-start-2 row-span-2 flex-col">
                     <h3 className="text-xl font-semibold mb-6 sm:mb-10">Leave A Message</h3>
@@ -23,11 +25,16 @@ const ContactUs = () => {
                 </div>
                 {/* Box 2 */}
                 <div className="md:row-span-1 flex-col">
-                    <ContactDetails />
-                    <SocialIcons />
+                    <div className="mt-10">
+                        <ContactDetails />
+                    </div>
+                    <div className="mt-10"> {/* Added margin-top for spacing */}
+                        <SocialIcons />
+                    </div>
                 </div>
             </div>
-        </section>
+                </section>
+
     );
 };
 

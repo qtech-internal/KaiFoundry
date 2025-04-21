@@ -16,7 +16,7 @@ export default function HeroSectionMob() {
   }, []);
 
   return (
-    <div className=" bg-white text-black bg-gradient-to-b lg:bg-gradient-to-r from-[#A5C0EE] to-[#FBC5EC] "> 
+    <div className=" bg-white text-black bg-gradient-to-b lg:bg-gradient-to-r from-[#A5C0EE] to-[#FBC5EC] border-2 "> 
       {/* Main Content */}
       <div className={`flex flex-col-reverse md:flex-row items-center  justify-between md:px-12 py-16 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         <div className="md:w-1/2 text-center mt-12 lg:mt-0 md:text-left z-10 px-2">
@@ -110,16 +110,16 @@ export default function HeroSectionMob() {
               />
               <div className="flex justify-between px-8 py-2 gap-4 rounded-lg relative z-10">
                 <div className="flex gap-2 items-center">
-                  <div className="text-[20px] font-[600] text-[#414141]">30+</div>
-                  <div className="text-[14px] text-[#6E6E6E]">Projects</div>
+                  <div className="text-[14px] font-[600] text-[#414141]">30+</div>
+                  <div className="text-[10px] text-[#6E6E6E]">Projects</div>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <div className="text-[20px] font-[600] text-[#414141]">40+</div>
-                  <div className="text-[14px] text-[#6E6E6E]">Developers</div>
+                  <div className="text-[14px] font-[600] text-[#414141]">40+</div>
+                  <div className="text-[10px] text-[#6E6E6E]">Developers</div>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <div className="text-[20px] font-[600] text-[#414141]">10+</div>
-                  <div className="text-[14px] text-[#6E6E6E]">Ecosystems</div>
+                  <div className="text-[14px] font-[600] text-[#414141]">10+</div>
+                  <div className="text-[10px] text-[#6E6E6E]">Ecosystems</div>
                 </div>
               </div>
             </div>

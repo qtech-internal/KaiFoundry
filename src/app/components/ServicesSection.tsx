@@ -206,17 +206,42 @@ const CARD_MARGIN_PX = 16;
 const TOTAL_CARD_WIDTH_PX = CARD_WIDTH_PX + CARD_MARGIN_PX;
 const ANIMATION_DURATION_SECONDS = 20;
 
+// const ServiceCard = ({ service, isMobile }: ServiceCardProps) => (
+//   <Link href={service.link} passHref legacyBehavior>
+//     <a
+//       className="flex-shrink-0 w-full md:w-[500px] bg-white rounded-xl shadow-lg overflow-hidden mx-2 cursor-pointer block"
+//       style={{ minWidth: isMobile ? "100%" : `${CARD_WIDTH_PX}px` }}
+//     >
+//       <div className="overflow-hidden h-80">
+//         <img
+//           src={service.image}
+//           alt={service.title}
+//           className="w-full h-full object-cover"
+//         />
+//       </div>
+//       <div className="p-4 md:p-6">
+//         <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2">
+//           {service.title}
+//         </h3>
+//         <p className="text-gray-700 text-sm md:text-base leading-relaxed">
+//           {service.description}
+//         </p>
+//       </div>
+//     </a>
+//   </Link>
+// );
 const ServiceCard = ({ service, isMobile }: ServiceCardProps) => (
   <Link href={service.link} passHref legacyBehavior>
     <a
-      className="flex-shrink-0 w-full md:w-[500px] bg-white rounded-xl shadow-lg overflow-hidden mx-2 cursor-pointer block"
-      style={{ minWidth: isMobile ? "100%" : `${CARD_WIDTH_PX}px` }}
+      className="flex-shrink-0 w-full md:w-[350px] bg-white rounded-xl shadow-lg overflow-hidden mx-2 cursor-pointer block"
+      style={{ minWidth: isMobile ? "100%" : "350px" }}
     >
-      <div className="overflow-hidden h-80">
+      <div className="overflow-hidden">
         <img
           src={service.image}
           alt={service.title}
-          className="w-full h-full object-cover"
+          className="w-full h-64 object-cover"
+          draggable="false"
         />
       </div>
       <div className="p-4 md:p-6">
@@ -271,7 +296,7 @@ const ServicesSection = () => {
   const displayServices = isMobile ? services : [...services, ...services];
 
   return (
-    <section ref={ref} className="py-20 md:py-40 bg-gray-50 overflow-hidden">
+    <section ref={ref} className="py-20 md:py-40 bg-gray-50 overflow-hidden ">
       <div className="container mx-auto flex flex-col md:flex-row px-4 md:px-12 items-center md:items-start">
         <motion.div
           className="w-full md:w-1/3 mb-10 md:mb-0 md:pr-10 text-center md:text-left"
@@ -288,7 +313,7 @@ const ServicesSection = () => {
             Services That Drive Your Success
           </p>
         </motion.div>
-        <div className="relative w-full md:w-2/3">
+        <div className="relative w-full md:w-2/3  py-4">
           {isMobile ? (
             <div className="flex flex-col gap-6">
               {services.map((service) => (

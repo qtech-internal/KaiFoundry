@@ -53,7 +53,8 @@ const CareersSection = () => {
       alt={images[0].alt}
       width={150}
       height={250}
-      className="rounded-lg object-cover"
+                className="rounded-lg object-cover"
+                  draggable="false"
     />
   </div>
   <div className="flex flex-col gap-2">
@@ -63,7 +64,8 @@ const CareersSection = () => {
         alt={images[1].alt}
         width={160}
         height={200}
-        className="rounded-lg object-cover"
+                  className="rounded-lg object-cover"
+                    draggable="false"
       />
     </div>
     <div className="flex-1">
@@ -72,7 +74,8 @@ const CareersSection = () => {
         alt={images[2].alt}
         width={160}
         height={100}
-        className="rounded-lg object-cover"
+                  className="rounded-lg object-cover"
+                    draggable="false"
       />
     </div>
   </div>
@@ -86,7 +89,8 @@ const CareersSection = () => {
       alt={images[3].alt}
       width={750}
       height={150}
-      className="rounded-lg object-cover"
+                className="rounded-lg object-cover"
+                  draggable="false"
     />
   </div>
   <div className="flex flex-col gap-2">
@@ -96,7 +100,8 @@ const CareersSection = () => {
         alt={images[5].alt}
         width={125}
         height={120}
-        className="rounded-lg object-cover"
+                  className="rounded-lg object-cover"
+                    draggable="false"
       />
     </div>
     <div className="flex-1">
@@ -105,7 +110,8 @@ const CareersSection = () => {
         alt={images[4].alt}
         width={130}
         height={20}
-        className="rounded-lg object-cover"
+                  className="rounded-lg object-cover"
+                    draggable="false"
       />
     </div>
   </div>

@@ -14,7 +14,29 @@ const Navbar: React.FC = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const pathname = usePathname();
   const lastScrollY = useRef(0);
-
+  useEffect(() => {
+    const handleOutsideClick = (e: MouseEvent) => {
+      const sidebar = document.getElementById("mobile-sidebar");
+      if (isOpen && sidebar && !sidebar.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+  
+    const handleScrollClose = () => {
+      if (isOpen) {
+        setIsOpen(false);
+      }
+    };
+  
+    document.addEventListener("mousedown", handleOutsideClick);
+    window.addEventListener("scroll", handleScrollClose);
+  
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      window.removeEventListener("scroll", handleScrollClose);
+    };
+  }, [isOpen]);
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > window.innerHeight) {
@@ -126,17 +148,24 @@ const Navbar: React.FC = () => {
       {/* Sidebar Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-500 ease-in-out"
+          className="fixed inset-0 bg-opacity-50 z-40 transition-opacity duration-500 ease-in-out"
           onClick={closeMenu}
         ></div>
       )}
 
       {/* Sidebar Menu */}
-      <div
+      {/* <div
         className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-500 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
-      >
+      > */}
+      <div
+  id="mobile-sidebar"
+  className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-500 ease-in-out ${
+    isOpen ? "translate-x-0" : "-translate-x-full"
+  }`}
+>
+
         <button
           onClick={closeMenu}
           className="absolute top-4 right-4 text-gray-700 text-2xl"

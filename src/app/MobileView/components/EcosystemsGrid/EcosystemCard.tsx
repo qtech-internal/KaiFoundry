@@ -16,7 +16,9 @@ const EcosystemCard = ({ name, icon }: { name: string; icon: string }) => {
                  w-full h-[120px] md:h-[150px] p-4"
     >
       <div className="flex items-center justify-center w-16 h-16">
-        <Image src={icon} alt={name} width={50} height={50} />
+        <Image src={icon} alt={name} width={50} height={50}
+          draggable="false" className="object-cover rounded-full"
+        />
       </div>
       <p className="mt-3 text-sm text-black font-bold">{name}</p>
     </div>

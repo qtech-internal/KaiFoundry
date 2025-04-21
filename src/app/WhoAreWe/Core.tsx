@@ -21,7 +21,7 @@ const coreValues = [
   },
   {
     img: img3,
-    title: "User -Centric Approach",
+    title: "User-Centric Approach",
     description:
       "We design with people in mind, making blockchain technology accessible and seamless.",
   },

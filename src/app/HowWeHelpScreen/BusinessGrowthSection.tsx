@@ -67,13 +67,15 @@ const BusinessGrowth = () => {
                   alt="Arrow"
                   width={1900} 
                   height={960} 
+                  draggable="false" // Prevent dragging of the image
                 />
               </div>
             )}
 
             {/* Icon with Background */}
             <div className="bg-gradient-to-r from-[#E95DFF] to-[#D680FF] p-4 rounded-2xl shadow-lg relative">
-              <Image src={step.icon} alt={step.title} width={60} height={60} />
+              <Image src={step.icon} alt={step.title} width={60} height={60}
+              draggable="false"/>
             </div>
 
             {/* Title */}

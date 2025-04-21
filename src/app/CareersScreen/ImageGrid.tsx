@@ -29,7 +29,7 @@ const images = [
 
 const ImageGrid = () => {
   return (
-<div className="hidden md:grid grid-cols-5 gap-4 px-6 justify-center items-center mx-auto">
+<div className="hidden md:grid grid-cols-5 gap-4 px-6 justify-center items-center mx-auto ">
   {/* Column 1 - Tall image */}
   <div className="col-span-1 row-span-2 relative h-[500px]">
     <Image
@@ -37,7 +37,8 @@ const ImageGrid = () => {
       alt={images[0].alt}
       fill
       className="object-cover rounded-3xl"
-      priority
+          priority
+          draggable="false"
     />
   </div>
 
@@ -49,7 +50,8 @@ const ImageGrid = () => {
       src={images[1].src}
       alt={images[1].alt}
       fill
-      className="object-cover rounded-2xl"
+            className="object-cover rounded-2xl"
+              draggable="false"
     />
   </div>
   <div className="relative flex-[2]">
@@ -57,7 +59,8 @@ const ImageGrid = () => {
       src={images[2].src}
       alt={images[2].alt}
       fill
-      className="object-cover rounded-3xl"
+            className="object-cover rounded-3xl"
+              draggable="false"
     />
   </div>
 </div>
@@ -70,7 +73,8 @@ const ImageGrid = () => {
       src={images[3].src}
       alt={images[3].alt}
       fill
-      className="object-cover rounded-3xl"
+          className="object-cover rounded-3xl"
+            draggable="false"
     />
   </div>
 
@@ -82,7 +86,8 @@ const ImageGrid = () => {
      src={images[4].src}
      alt={images[4].alt}
       fill
-      className="object-cover rounded-3xl"
+            className="object-cover rounded-3xl"
+              draggable="false"
     />
   </div>
   <div className="relative flex-[3]">
@@ -90,7 +95,8 @@ const ImageGrid = () => {
          src={images[5].src}
          alt={images[5].alt}
       fill
-      className="object-cover rounded-3xl"
+            className="object-cover rounded-3xl"
+              draggable="false"
     />
   </div>
  

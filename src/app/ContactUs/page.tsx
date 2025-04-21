@@ -10,7 +10,7 @@ const ContactUs = () => {
     };
 
     return (
-        <section className="container sm:p-20 p-4 mt-14 ">
+        <section className="container sm:p-20 p-4 mt-14  ">
             {/* Back Button */}
             <button 
                 onClick={handleBackClick} 
