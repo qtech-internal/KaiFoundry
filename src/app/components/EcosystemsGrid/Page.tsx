@@ -1,13 +1,13 @@
 import EcosystemCard from "./EcosystemCard";
 const ecosystems = [
-  { name: "TON", icon: "/assets/ton.png" },
-  { name: "NEAR", icon: "/assets/near.png" },
-  { name: "POLYGON", icon: "/assets/polygon.png" },
-  { name: "ICP", icon: "/assets/icp.png" },
-  { name: "ETHEREUM", icon: "/assets/ethereum.png" },
-  { name: "FILECOIN", icon: "/assets/filecoin.png" },
-  { name: "BITCOIN", icon: "/assets/bitcoin.png" },
-  { name: "SOLANA", icon: "/assets/solana.png" }
+  { name: "TON", icon: "/toncoin-ton-logo 1.svg" },
+  { name: "NEAR", icon: "/log8.svg" },
+  { name: "POLYGON", icon: "/log1.svg" },
+  { name: "ICP", icon: "/log7.svg" },
+  { name: "ETHEREUM", icon: "/log8.svg" },
+  { name: "FILECOIN", icon: "/log7.svg" },
+  { name: "BITCOIN", icon: "/log5.svg" },
+  { name: "SOLANA", icon: "/log2.svg" }
 ];
 
 const EcosystemsGrid = () => {

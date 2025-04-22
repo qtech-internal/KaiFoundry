@@ -42,7 +42,7 @@ const HeroSection = () => {
         <p className="text-gray-600 text-base md:text-lg mt-4">
           Unlock the power of Artificial Intelligence to automated tasks, drive insights and create smater solutions for your business
         </p>
-        <Link href="/contact">
+        <Link href="/ContactUs">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

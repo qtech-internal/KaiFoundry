@@ -9,7 +9,8 @@ const ContactInfo: React.FC<ContactInfoProps> = ({ phone, email }) => {
   return (
     <div className="text-gray-300 flex flex-col items-start">
       {/* Horizontal Separator */}
-      <hr className="border-t border-white sm:border-black w-20 border-[1px] my-6" />
+      <hr className="border-t border-white sm:border-black block lg:hidden w-20 my-6" />
+
       <p>{phone}</p>
       <p>
         <a href={`mailto:${email}`} className="hover:text-white">

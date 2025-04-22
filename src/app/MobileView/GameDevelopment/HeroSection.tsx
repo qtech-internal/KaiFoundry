@@ -37,7 +37,7 @@ const HeroSection = () => {
         <p className="text-gray-600 text-base md:text-lg mt-4">
           We create engaging, high-performance games that players love-seamless, fun, and built for the future of gaming
         </p>
-        <Link href="/contact">
+        <Link href="/ContactUs">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
