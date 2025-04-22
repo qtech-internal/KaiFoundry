@@ -20,7 +20,7 @@ const JobApplication = () => {
   const router = useRouter();
 
   return (
-    <div className="w-full mx-auto p-6 px-8 pr-0 ">
+    <div className="w-full mx-auto p-6 px-8 pr-0  ">
       <button
         className="flex items-center text-gray-600 hover:text-gray-900 mb-4 py-2 px-2 text-lg font-semibold  rounded-md transition duration-200"
         onClick={() => router.back()}

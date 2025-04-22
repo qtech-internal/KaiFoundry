@@ -37,20 +37,29 @@ const Navbar: React.FC = () => {
     };
   }, [isOpen]);
   
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > window.innerHeight) {
+  //       setIsVisible(window.scrollY < lastScrollY.current);
+  //     } else {
+  //       setIsVisible(true);
+  //     }
+  //     lastScrollY.current = window.scrollY;
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > window.innerHeight) {
-        setIsVisible(window.scrollY < lastScrollY.current);
-      } else {
-        setIsVisible(true);
-      }
+      setIsVisible(window.scrollY < lastScrollY.current);
       lastScrollY.current = window.scrollY;
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
+  
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
   const isActive = (path: string) => pathname === path;
@@ -63,7 +72,7 @@ const Navbar: React.FC = () => {
           isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
       >
-        <nav className="md:mx-10 py-2 px-2 md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-md md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out">
+        <nav className="md:mx-10 py-2 px-2 md:px-5 lg:px-5 flex items-center justify-between md:backdrop-blur-md md:border md:border-gray-300 md:rounded-full transition-all duration-500 ease-in-out ">
           <button
             onClick={toggleMenu}
             className="md:hidden focus:outline-none p-2 rounded-sm"
@@ -76,7 +85,7 @@ const Navbar: React.FC = () => {
           </button>
 
           {/* Logo */}
-          <div className="hidden md:flex flex-shrink-0">
+          <div className="hidden md:flex flex-shrink-0 ">
             <Link href="/">
               <Image
                 src="/assets/logo.svg"
@@ -211,9 +220,11 @@ const Navbar: React.FC = () => {
           >
             Blogs
           </Link>
-          <button className="bg-pink-500 text-white px-4 py-2 rounded-full hover:bg-pink-600 mt-4 w-full transition-all duration-500 ease-in-out">
+          <Link href="/ContactUs">
+          <button className="bg-fuchsia-500  text-white px-4 py-2 rounded-full hover:bg-pink-600 mt-4 w-full transition-all duration-500 ease-in-out">
             Contact Us
-          </button>
+            </button>
+            </Link>
         </nav>
       </div>
 

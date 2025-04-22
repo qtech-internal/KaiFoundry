@@ -17,19 +17,19 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className=" bg-white text-gray-800 pt-16 px-12 ">
+    <div className=" bg-white text-gray-800 pt-16 px-12  ">
       {/* Main Content */}
       <div
         className={`flex flex-col md:flex-row items-center justify-between transition-opacity duration-1000 ${
           isVisible ? "opacity-100" : "opacity-0"
         }`}
       >
-        <div className="md:w-1/2 text-center md:text-left mt-20">
+        <div className="md:w-1/2 text-center md:text-left mt-20 ">
           <h1
-            className={`lg:text-5xl xl:text-7xl md:text-3xl font-bold transition-transform duration-1000 py-10`}
+            className={`lg:text-5xl xl:text-6xl md:text-3xl font-bold transition-transform duration-1000 py-10 leading-[1.3]`}
           >
             Building Your{""}
-            <span className="bg-gradient-to-r from-[#821890] to-[#D444F1] bg-clip-text text-transparent flex">
+            <span className="bg-gradient-to-r from-[#821890] to-[#D444F1] bg-clip-text text-transparent flex ">
               BUSINESSES
             </span>
             & Powering
@@ -55,21 +55,22 @@ export default function HeroSection() {
           >
             <div
               className="absolute inset-y-0 left-0 right-0 bg-[#D444F1] rounded-full"
-              style={{ width: "calc(42% - 10px)" }}
+              style={{ width: "calc(48% - 10px)" }}
             ></div>
             <Link href="/HowWeHelp">
-              <button
-                className={`relative z-10 flex items-center px-8 py-3 rounded-full text-white text-[18px] text-lg transition-transform duration-1000 transform ${
-                  isVisible
-                    ? "translate-x-0 bg-[#D444F1]"
-                    : "translate-x-10 bg-[#D444F1]"
-                }`}
-              >
-                HOW WE HELP
-                <span className="ml-2 w-7 h-7 flex items-center justify-center border-2 border-white rounded-full font-light">
-                  ➜
-                </span>
-              </button>
+            <button
+  className={`relative z-10 flex items-center px-8 py-3 text-white text-[18px] text-lg transition-transform duration-1000 transform ${
+    isVisible
+      ? "translate-x-0 bg-[#D444F1]"
+      : "translate-x-10 bg-[#D444F1]"
+  } rounded-l-full rounded-r-none`}
+>
+  HOW WE HELP
+  <span className="ml-2 w-7 h-7 flex items-center justify-center border-2 border-white rounded-full font-light">
+    ➜
+  </span>
+</button>
+
             </Link>
             <Link href="/contact">
               <button

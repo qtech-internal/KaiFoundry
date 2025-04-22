@@ -16,7 +16,7 @@ export default function HeroSectionMob() {
   }, []);
 
   return (
-    <div className=" bg-white text-black bg-gradient-to-b lg:bg-gradient-to-r from-[#A5C0EE] to-[#FBC5EC] border-2 "> 
+    <div className=" bg-white text-black bg-gradient-to-b lg:bg-gradient-to-r from-[#A5C0EE] to-[#FBC5EC]  "> 
       {/* Main Content */}
       <div className={`flex flex-col-reverse md:flex-row items-center  justify-between md:px-12 py-16 transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
         <div className="md:w-1/2 text-center mt-12 lg:mt-0 md:text-left z-10 px-2">

@@ -40,7 +40,7 @@ const HeroSection = () => {
         <p className="text-gray-600 text-base md:text-lg mt-4">
           Secure, scalable, and customized blockchain development for the digital future.
         </p>
-        <Link href="/contact">
+        <Link href="/ContactUs">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
