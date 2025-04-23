@@ -56,7 +56,7 @@ const FeaturesSection = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="container mx-auto text-center">
+      <div className=" mx-auto text-center">
       
         <motion.h2
           className="text-4xl md:text-6xl font-bold text-gray-900"
@@ -68,22 +68,26 @@ const FeaturesSection = () => {
         </motion.h2>
 
     
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="p-6 border-t-4"
-              style={{ borderColor: "#D444F1" }}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl md:text-3xl font-semibold text-left">{service.title}</h3>
-              <p className="text-gray-600 mt-3 text-left text-base md:text-lg">{service.description}</p>
-            </motion.div>
-          ))}
-        </div>
+       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                       {services.map((service, index) => (
+                         <motion.div
+                           key={index}
+                           className="p-4 border-t-3 mb-6 max-w-100 mx-auto" // Set max width and center the card
+                           style={{ borderColor: "#D444F1" }}
+                           initial={{ opacity: 0, y: 20 }}
+                           whileInView={{ opacity: 1, y: 0 }}
+                           transition={{ duration: 0.5, delay: index * 0.2 }}
+                           viewport={{ once: true }}
+                         >
+                           <h3 className="text-xl md:text-2xl font-semibold text-left">
+                             {service.title}
+                           </h3>
+                           <p className="text-gray-600 mt-3 text-left text-sm md:text-base">
+                             {service.description}
+                           </p>
+                         </motion.div>
+                       ))}
+                     </div>
       </div>
     </section>
   );

@@ -37,7 +37,7 @@ const WhyChooseUs = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Why <span className="text-[#D444F1]">Choose</span> Us?
+          Why <span className="text-[#D444F1]">Choose</span> Service AI?
         </motion.h2>
 
         {/* Grid */}

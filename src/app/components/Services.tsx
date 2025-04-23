@@ -56,7 +56,7 @@ const Services = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="container mx-auto px-6 md:px-12 text-center">
+      <div className="mx-auto px-6 md:px-12 text-center ">
         {/* Heading */}
         <motion.h2
           className="text-3xl md:text-5xl text-gray-800 font-semibold" // Decreased text size
@@ -73,7 +73,7 @@ const Services = () => {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className="p-8 border-t-3 mb-6 max-w-150 mx-auto" // Set max width and center the card
+              className="p-4 border-t-3 mb-6 max-w-100 mx-auto" // Set max width and center the card
               style={{ borderColor: "#D444F1" }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}

@@ -48,7 +48,7 @@ const SolutionsSection = () => {
   return (
     <div className="py-12 w-full">
       {/* Title */}
-      <h2 className="text-[24px] md:text-4xl font-bold text-[#D444F1] text-center px-4 md:px-10">
+      <h2 className="text-[22px] md:text-3xl font-bold text-[#D444F1] text-center px-4 md:px-10">
         Solutions <span className='text-black'>Built For</span> The Future
       </h2>
       <p className="text-[#666666] mt-2 text-center px-4 md:px-10 text-[14px] md:text-lg">

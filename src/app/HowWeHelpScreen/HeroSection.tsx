@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HowWeHelp = () => {
   return (
-    <section className="flex flex-col md:flex-row-reverse items-center text-center px-6 py-16 md:text-left md:px-20 md:justify-between relative">
+    <section className="flex flex-col md:flex-row-reverse w-full items-center text-center px-6 py-16 md:text-left md:px-20 md:justify-between relative">
 
       {/* Background GIF Container */}
       <div className="absolute inset-y-0 right-20 z-0 w-full h-full md:w-1/3 md:h-[1000px] transform -translate-y-50 -translate-x-5"> 

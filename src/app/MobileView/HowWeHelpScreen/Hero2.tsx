@@ -25,7 +25,7 @@ const HeroSection2 = () => {
         </motion.p>
 
         {/* Features */}
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center items-center mx-auto mt-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,7 +33,7 @@ const HeroSection2 = () => {
             className="grid grid-cols-3 gap-4 border-t border-white pt-2 bg-gradient-to-r from-purple-100 to-white px-4 md:px-10 py-4 rounded-lg" // Adjusted grid for mobile
           >
             {/* Feature 1 */}
-            <div className="text-gray-600 text-center border-r  lg:border-r border-white pr-4 text-sm lg:text-3xl">
+            <div className="text-gray-600 text-center  border-r  lg:border-r border-white pr-4  pt-2 text-sm lg:text-3xl">
               Secure storage
             </div>
             {/* Feature 2 */}

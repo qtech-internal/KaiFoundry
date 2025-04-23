@@ -20,7 +20,7 @@ const JobApplication = () => {
   const router = useRouter();
 
   return (
-    <div className="max-w-full mx-auto p-6 pr-0  ">
+    <div className="w-full mx-auto p-6  ">
       <button
         className="flex items-center text-gray-600 hover:text-gray-900 mb-4 py-10  text-lg font-semibold  rounded-md transition duration-200"
         onClick={() => router.back()}
@@ -32,12 +32,12 @@ const JobApplication = () => {
       <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 text-center">Job Application</h1>
 
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-2">About The Job</h2>
-      <p className="text-[#4D4D4D] mb-6 text-lg md:text-xl px-2 lg:px-0 sm:px-4">
+      <p className="text-[#4D4D4D] mb-6 text-lg md:text-xl px-2 lg:px-0 sm:px-4 ">
       ullamcorper sit. Aliquam sed senectus varius nulla risus aliquet. Nunc sit scelerisque mauris sit scelerisque donec aliquam. Commodo eros leo et quisque integer. Vitae luctus non habitant in at sed. Sapien suspendisse tristique tortor adipiscing eget. Elit pretium eu at nibh ac tristique est.
 Ut non nam eget praesent malesuada faucibus mauris viverra. Eget phasellus in cras vitae dignissim in. Nisl bibendum ipsum vitae sed facilisis quis sit nunc. Tellus maecenas quis adipiscing habitasse lacus. Vitae feugiat tellus scelerisque quis nulla quam eget mauris ornare. Volutpat feugiat turpis nulla lacus et donec nibh mauris. Viverra duis id vitae integer tincidunt dolor. Morbi fames venenatis egestas imperdiet elit. Malesuada aliquam ornare ut eu in vel neque rhoncus. Neque dictum vitae sit nibh.
       </p>
 
-      <h2 className="text-xl font-semibold text-gray-800 mb-2">
+      <h2 className="text-xl font-semibold text-gray-800 mb-8">
         Eligibility Criteria
       </h2>
 
@@ -52,7 +52,7 @@ Ut non nam eget praesent malesuada faucibus mauris viverra. Eget phasellus in cr
         ))}
       </ul>
 
-      <h2 className="text-xl font-semibold text-gray-800 mb-2 mt-6">
+      <h2 className="text-xl font-semibold text-gray-800 mb-8 mt-8">
         Perks & Benefits
       </h2>
 
