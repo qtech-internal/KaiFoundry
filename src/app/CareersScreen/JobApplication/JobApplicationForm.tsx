@@ -25,10 +25,12 @@ const JobApplicationForm = () => {
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = event.target;
-    const formatted = value.replace(/\s{2,}/g, ' ');
+  
+    // Remove multiple spaces & trim start + end
+    const formatted = value.replace(/\s{2,}/g, ' ').trim();
     setFormData((prev) => ({ ...prev, [name]: formatted }));
   };
-
+  
   const handleBlur = (
     event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -40,10 +42,18 @@ const JobApplicationForm = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     console.log("Form submitted with data:", formData, "and file:", file);
+    alert("Form submitted successfully!");
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      whyJoin: ''
+    });
+    setFile(null);
   };
 
   return (
-    <div className="max-w-full mx-auto p-6">
+    <div className="w-fullmx-auto p-6 ">
       <h1 className="text-3xl font-bold text-gray-900 mb-6">Application Form</h1>
 
       <form className="space-y-6 w-full" onSubmit={handleSubmit}>
@@ -154,7 +164,7 @@ const JobApplicationForm = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="w-full md:w-1/4 bg-[#D444F1] text-white py-3 rounded-lg font-semibold hover:bg-[#D444F1]/80 transition"
+            className="w-1/4 bg-[#D444F1] text-white py-3 text-[16px] rounded-full font-semibold hover:bg-[#D444F1]/80 transition"
           >
             Submit
           </button>

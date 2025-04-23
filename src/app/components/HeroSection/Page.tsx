@@ -17,7 +17,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className=" bg-white text-gray-800 pt-16 px-12  ">
+    <div className=" bg-white text-gray-800 pt-16 px-12 w-full ">
       {/* Main Content */}
       <div
         className={`flex flex-col md:flex-row items-center justify-between transition-opacity duration-1000 ${
@@ -57,7 +57,7 @@ export default function HeroSection() {
               className="absolute inset-y-0 left-0 right-0 bg-[#D444F1] rounded-full"
               style={{ width: "calc(48% - 10px)" }}
             ></div>
-            <Link href="/HowWeHelp">
+            <Link href="/HowWeHelpScreen">
             <button
   className={`relative z-10 flex items-center px-8 py-3 text-white text-[18px] text-lg transition-transform duration-1000 transform ${
     isVisible
@@ -72,7 +72,7 @@ export default function HeroSection() {
 </button>
 
             </Link>
-            <Link href="/contact">
+            <Link href="/ContactUs">
               <button
                 className={`relative z-10 ml-[-10px] px-6 py-3 rounded-full border border-purple-500 bg-white text-black text-lg transition-transform duration-1000 transform ${
                   isVisible
@@ -181,7 +181,7 @@ export default function HeroSection() {
 </div> */}
 
 
-      <div className="mt-18 max-w-7xl items-center ml-20">
+      <div className="mt-18 max-w-7xl items-center ">
         <div className="w-full max-w-7xl items-center sm:px-6 sm:py-4">
           <div className="bg-white rounded-full border border-fuchsia-300 shadow-sm flex items-center justify-around p-3 sm:p-4">
             <div className="flex items-baseline text-center">

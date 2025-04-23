@@ -147,7 +147,7 @@ const Navbar: React.FC = () => {
           </ul>
 
           <Button
-            className="bg-fuchsia-500 text-white"
+            className="bg-[#D444F1] text-white"
             text="Contact Us"
             href="/ContactUs"
           />
@@ -221,7 +221,7 @@ const Navbar: React.FC = () => {
             Blogs
           </Link>
           <Link href="/ContactUs">
-          <button className="bg-fuchsia-500  text-white px-4 py-2 rounded-full hover:bg-pink-600 mt-4 w-full transition-all duration-500 ease-in-out">
+          <button className="bg-[#D444F1]  text-white px-4 py-2 rounded-full hover:bg-pink-600 mt-4 w-full transition-all duration-500 ease-in-out">
             Contact Us
             </button>
             </Link>

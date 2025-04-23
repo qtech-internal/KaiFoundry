@@ -36,7 +36,7 @@ const BusinessGrowth = () => {
         viewport={{ once: true }}
         className="text-3xl md:text-4xl font-bold text-gray-900"
       >
-        Helping <span className="text-[#E95DFF]">Your Business Grow</span>
+        Helping <span className="text-[#b243c3]">Your Business Grow</span>
       </motion.h2>
       <motion.p
         initial={{ opacity: 0, y: 20 }}

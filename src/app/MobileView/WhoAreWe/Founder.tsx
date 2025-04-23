@@ -12,7 +12,7 @@ const FounderSection = () => {
 
   return (
     <section ref={ref} className="px-6 lg:px-20 py-16">
-      <div className="max-w-6xl mx-auto flex flex-col items-center">
+      <div className="w-full mx-auto flex flex-col items-center">
         {/* Heading Animation */}
         <motion.h2
           initial={{ opacity: 0, y: 50 }}
@@ -36,7 +36,8 @@ const FounderSection = () => {
         </motion.p>
 
         {/* Main Content */}
-        <div className="grid grid-rows-2 lg:flex  items-center lg:ml-20 gap-4">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-8">
+
           {/* Image Animation */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -44,7 +45,7 @@ const FounderSection = () => {
               inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
             }
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-            className="w-full md:w-1/2 flex justify-center ml-4 lg:ml-0 z-10"
+            className="w-full md:w-1/2 flex justify-center  z-10"
           >
             <Image
               src={img}
@@ -59,7 +60,7 @@ const FounderSection = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-            className="w-full md:w-1/2 md:h-[380px] lg:h-[550px] -mt-20  -ml-4 lg:ml-0 lg:mt-0 pt-10 lg:pt-[150px] px-12 bg-[#F8E6FF]  p-8 shadow-lg"
+            className="w-full md:w-1/2 md:h-[380px] lg:h-[550px]   pt-10 lg:pt-[150px] px-12 bg-[#F8E6FF]  p-8 shadow-lg"
           >
             <h3 className="text-[14px] lg:text-2xl font-bold text-[#333333] pb-3">
               VINAYAK KALRA

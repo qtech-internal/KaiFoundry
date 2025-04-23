@@ -34,7 +34,7 @@ const JobListings = () => {
         {jobListings.map((job, index) => (
           <div
             key={index}
-            className={`p-6 md:p-8 border-2  border-gray-200 mb-8 bg-white transition-all duration-300 ease-in-out hover:bg-purple-100`}
+            className={`p-6 md:p-8 border-2  border-gray-200 mb-8 bg-white transition-all duration-300 ease-in-out hover:bg-[#FCEEFF]`}
           >
             <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">{job.title}</h2>
             <p className="text-gray-700 font-semibold mb-2">

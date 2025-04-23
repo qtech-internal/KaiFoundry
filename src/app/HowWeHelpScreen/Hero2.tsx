@@ -72,7 +72,7 @@ const HeroSection2 = () => {
 
         {/* Phone Image */}
         <Image
-          src="/assets/HowWeHelp/phone.png" // Replace with your actual image path
+          src="/mob.png" // Replace with your actual image path
           alt="KaiOS Phone"
           width={550} // Adjusted width for mobile
           height={550} // Adjusted height for mobile

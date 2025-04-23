@@ -40,7 +40,7 @@ const Footer: FC = () => {
       className="bg-[#821890] text-white p-8"
       style={{ fontFamily: "Inter, sans-serif", minHeight: "500px" }}
     >
-      <div className="container mx-auto grid grid-cols-12 md:grid-cols-12 gap-6 sm:grid-cols-2 sm:gap-4">
+      <div className="mx-auto grid grid-cols-12 md:grid-cols-12 gap-6 sm:grid-cols-2 sm:gap-4">
         {/* Logo - Start Aligned */}
         <div className="sm:col-span-3 flex justify-start order-1 col-span-6">
           <img src="/svg/Logo.svg" alt="Logo" className="h-10" />
