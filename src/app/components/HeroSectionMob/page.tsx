@@ -47,7 +47,7 @@ export default function HeroSectionMob() {
                 </span>
               </button>
             </Link>
-            <Link href="/contact">
+            <Link href="/ContactUs">
               <button className={`relative z-10 ml-[-10px] px-6 py-3 rounded-full border border-purple-500 bg-white text-black font-semibold text-[15px] transition-transform duration-1000 transform ${isVisible ? 'translate-x-0 bg-[#D444F1]' : 'translate-x-10 bg-[#D444F1]'}`}>
                 Contact Us
               </button>
