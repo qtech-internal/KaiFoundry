@@ -44,7 +44,7 @@
     return (
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="container overflow-x-hidden mx-auto">
+        <div className="container max-w-[1920px] overflow-x-hidden mx-auto">
           <ClientLayout>{children}</ClientLayout>
             <Footer />
             </div>

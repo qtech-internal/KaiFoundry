@@ -5,7 +5,7 @@ const ecosystems = [
   { name: "POLYGON", icon: "/log1.svg" },
   { name: "ICP", icon: "/log7.svg" },
   { name: "ETHEREUM", icon: "/log8.svg" },
-  { name: "FILECOIN", icon: "/log7.svg" },
+  { name: "FILECOIN", icon: "/log6.svg" },
   { name: "BITCOIN", icon: "/log5.svg" },
   { name: "SOLANA", icon: "/log2.svg" }
 ];
