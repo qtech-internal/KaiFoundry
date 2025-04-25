@@ -17,9 +17,9 @@ const navs = [
   {
     title: "Services",
     links: [
-      { label: "AI", href: "/ai" },
-      { label: "Gaming", href: "/gaming" },
-      { label: "Blockchain", href: "/blockchain" },
+      { label: "AI", href: "/AIServices" },
+      { label: "Gaming", href: "/GameDevelopment" },
+      { label: "Blockchain", href: "/BlockChainService" },
       { label: "Web3 Solutions", href: "/web3" },
     ],
   },

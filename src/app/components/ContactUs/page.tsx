@@ -5,10 +5,13 @@ import SocialIcons from "./SocialIcons";
 
 const ContactUs = () => {
     return (
-        <section className="container sm:p-20 p-4">
-            <h2 className="text-5xl font-bold text-center mb-10">
+        <>
+            
+       <h2 className="text-5xl font-bold text-center mb-10">
                 Let&apos;s Get <span className="text-fuchsia-600">In Touch</span>
             </h2>
+        <section className=" sm:p-20 p-4 flex justify-center ">
+        
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20 p-4">
                 {/* Box 1 */}
@@ -33,6 +36,7 @@ const ContactUs = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

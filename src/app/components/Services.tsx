@@ -62,7 +62,7 @@ const Services = () => {
           className="text-3xl md:text-5xl text-gray-800 font-semibold" // Decreased text size
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.3 }}
         >
           <span className="text-[#D444F1]">What We Offer</span> - Our
           <br />Specialized Features

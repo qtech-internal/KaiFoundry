@@ -17,7 +17,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div className=" bg-white text-gray-800 pt-16 px-12 w-full ">
+    <div className=" bg-white text-gray-800 pt-16 px-12 w-full  ">
       {/* Main Content */}
       <div
         className={`flex flex-col md:flex-row items-center justify-between transition-opacity duration-1000 ${
@@ -181,7 +181,7 @@ export default function HeroSection() {
 </div> */}
 
 
-      <div className="mt-18 max-w-7xl items-center ">
+      <div className="mt-18 items-center  justify-center flex flex-col md:flex-row px-4 md:px-14">
         <div className="w-full max-w-7xl items-center sm:px-6 sm:py-4">
           <div className="bg-white rounded-full border border-fuchsia-300 shadow-sm flex items-center justify-around p-3 sm:p-4">
             <div className="flex items-baseline text-center">

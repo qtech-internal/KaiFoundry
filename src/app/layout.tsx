@@ -24,18 +24,18 @@
       title: "Your IT Company - Best Software Solutions",
       description: "We build scalable and secure software solutions.",
       url: "https://kaifoundry.com/",
-      images: ["/logo.ico"],
+      images: ["/logo.png"], 
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      images: ["/logo.png"],
+      images: ["/logo.png"], 
     },
     icons: {
-      icon: "/logo.ico",
+      icon: "/logo.png", 
     },
   };
-
+  
   export default function RootLayout({
     children,
   }: {
