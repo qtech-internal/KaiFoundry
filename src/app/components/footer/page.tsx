@@ -17,18 +17,18 @@ const navs = [
   {
     title: "Services",
     links: [
-      { label: "AI", href: "/ai" },
-      { label: "Gaming", href: "/gaming" },
-      { label: "Blockchain", href: "/blockchain" },
+      { label: "AI", href: "/AIServices" },
+      { label: "Gaming", href: "/GameDevelopment" },
+      { label: "Blockchain", href: "/BlockChainService" },
       { label: "Web3 Solutions", href: "/web3" },
     ],
   },
   {
     title: "About",
     links: [
-      { label: "Who We Are", href: "/about" },
+      { label: "Who We Are", href: "/WhoAreWe" },
       { label: "What We Do", href: "/services" },
-      { label: "Career", href: "/career" },
+      { label: "Career", href: "/CareersScreen" },
       { label: "Portfolio", href: "/portfolio" },
     ],
   },
