@@ -1,34 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { UserCheck, FlaskConical, ShieldCheck, Headphones } from "lucide-react";
 
 const features = [
   {
-    icon: <UserCheck size={40} className="text-white" />,
-    title: "Expertise",
-    description: "We have expertise in developing Blockchain.",
+    icon: "/custom.png",
+    title: "Custom-Built for Your Needs",
+    description: "We create blockchain solutions tailored to your business goals.",
   },
   {
-    icon: <FlaskConical size={40} className="text-white" />,
-    title: "Custom Solutions",
-    description: "Every project is customized to solve your specific challenges.",
+    icon: "/unmatched.png",
+    title: "Unmatched Security",
+    description: "Decentralization and encryption ensure your data stays protected.",
   },
   {
-    icon: <ShieldCheck size={40} className="text-white" />,
-    title: "Security & Reliability",
-    description: "We focus on using the most secure & reliable technologies.",
+    icon: "/seemless.png",
+    title: "Seamless Integration",
+    description: "Our blockchain solutions work smoothly with your existing systems.",
   },
   {
-    icon: <Headphones size={40} className="text-white" />,
-    title: "End To End Support",
-    description: "We offer complete support from idea to final deployment.",
+    icon: "/future.png",
+    title: "Future-Ready Technology",
+    description: "Scalable, efficient, and designed to grow with your business.",
   },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="py-20 bg-purple-100">
+    <section className="py-20 bg-[#FBE8FF]">
       <div className="container mx-auto px-6 md:px-12 text-center">
         {/* Heading */}
         <motion.h2
@@ -51,11 +50,11 @@ const WhyChooseUs = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               viewport={{ once: true }}
             >
-              <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-[#D444F1] rounded-full"> 
-                {feature.icon}
+              <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-[#D444F1] rounded-full">
+                <img src={feature.icon} alt={feature.title} className="w-10 h-10 object-contain" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900">{feature.title}</h3>
-              <p className="text-gray-600 mt-3">{feature.description}</p>
+              <h3 className="text-xl md:text-2xl font-semibold text-[#434343] font-manrope">{feature.title}</h3>
+              <p className="text-[#434343] text-[16px] font-manrope mt-3">{feature.description}</p>
             </motion.div>
           ))}
         </div>

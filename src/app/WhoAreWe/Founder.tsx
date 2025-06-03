@@ -17,10 +17,10 @@ const FounderSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-6xl font-bold text-center mb-6"
+          className="text-6xl font-semibold text-center leading-[72px] mb-6"
         >
           Meet{" "}
-          <span className="text-[#821890] bg-clip-text">
+          <span className="text-[#BA24D5] bg-clip-text">
             Our Founder
           </span>
         </motion.h2>
@@ -28,7 +28,7 @@ const FounderSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-gray-600 text-center max-w-3xl mb-12 text-xl" // Increased font size
+          className="text-gray-600 text-center  mb-12 text-xl font-[400] leading-[28px]" // Increased font size
         >
           We focus on the details of everything we do. All to help businesses
           around the world.
@@ -64,8 +64,8 @@ const FounderSection = () => {
             <h3 className="text-2xl font-bold text-gray-800 pb-3">
               VINAYAK KALRA
             </h3>
-            <p className="text-[#821890] font-semibold text-lg mt-1">Founder</p>
-            <div className="w-12 border-b-2 border-[#821890] my-3"></div>
+            <p className="text-[#D444F1] font-semibold text-lg mt-1">Founder</p>
+            <div className="w-12 border-b-2 border-[#D444F1] my-3"></div>
             <p className="text-gray-700 leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -81,19 +81,19 @@ const FounderSection = () => {
             >
               <a
                 href="#"
-                className="text-[#9C27B0] hover:text-[#EA83FF] text-xl"
+                className="text-[#D444F1] hover:text-[#EA83FF] text-xl"
               >
                 <FaFacebookF />
               </a>
               <a
                 href="#"
-                className="text-[#9C27B0] hover:text-[#EA83FF] text-xl"
+                className="text-[#D444F1] hover:text-[#EA83FF] text-xl"
               >
                 <FaGithub />
               </a>
               <a
                 href="#"
-                className="text-[#9C27B0] hover:text-[#EA83FF] text-xl"
+                className="text-[#D444F1] hover:text-[#EA83FF] text-xl"
               >
                 <FaLinkedinIn />
               </a>

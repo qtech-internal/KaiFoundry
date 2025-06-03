@@ -51,6 +51,11 @@ const JobApplicationForm = () => {
     });
     setFile(null);
   };
+ const preventSpace = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  if (e.key === ' ') {
+    e.preventDefault();
+  }
+};
 
   return (
     <div className="w-fullmx-auto p-6 ">
@@ -65,6 +70,7 @@ const JobApplicationForm = () => {
             </label>
             <input
               type="text"
+                onKeyDown={preventSpace}
               name="name"
               placeholder="Enter your Name"
               className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D444F1]"
@@ -82,6 +88,7 @@ const JobApplicationForm = () => {
             </label>
             <input
               type="email"
+                onKeyDown={preventSpace}
               name="email"
               placeholder="Enter your E-mail"
               className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D444F1]"
@@ -101,6 +108,7 @@ const JobApplicationForm = () => {
           </label>
           <input
             type="tel"
+              onKeyDown={preventSpace}
             name="phone"
             placeholder="Enter your Contact Number"
             className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#D444F1]"
@@ -164,7 +172,7 @@ const JobApplicationForm = () => {
         <div className="flex justify-center">
           <button
             type="submit"
-            className="w-1/4 bg-[#D444F1] text-white py-3 text-[16px] rounded-full font-semibold hover:bg-[#D444F1]/80 transition"
+            className=" bg-[#D444F1] text-white py-3 px-8 text-[16px] rounded-full font-semibold hover:bg-[#821890] transition"
           >
             Submit
           </button>

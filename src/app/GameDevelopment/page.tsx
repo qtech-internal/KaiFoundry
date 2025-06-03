@@ -6,6 +6,7 @@ import FeaturesSection from './FeaturesSection';
 import WhyChooseUs from './WhyChooseUs';
 import EcosystemsGrid from './Ecosystem';
 import FAQSection from './FAQ';
+import GameContact from './GameContact';
 
 const GameDevelopmentPage: React.FC = () => {
   return (
@@ -15,10 +16,9 @@ const GameDevelopmentPage: React.FC = () => {
    <FeaturesSection />
    <WhyChooseUs />
    <EcosystemsGrid />
-    <FAQSection />
-   
-
-    </div>
+      <FAQSection />
+      <GameContact/>
+     </div>
   );
 };
 

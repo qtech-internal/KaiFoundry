@@ -105,7 +105,7 @@ const Navbar: React.FC = () => {
                 href="/HowWeHelpScreen"
                 className={`${
                   isActive("/HowWeHelpScreen")
-                    ? "text-fuchsia-500"
+                    ? "text-[#821890]"
                     : "text-gray-700"
                 }`}
               >
@@ -120,7 +120,7 @@ const Navbar: React.FC = () => {
                 href="/CareersScreen"
                 className={`${
                   isActive("/CareersScreen")
-                    ? "text-fuchsia-500"
+                    ? "text-[#821890]"
                     : "text-gray-700"
                 }`}
               >
@@ -140,7 +140,7 @@ const Navbar: React.FC = () => {
               <Link
                 href="/blog"
                 className={`${
-                  isActive("/blog") ? "text-fuchsia-500" : "text-gray-700"
+                  isActive("/blog") ? "text-[#821890]" : "text-gray-700"
                 }`}
               >
                 Blogs
@@ -191,7 +191,7 @@ const Navbar: React.FC = () => {
             href="/HowWeHelpScreen"
             className={`${
               isActive("/HowWeHelpScreen")
-                ? "text-fuchsia-500"
+                ? "text-[#821890]"
                 : "text-gray-700"
             }`}
           >
@@ -203,7 +203,7 @@ const Navbar: React.FC = () => {
           <Link
             href="/CareersScreen"
             className={`${
-              isActive("/CareersScreen") ? "text-fuchsia-500" : "text-gray-700"
+              isActive("/CareersScreen") ? "text-[#821890]" : "text-gray-700"
             }`}
           >
             Careers
@@ -217,7 +217,7 @@ const Navbar: React.FC = () => {
           <Link
             href="/blog"
             className={`${
-              isActive("/blog") ? "text-fuchsia-500" : "text-gray-700"
+              isActive("/blog") ? "text-[#821890]" : "text-gray-700"
             }`}
           >
             Blogs
