@@ -121,28 +121,46 @@ export default function HeroSection() {
        
           
         >
-          <div className="w-26 overflow-hidden rounded-lg rotate-90 border-8 border-rounded-full border-white flex items-center justify-center mx-10 -mt-6">
-            <Image
-              src="/assets/abstract.png"
-              alt="Abstract Design"
-              width={150}
-              height={54}
-              draggable="false"
-              className="object-cover"
-            />
-          </div>
-          <div className="flex-1 -mt-6">
-            <h2 className="font-semibold text-lg">Uncover our identity</h2>
-            <p className="text-gray-600 text-sm">
-              We are a creative hub shaping the future of digital design and
-              technology.
-            </p>
-          </div>
-          <Link href="/WhoAreWe">
-            <div className="w-10 h-10 flex items-center justify-center bg-white rounded-full shadow-md cursor-pointer">
-              <span className="text-purple-500 text-xl">→</span>
-            </div>
-          </Link>
+  <div className="relative p-2 rounded-[24px] max-w-5xl">
+  <div className="flex items-center bg-white rounded-[18px]  pl-4 py-3  relative overflow-hidden">
+    
+    {/* Left Abstract Image */}
+    <div className="w-[120px] h-[80px] overflow-hidden rounded-xl flex-shrink-0">
+      <Image
+        src="/assets/abstract.png"
+        alt="Abstract Design"
+        width={120}
+        height={80}
+        className="object-cover w-full h-full"
+      />
+    </div>
+
+    {/* Center Text */}
+    <div className="flex-1 px-4">
+      <h2 className="font-semibold text-lg">Uncover our identity</h2>
+      <p className="text-gray-600 text-sm">
+        We are a creative hub shaping the future of digital design and technology.
+      </p>
+    </div>
+
+    {/* Right Arrow Button with curved background */}
+    <Link href="/WhoAreWe">
+      <div className="relative w-[75px] translate-x-[12px] h-full flex items-center justify-center">
+        
+        {/* Curved pink background */}
+        <div className="absolute  h-[65px] w-[68px] bg-[#fce7f3] rounded-tl-[18px]  rounded-bl-[-5px] -top-70  top-3" />
+
+        {/* Arrow circle */}
+        <div className="relative z-10 w-12 h-12 bg-white rounded-full shadow-md -ml-2  flex items-center justify-center border border-purple-100 top-4">
+          <span className="text-purple-600 text-xl">→</span>
+        </div>
+      </div>
+    </Link>
+
+  </div>
+</div>
+
+
         </motion.div>
       </div>
 {/* <div className="relative flex justify-end px-4 md:px-14 border-2 ">
