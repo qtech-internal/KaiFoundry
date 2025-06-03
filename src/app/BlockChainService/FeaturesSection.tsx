@@ -11,37 +11,37 @@ const services = [
   {
     title: "Layer 2 Development",
     description:
-      "Stablecoin Development service enables businesses to create secure and stable digital assets backed by real-world value. We design and develop stablecoins with robust smart contracts, regulatory compliance, and seamless integrations to ensure price stability and trust.",
+      "Enhance scalability and reduce transaction costs with Layer 2 solutions. Improve transaction speed and efficiency while maintaining security.",
   },
   {
     title: "Blockchain Protocol Development",
     description:
-      "Security Token Offering (STO) service helps businesses streamline asset digitization, ensuring compliance with financial regulations.",
+      "Custom blockchain protocols designed for speed, security, and efficiency. Built to support diverse use cases, from finance to supply chain.",
   },
   {
     title: "Centralized/Decentralized Exchange Development",
     description:
-      "Kai Foundry specializes in Smart Contract Development, creating secure and efficient blockchain solutions tailored to your needs.",
+      "Build secure and scalable trading platforms for digital assets. Designed for high performance, compliance, and seamless user experience.",
   },
   {
     title: "NFT Marketplace Development",
     description:
-      "Kai Foundry offers a White Label Exchange Platform, enabling businesses to launch their own customized crypto trading platform with ease. Our solution comes with advanced security, liquidity management, and seamless user experience.",
+      "Launch your own NFT marketplace for digital assets, collectibles, and more. Fully customizable with secure smart contracts and user-friendly interfaces.",
   },
   {
     title: "Smart Contract Development & Audit",
     description:
-      "White Label Wallet Development empowers businesses to offer secure, branded cryptocurrency wallets with ease. Our solution supports multi-currency transactions, advanced security features, and seamless integrations, ensuring a smooth user experience.",
+      "Develop and audit secure smart contracts to automate and optimize business operations. Ensure reliability, transparency, and zero vulnerabilities.",
   },
   {
     title: "Crypto Wallet Development",
     description:
-      "Kai Foundry empowers businesses to create their own digital currency with a secure, scalable, and customized approach. From conceptualization to deployment, we handle everything—tokenomics design, blockchain integration, and security enhancements.",
+      "Create secure, multi-currency crypto wallets with advanced security features. Enable seamless transactions, staking, and asset management.",
   },
   {
     title: "Decentralized App Development",
     description:
-      "Kai Foundry provides expert blockchain consultation to help businesses harness the power of decentralized technology. Whether you're exploring blockchain for the first time or optimizing an existing solution, we guide you through strategy, architecture, and implementation.",
+      "Build powerful dApps with secure blockchain integration. Designed for various industries, from finance to gaming and beyond.",
   },
 ];
 
@@ -59,12 +59,12 @@ const FeaturesSection = () => {
       <div className=" mx-auto text-center">
       
         <motion.h2
-          className="text-4xl md:text-6xl font-bold text-gray-900"
+          className="text-4xl md:text-4xl lg:text-6xl font-medium font-inter text-[#333333] "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          Key <span className="text-[#D444F1]">Features</span> of Blockchain Development
+          Key <span className="text-[#D444F1] mb-10">Features</span> of Blockchain <br /> Development
         </motion.h2>
 
     
@@ -79,10 +79,10 @@ const FeaturesSection = () => {
                            transition={{ duration: 0.5, delay: index * 0.2 }}
                            viewport={{ once: true }}
                          >
-                           <h3 className="text-xl md:text-2xl font-semibold text-left">
+                           <h3 className="text-xl md:text-2xl text-[#0E0E0E] font-manrope font-semibold text-left">
                              {service.title}
                            </h3>
-                           <p className="text-gray-600 mt-3 text-left text-sm md:text-base">
+                           <p className="text-[#575656] mt-3 text-left text-sm md:text-base font-[400] leading-[27px] font-manrope ">
                              {service.description}
                            </p>
                          </motion.div>

@@ -48,11 +48,11 @@ const SolutionsSection = () => {
   return (
     <div className="py-12 w-full">
       {/* Title */}
-      <h2 className="text-4xl md:text-6xl font-bold text-black text-center px-4 md:px-10">
+      <h2 className="text-4xl md:text-6xl font-semibold text-black text-center px-4 md:px-10">
       <span style={{ color: '#BA24D5' }}>Solutions  </span>  Built For <span style={{ color: '#BA24D5' }}>The Future</span>
       </h2>
-      <p className="text-[#333333] mt-2 text-center px-4 md:px-70  0 text-base md:text-[22px] font-medium">
-        Blockchain solutions designed to power your business with security, efficiency, and scalability.
+      <p className="text-[#333333] mt-2 text-center px-4 md:px-70  text-base md:text-[22px] font-[400]">
+        Blockchain solutions designed to power your business with security, <br /> efficiency, and scalability.
       </p>
 
       {/* List of Solutions */}

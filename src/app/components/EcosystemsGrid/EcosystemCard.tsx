@@ -20,7 +20,7 @@ const EcosystemCard = ({ name, icon }: { name: string; icon: string }) => {
           draggable="false"
         /> {/* Increased icon size */}
       </div>
-      <p className="mt-3 text-lg text-black font-bold">{name}</p> {/* Increased text size */}
+      <p className="mt-3 text-lg text-[#414141] font-semibold">{name}</p> {/* Increased text size */}
     </div>
   );
 };

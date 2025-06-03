@@ -36,18 +36,18 @@ const HeroSection = () => {
             Game That Keep <br />
             <span className="text-[#E95DFF]">Players</span> Hooked
           </h2> */}
-             <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900">
-          Empowering Innovation with <br />
+             <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 ">
+          Empowering <br /> Innovation with <br />
           <span className="text-[#E95DFF]">Blockchain</span> Solutions
         </h2>
           <p className="text-gray-600 text-base md:text-lg mt-4">
           Secure, scalable, and customized blockchain development for the digital future.
           </p>
-          <Link href="/contact">
+          <Link href="/ContactUs">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="mt-6 px-6 py-3 rounded-full bg-gradient-to-r from-[#E95DFF] to-[#D680FF] text-white text-lg font-medium shadow-lg transition"
+              className="mt-6 px-6 py-3 rounded-full bg-gradient-to-r from-[#E95DFF] to-[#D680FF] text-white text-lg hover:bg-[#821890] font-medium shadow-lg transition"
             >
               Contact Us
             </motion.button>
