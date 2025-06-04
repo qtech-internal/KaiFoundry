@@ -61,7 +61,8 @@ const HeroSection = () => {
               alt="Background"
               className="w-full h-full object-cover"
               width={1920}
-              height={1080}
+          height={1080}
+          draggable="false"
             />
           </div>
         
@@ -81,22 +82,22 @@ const HeroSection = () => {
             >
           
                  <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900">
-        <span className="text-[#E95DFF]">AI Services</span>
+        <span className="text-[#9F1AB1]">AI Solutions </span>
            That Think, Learn & Evolve <br />
       
         </h2>
               <p className="text-gray-600 text-base md:text-lg mt-4">
               Unlock the power of Artificial Intelligence to automated tasks, drive insights and create smater solutions for your business
               </p>
-              <Link href="/contact">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="mt-6 px-6 py-3 rounded-full bg-gradient-to-r from-[#E95DFF] to-[#D680FF] text-white text-lg font-medium shadow-lg transition"
-                >
-                  Contact Us
-                </motion.button>
-              </Link>
+                <Link href="/ContactUs">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#D444F1] mt-10 text-white hover:bg-[#B33BC1] rounded-full py-2 px-4 w-40 transition duration-300"
+            >
+              Contact Us
+            </motion.button>
+          </Link>
             </motion.div>
           </div>
         </section>

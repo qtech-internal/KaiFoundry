@@ -1,14 +1,15 @@
 "use client";
 import { motion } from "framer-motion";
-import { PaintBrushIcon, GlobeAltIcon, UserIcon, DevicePhoneMobileIcon, CubeIcon, ArrowsRightLeftIcon } from "@heroicons/react/24/solid";
+import { PaintBrushIcon, GlobeAltIcon, UserIcon, DevicePhoneMobileIcon, CubeIcon, ArrowsUpDownIcon } from "@heroicons/react/24/solid";
+import { IoColorPaletteOutline } from "react-icons/io5";
 
 const features = [
-  { name: "Immersive", icon: PaintBrushIcon },
-  { name: "Web3-Ready", icon: GlobeAltIcon },
-  { name: "Customizable", icon: UserIcon },
+  { name: "Immersive", icon: IoColorPaletteOutline },
   { name: "Cross-Platform", icon: DevicePhoneMobileIcon },
+  { name: "Web3-Ready", icon: GlobeAltIcon },
   { name: "Optimized", icon: CubeIcon },
-  { name: "End-to-End", icon: ArrowsRightLeftIcon },
+  { name: "Customizable", icon: UserIcon },
+  { name: "End-to-End", icon: ArrowsUpDownIcon },
 ];
 
 export default function GameDevelopmentSection() {
