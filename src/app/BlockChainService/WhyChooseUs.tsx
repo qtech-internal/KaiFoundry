@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
         </motion.h2>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+        {/* <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -57,7 +57,28 @@ const WhyChooseUs = () => {
               <p className="text-[#434343] text-[16px] font-manrope mt-3">{feature.description}</p>
             </motion.div>
           ))}
+        </div> */}
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-10 mt-10">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              className="p-4 bg-white flex flex-col justify-center items-center  shadow-md"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <div className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 mb-4 bg-[#D444F1] rounded-full">
+                <img src={feature.icon} alt={feature.title} className="w-12 h-12 md:w-16 md:h-16 object-contain"
+                  draggable="false" // Prevent dragging of the image
+                />
+              </div>
+              <h3 className="text-base md:text-xl font-semibold text-gray-900 text-center ">{feature.title}</h3>
+              <p className="text-gray-600 mt-2 text-sm md:text-base text-center ">{feature.description}</p>
+            </motion.div>
+          ))}
         </div>
+        
       </div>
     </section>
   );

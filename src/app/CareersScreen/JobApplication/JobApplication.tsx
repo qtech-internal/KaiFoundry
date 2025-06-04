@@ -29,7 +29,7 @@ const JobApplication = () => {
         Back
       </button>
 
-      <h1 className="text-4xl md:text-6xl font-semibold text-[#333333] mb-6 text-center">Job Application</h1>
+      <h1 className="text-4xl md:text-6xl font-semibold text-[#333333] mb-10 text-center">Job Application</h1>
 
       <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mb-8">About The Job</h2>
       <p className="text-[#4D4D4D] mb-8 text-lg md:text-xl px-2 lg:px-0 sm:px-4 ">
