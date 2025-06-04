@@ -59,7 +59,7 @@ const FeaturesSection = () => {
       <div className=" mx-auto text-center">
       
         <motion.h2
-          className="text-4xl md:text-4xl lg:text-6xl font-medium font-inter text-[#333333] "
+          className="text-2xl md:text-4xl lg:text-6xl font-semibold font-inter text-[#333333] "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

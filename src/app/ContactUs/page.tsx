@@ -20,8 +20,8 @@ const ContactUs = () => {
                 Back
             </button>
 
-            <h2 className="mt-6 sm:mt-14 text-[28px] sm:text-[32px] md:text-[48px] lg:text-[62px] font-bold text-[#333333] text-center mb-2">
-  Let&apos;s Get In Touch
+            <h2 className="mt-6 sm:mt-14 text-[28px] sm:text-[14px] md:text-[48px] lg:text-[62px] font-bold text-[#333333] text-center mb-2">
+  Let&apos;s Get  <span className="text-fuchsia-600">In Touch</span>
 </h2>
 
 

@@ -29,9 +29,9 @@ const JobApplication = () => {
         Back
       </button>
 
-      <h1 className="text-[24px] md:text-6xl font-bold text-[#333333] mb-6 text-center">Job Application</h1>
+      <h1 className="text-[24px] md:text-6xl font-bold text-[#333333] text-center mb-20">Job Application</h1>
 
-      <h2 className="text-[20px] md:text-3xl font-semibold text-[#333333] mb-2">About The Job</h2>
+      <h2 className="text-[20px] md:text-3xl pl-2 font-semibold text-[#333333] mb-2">About The Job</h2>
       <p className="text-[#4D4D4D]  mb-6 text-[20px] md:text-xl">
         Ullamcorper Sit. Aliquam Sed Senectus Varius Nulla Risus Aliquet. Nunc
         Sit Scelerisque Mauris Sit Scelerisque Donec Aliquam. Commodo Eros Leo

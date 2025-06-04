@@ -28,7 +28,7 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-20 bg-purple-100">
+    <section className="py-20 bg-[#FBE8FF]">
           <div className="container mx-auto px-6 md:px-12 text-center">
       
             <motion.h2
@@ -41,7 +41,7 @@ const Features = () => {
             </motion.h2>
     
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+            {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
@@ -58,7 +58,25 @@ const Features = () => {
                   <p className="text-gray-600 mt-3">{feature.description}</p>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
+           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-10 mt-10">
+                  {features.map((feature, index) => (
+                    <motion.div
+                      key={index}
+                      className="p-4 bg-white flex flex-col justify-center items-center  shadow-md"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.2 }}
+                      viewport={{ once: true }}
+                    >
+                          <div className="flex items-center justify-center w-20 h-20 mx-auto mb-6 bg-[#D444F1] rounded-full"> 
+                    {feature.icon}
+                  </div>
+                      <h3 className="text-base md:text-xl font-semibold text-gray-900 text-center ">{feature.title}</h3>
+                      <p className="text-gray-600 mt-2 text-sm md:text-base text-center ">{feature.description}</p>
+                    </motion.div>
+                  ))}
+                </div>
           </div>
         </section>
   );
