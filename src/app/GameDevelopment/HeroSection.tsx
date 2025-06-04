@@ -14,7 +14,8 @@ const HeroSection = () => {
       alt="Background"
       className="w-full h-full object-cover"
       width={1920}
-      height={1080}
+          height={1080}
+          draggable="false"
     />
   </div>
 
@@ -36,18 +37,18 @@ const HeroSection = () => {
         Game That Keep <br />
         <span className="text-[#E95DFF]">Players</span> Hooked
       </h2>
-      <p className="text-gray-600 text-base md:text-lg mt-4">
-        We create engaging, high-performance games that players love — seamless, fun, and built for the future of gaming
+      <p className="text-gray-600 text-base md:text-[20px] mt-4">
+        We create engaging, high-performance games <br /> that players love — seamless, fun, and built for <br /> the future of gaming
       </p>
-      <Link href="/contact">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-6 px-6 py-3 rounded-full bg-gradient-to-r from-[#E95DFF] to-[#D680FF] text-white text-lg font-medium shadow-lg transition"
-        >
-          Contact Us
-        </motion.button>
-      </Link>
+         <Link href="/ContactUs">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#D444F1] mt-10 text-white hover:bg-[#B33BC1] rounded-full py-2 px-4 w-40 transition duration-300"
+            >
+              Contact Us
+            </motion.button>
+          </Link>
     </motion.div>
   </div>
 </section>

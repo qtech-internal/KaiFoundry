@@ -15,6 +15,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
           width={1920}
           height={1080}
+          draggable="false"
         />
       </div>
     

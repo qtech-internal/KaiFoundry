@@ -63,25 +63,11 @@ const Footer: FC = () => {
 
         {/* CTA Button */}
         <div className="sm:col-span-3 flex sm:order-6 justify-end order-2 col-span-6">
-    <Button className="bg-white text-black font-inter" text="Get In Touch" href="/" />
+    <Button className="bg-white text-black font-inter" text="Get In Touch" href="/ContactUs" />
 </div>
       </div>
 
-      {/* Bottom Section: Social Icons & Contact Info */}
-      {/* <div className="container mx-auto grid grid-cols-12 gap-6 sm:gap-4 mt-50 items-center text-center sm:text-left">
-        <div className="col-span-12 sm:col-span-6 flex justify-center sm:justify-start">
-          <SocialIcons />
-        </div>
-        <div className="col-span-12 sm:col-span-6 flex justify-center sm:justify-start leading-6">
-          <ContactInfo phone="123456789" email="kaifoundry@gmail.com" />
-        </div>
-      </div> */}
-{/* <div className="container mx-auto grid grid-cols-12 gap-20 sm:gap-4 mt-50 items-center text-center sm:text-left border-2">
-  <div className="col-span-12 sm:col-span-6 flex justify-center sm:justify-start gap-14 sm:gap-16">
-    <SocialIcons />
-    <ContactInfo phone="123456789" email="kaifoundry@gmail.com" />
-  </div>
-</div> */}
+    
 <div className="mx-auto grid grid-cols-12 mt-30 items-start text-left pt-6">
   <div className="col-span-12 sm:col-span-6 flex flex-col lg:flex-row items-start lg:gap-16 gap-4">
     <SocialIcons />

@@ -42,10 +42,10 @@ export default function BlogPost() {
 
     return (
         <div className="w-full p-5 flex flex-col items-center bg-cover bg-fill mt-10  lg:mt-0" style={{ backgroundImage: "url('/assets/blogs/background.gif')" }}>
-            <div className="flex w-full md:px-5">
+            <div className="flex w-full md:px-5 mb-10">
                 <button
                     onClick={() => router.back()}
-                    className="flex items-center space-x-2 mx-auto text-gray-600 hover:underline px-4 py-2 rounded-lg absolute top-25 transition duration-300 ease-in-out"
+                    className="flex items-center space-x-2 mx-auto text-gray-600  px-4 py-2 rounded-lg absolute top-25 transition duration-300 ease-in-out"
                 >
 
                     <span className="text-lg  flex justify-between items-center"><IoMdArrowBack size={20}  /> Back</span>
@@ -62,15 +62,15 @@ export default function BlogPost() {
                 draggable={false}
             />
 
-            <div className="w-full max-w-4xl px-4 sm:px-10">
-                <h1 className="text-[24px] text-[#2D3748] lg:text-5xl font-bold">{post.title}</h1>
+            <div className="w-full max-w-[80%] px-4 sm:px-10 ">
+                <h1 className="text-[24px] text-[#2D3748] md:text-4xl lg:text-6xl font-bold">{post.title}</h1>
                 <p className="text-[27px] text-[#2D3748] mt-2">
                     <strong>Written by {post.author}</strong> &nbsp; | &nbsp; {post.date}
                 </p>
                 <div className="border-b border-gray-300 my-4"></div>
             </div>
 
-            <div className="mt-6 text-gray-800 space-y-4 leading-relaxed w-full max-w-4xl px-4 sm:px-10">
+            <div className="mt-6 text-gray-800 space-y-4 leading-relaxed w-full items-center mx-auto px-4 sm:px-10 max-w-[80%] ">
                 <p>{post.content}</p>
                 {post.subheadings.map((subheading, index) => (
                     <div key={index}>

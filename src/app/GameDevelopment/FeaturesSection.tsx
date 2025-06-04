@@ -52,7 +52,7 @@ const FeaturesSection = () => {
       <div className=" mx-auto text-center">
       
         <motion.h2
-          className="text-4xl md:text-6xl font-bold text-gray-900"
+          className="text-4xl md:text-5xl font-semibold text-[#333333] mb-20 "
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -73,10 +73,10 @@ const FeaturesSection = () => {
                       transition={{ duration: 0.5, delay: index * 0.2 }}
                       viewport={{ once: true }}
                     >
-                      <h3 className="text-xl md:text-2xl font-semibold text-left">
+                      <h3 className="text-xl md:text-2xl font-semibold text-left text-[#333333]">
                         {service.title}
                       </h3>
-                      <p className="text-gray-600 mt-3 text-left text-sm md:text-base">
+                      <p className="text-[#575656] mt-3 text-left text-sm md:text-base">
                         {service.description}
                       </p>
                     </motion.div>

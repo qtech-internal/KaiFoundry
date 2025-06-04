@@ -6,36 +6,8 @@ const services = [
   {
     title: "AI ML Solutions",
     description:
-      "End-to-end game creation, from concept to launch. We craft engaging, high-quality games for various platforms."},
-  // {
-  //   title: "P2E Game Development",
-  //   description:
-  //     "Develop play-to-earn (P2E) games that reward players with digital assets. Integrate blockchain to enable secure in-game economies"},
-  // {
-  //   title: "Tap-To-Earn Game",
-  //   description:
-  //     "Build lightweight, addictive hyper-casual games. Designed for quick sessions with simple mechanics and high replayability."},
-  // {
-  //   title: "Hyper Casual Game Development",
-  //   description:
-  //     "Kai Foundry specializes in Smart Contract Development, creating secure and efficient blockchain solutions tailored to your needs.",
-  // },
-  // {
-  //   title: "Telegram Game Development",
-  //   description:
-  //     "Develop fun and interactive games within Telegram. Perfect for engaging users directly within the messaging app."},
-  // {
-  //   title: "NFT Gaming",
-  //   description:
-  //     "Integrate NFTs into your game to offer unique, tradable assets. Players can truly own in-game items and collectibles."},
-  // {
-  //   title: "Web3 Game Development",
-  //   description:
-  //     "Build decentralized Web3 games with blockchain integration. Empower players with asset ownership. transparency, and security."},
-  // {
-  //   title: "Blockchain Game Development",
-  //   description:
-  //     "Develop blockchain-powered games with secure, decentralized mechanics. Enhance trust, player engagement, and digital economies."},
+      "Leverage advanced Machine Learning models to analyze data, automate tasks, and enhance decision-making. Our AI-driven solutions help businesses optimize operations and unlock new growth opportunities."},
+ 
 ];
 
 const FeaturesSection = () => {
@@ -57,7 +29,7 @@ const FeaturesSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-             Key <span className="text-[#D444F1]">Features</span> AI Services
+             Key <span className="text-[#D444F1]">Features</span> of Industries Solutions
             </motion.h2>
     
         

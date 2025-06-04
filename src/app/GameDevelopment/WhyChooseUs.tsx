@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Gamepad2, Monitor, BarChart3, Handshake } from "lucide-react";
+import { Gamepad2, Monitor, BarChart3, Handshake,ChartSpline } from "lucide-react";
 
 const features = [
   {
@@ -15,7 +15,7 @@ const features = [
     description: "We create games for mobile, PC, web, and blockchain for a wider audience.",
   },
   {
-    icon: <BarChart3 size={40} className="text-white" />,
+    icon: <ChartSpline size={40} className="text-white" />,
     title: "Scalability & Performance",
     description: "Optimized for smooth gameplay and future expansions.",
   },
