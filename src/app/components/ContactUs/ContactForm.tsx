@@ -1,8 +1,11 @@
+
 "use client";
 import { useState, useRef } from "react";
+
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import Loader from "../UI/Loader";
+
 import ReCAPTCHA from "react-google-recaptcha";
 
 const ContactForm = () => {
@@ -19,17 +22,36 @@ const ContactForm = () => {
   const [success, setSuccess] = useState<string | null>(null);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
+  // const handleChange = (
+  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  // ) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  //   setError(null); // Clear error when user types
+  // };
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  let value = e.target.value;
+  if (e.target.name === "email") {
+    value = value.replace(/\s/g, "");
+  }
+  setFormData({ ...formData, [e.target.name]: value });
+  setError(null);
+};
 
-    // Prevent leading spaces and multiple continuous spaces
-    const sanitizedValue = value.replace(/^\s+|\s{2,}/g, " ");
+const preventSpace = (e: React.KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  if (e.key === " ") {
+    e.preventDefault();
+  }
+};
+const preventPasteSpaces = (e: React.ClipboardEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const paste = e.clipboardData.getData("text");
+  if (paste.includes(" ")) {
+    e.preventDefault();
+  }
+};
 
-    setFormData({ ...formData, [name]: sanitizedValue });
-    setError(null);
-  };
+// ... rest of your component unchanged
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,6 +95,9 @@ const ContactForm = () => {
     }
   };
 
+
+
+
   if (loading) return <Loader />;
 
   return (
@@ -83,14 +108,16 @@ const ContactForm = () => {
       )}
 
       <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
-        <Input
-          label="Name*"
-          type="text"
-          name="name"
-          placeholder="Enter your Name"
-          value={formData.name}
-          onChange={handleChange}
-        />
+ <Input
+  label="Name*"
+  type="text"
+  name="name"
+  placeholder="Enter your Name"
+  value={formData.name}
+  onChange={handleChange}
+  onKeyDown={preventSpace} 
+/>
+
         <Input
           label="Last Name"
           type="text"
@@ -98,15 +125,19 @@ const ContactForm = () => {
           placeholder="Enter your Last Name"
           value={formData.lastName}
           onChange={handleChange}
+           onKeyDown={preventSpace} 
         />
       </div>
       <Input
         label="Email*"
         type="email"
         name="email"
-        placeholder="Enter your Email"
-        value={formData.email}
+         value={formData.email}
         onChange={handleChange}
+        onKeyDown={preventSpace}
+          onPaste={preventPasteSpaces}
+        placeholder="Enter your Email"
+        
       />
       <Input
         label="Phone Number*"
@@ -115,6 +146,7 @@ const ContactForm = () => {
         placeholder="Enter your Contact Number"
         value={formData.phone}
         onChange={handleChange}
+         onKeyDown={preventSpace} 
       />
       <Input
         label="Message*"
@@ -123,6 +155,7 @@ const ContactForm = () => {
         placeholder="Write your message here."
         value={formData.message}
         onChange={handleChange}
+         onKeyDown={preventSpace} 
         textarea
       />
 
@@ -135,11 +168,11 @@ const ContactForm = () => {
       />
 
       <div className="flex justify-center">
-        <Button
-          type="submit"
-          text="Submit"
-          className="bg-[#D444F1] text-white hover:bg-[#B33BC1] rounded-full py-2 px-4 w-40 transition duration-300"
-        />
+      <Button
+  type="submit"
+  text="Submit"
+  className="bg-[#D444F1] text-white hover:bg-[#B33BC1] rounded-full py-2 px-4 w-40 transition duration-300" // Fixed width example
+/>
       </div>
     </form>
   );
