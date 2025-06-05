@@ -45,7 +45,7 @@ const AboutUs = () => {
             {/* Mobile Layout */}
             <div className="sm:hidden flex flex-col items-center justify-center mt-10 max-w-6xl w-full">
                 {/* Founder Image */}
-                <div className="w-[300px] h-[300px] flex items-center">
+                <div className="w-[300px] h-[300px] flex items-Fcenter">
                     <Image
                         src="/assets/founder.jpeg"
                         alt="Founder"

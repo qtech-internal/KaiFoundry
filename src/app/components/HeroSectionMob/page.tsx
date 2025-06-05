@@ -65,7 +65,7 @@ export default function HeroSectionMob() {
               isVisible ? 'translate-y-0' : 'translate-y-60'
             }`}
           />
-          <div className="relative z-20   lg:hidden bg-white/10 backdrop-blur-md shadow-[0_0_30px_#D444F1] border border-white/20 w-[300px] rounded-xl p-[3px] flex left-2/9 -mt-8">
+          <div className="relative z-20 translate-x-[-45px]  lg:hidden bg-white/10 backdrop-blur-md shadow-[0_0_30px_#D444F1] border border-white/20 w-[300px] rounded-xl p-[3px] flex left-2/9 -mt-8">
               <motion.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -81,50 +81,58 @@ export default function HeroSectionMob() {
                   className="object-cover w-[40px] h-[40px] rounded-md"
                 />
               
-              <div className="flex-1">
+              <div className="flex-1 ">
                 <h2 className="text-[10.8px] font-[500] text-black">Uncover our identity</h2>
                 <p className="text-[10px]">
                   We are a creative hub shaping the future of digital design and
                   technology.
                 </p>
               </div>
-              <Link href="/WhoAreWe">
-                <div className="w-5 h-5 flex items-center justify-center self-start bg-white rounded-full shadow-md cursor-pointer">
-                  <span className="text-purple-500 text-[10px] flex justify-center items-center">→</span>
-                </div>
-              </Link>
+             {/* Right Arrow Button with curved background */}
+    <Link href="/WhoAreWe">
+      <div className="relative w-[55px]  translate-x-[12px] h-full flex items-center justify-center">
+        
+       {/* Curved pink background rotated from bottom */}
+<div className="absolute h-[45px] w-[60px] bg-[#fce7f3] rounded-tr-[10px] rotate-180 bottom-0 left-0 -top-2 " />
+
+
+        {/* Arrow circle */}
+        <div className="relative z-10 w-9 h-9 bg-white rounded-full shadow-md -ml-2  flex items-center justify-center border border-purple-100 -top-4">
+          <span className="text-purple-600 text-xl">→</span>
+        </div>
+      </div>
+    </Link>
             </motion.div> 
           </div>
-          <div className="flex items-end absolute h-full">
-            <div className="relative w-full z-20 lg:hidden rounded-lg  ">
-              <div
-                className="absolute inset-0 rounded-lg border-2 border-[#BA24D5] mx-5 pointer-events-none"
-                style={{
-                  background: "linear-gradient(to right, transparent, #FBE8FF, transparent)",
-                  maskImage: "linear-gradient(to right, transparent 0%, #BA24D5 20%, #BA24D5 80%, transparent 100%)",
-                  WebkitMaskImage: "linear-gradient(to right, transparent 0%, #BA24D5 20%, #BA24D5 80%, transparent 100%)",
-                  borderRadius:'20px',
-                  marginLeft:'6px',
-                  marginRight:'6px'
-                }}
-              />
-              <div className="flex justify-between px-8 py-2 gap-4 rounded-lg relative z-10">
-                <div className="flex gap-2 items-center">
-                  <div className="text-[14px] font-[600] text-[#414141]">30+</div>
-                  <div className="text-[10px] text-[#6E6E6E]">Projects</div>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <div className="text-[14px] font-[600] text-[#414141]">40+</div>
-                  <div className="text-[10px] text-[#6E6E6E]">Developers</div>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <div className="text-[14px] font-[600] text-[#414141]">10+</div>
-                  <div className="text-[10px] text-[#6E6E6E]">Ecosystems</div>
-                </div>
-              </div>
-            </div>
-          </div>
-    
+       <div className="flex items-end absolute h-full">
+  <div className="relative w-full z-20 lg:hidden rounded-lg translate-x-[-14px]">
+    <div
+      className="absolute inset-0 rounded-lg border-2 border-[#BA24D5] mx-5 pointer-events-none"
+      style={{
+        background: "linear-gradient(to right, transparent, #FBE8FF, transparent)",
+        maskImage: "linear-gradient(to right, transparent 0%, #BA24D5 20%, #BA24D5 80%, transparent 100%)",
+        WebkitMaskImage: "linear-gradient(to right, transparent 0%, #BA24D5 20%, #BA24D5 80%, transparent 100%)",
+        borderRadius: '20px',
+        marginLeft: '6px',
+        marginRight: '6px'
+      }}
+    />
+    <div className="flex justify-between px-15 py-2 gap-4 rounded-lg relative z-10 mobile-center">
+      <div className="flex gap-2 items-center">
+        <div className="text-[14px] font-[600] text-[#414141]">30+</div>
+        <div className="text-[10px] text-[#6E6E6E]">Projects</div>
+      </div>
+      <div className="flex gap-2 items-center">
+        <div className="text-[14px] font-[600] text-[#414141]">40+</div>
+        <div className="text-[10px] text-[#6E6E6E]">Developers</div>
+      </div>
+      <div className="flex gap-2 items-center">
+        <div className="text-[14px] font-[600] text-[#414141]">10+</div>
+        <div className="text-[10px] text-[#6E6E6E]">Ecosystems</div>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
         
       </div>
