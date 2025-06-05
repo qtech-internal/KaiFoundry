@@ -1,98 +1,4 @@
-// import React, { useEffect, useState } from "react";
-// import { AiOutlineClose } from "react-icons/ai";
-// import { FaGamepad, FaRobot } from "react-icons/fa";
-// import { SiBlockchaindotcom } from "react-icons/si";
-// import Link from "next/link"; // Import Link from next/link
-
-// interface ServicesPopupProps {
-//   onClose: () => void;
-// }
-
-// const ServicesPopup: React.FC<ServicesPopupProps> = ({ onClose }) => {
-//   const [isVisible, setIsVisible] = useState(true);
-
-//   // Hide the popup when the user scrolls
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setIsVisible(false);
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, []);
-
-//   if (!isVisible) return null; // Don't render the popup if it's not visible
-
-//   return (
-//     <div className="fixed inset-0 flex items-start mt-20 mx-auto z-50 container justify-center ">
-//       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-8xl opacity-100 relative">
-//         <button
-//           onClick={onClose}
-//           className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
-//         >
-//           <AiOutlineClose className="w-6 h-6" />
-//         </button>
-//         <div className="flex flex-col md:flex-row gap-8 py-19">
-//           <div className="flex flex-col justify-center items-start pl-10 w-full md:w-1/3 text-center">
-//             <div className="flex flex-col items-start justify-start">
-//               <h2 className="text-5xl font-bold mb-4">Services</h2>
-//               <p className="text-gray-600 max-w-md text-start">
-//                 Empowering your business with tailored solutions for sustainable growth.
-//               </p>
-//             </div>
-//           </div>
-
-//           <div className="grid md:grid-cols-2 grid-cols-1 gap-6 w-full md:w-1/2">
-//             <Link href="/BlockChainService" passHref>
-//               <ServiceItem
-//                 icon={<SiBlockchaindotcom className="text-purple-600 text-4xl" />}
-//                 title="Blockchain Development"
-//                 description="Solutions tailored to your needs."
-//               />
-//             </Link>
-//             <Link href="/AIServices" passHref>
-//               <ServiceItem
-//                 icon={<FaRobot className="text-purple-600 text-4xl" />}
-//                 title="AI Services"
-//                 description="Unlock the power of AI."
-//               />
-//             </Link>
-//             <Link href="/GameDevelopment" passHref>
-//               <ServiceItem
-//                 icon={<FaGamepad className="text-purple-600 text-4xl" />}
-//                 title="Game Development"
-//                 description="Experiences that drive players."
-//               />
-//             </Link>
-//             <div></div>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// const ServiceItem: React.FC<{
-//   icon: React.ReactNode;
-//   title: string;
-//   description: string;
-// }> = ({ icon, title, description }) => {
-//   return (
-//     <div className="flex items-center gap-3">
-//       <div className="bg-purple-100 p-3 rounded-full">{icon}</div>
-//       <div>
-//         <h3 className="text-lg font-semibold">{title}</h3>
-//         <p className="text-gray-500">{description}</p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ServicesPopup;
-import React, { useEffect, useRef } from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import React, { useEffect, useRef, useState } from "react";
 import { FaGamepad, FaRobot } from "react-icons/fa";
 import { SiBlockchaindotcom } from "react-icons/si";
 import Link from "next/link";
@@ -103,74 +9,57 @@ interface ServicesPopupProps {
 
 const ServicesPopup: React.FC<ServicesPopupProps> = ({ onClose }) => {
   const popupRef = useRef<HTMLDivElement>(null);
+  const [selectedService, setSelectedService] = useState<string | null>(null); // New state for selected service
 
   useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
-        onClose(); // Close if clicked outside
-      }
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
     };
 
-    const handleScroll = () => {
-      onClose(); // Close on scroll
-    };
-
-    document.addEventListener("mousedown", handleOutsideClick);
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-      window.removeEventListener("scroll", handleScroll);
-    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
   }, [onClose]);
 
-  return (
-    <div className="fixed inset-0 flex items-start mt-20 mx-auto z-50 container justify-center bg-black/30 backdrop-blur-sm">
-      <div
-        ref={popupRef}
-        className="bg-white shadow-lg rounded-lg p-6 w-full max-w-8xl opacity-100 relative"
-      >
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
-        >
-          <AiOutlineClose className="w-6 h-6" />
-        </button>
-        <div className="flex flex-col md:flex-row gap-8 py-19">
-          <div className="flex flex-col justify-center items-start pl-10 w-full md:w-1/3 text-center">
-            <div className="flex flex-col items-start justify-start">
-              <h2 className="text-5xl font-bold mb-4">Services</h2>
-              <p className="text-gray-600 max-w-md text-start">
-                Empowering your business with tailored solutions for sustainable growth.
-              </p>
-            </div>
-          </div>
+  const handleServiceClick = (service: string) => {
+    setSelectedService(service); // Update selected service on click
+  };
 
-          <div className="grid md:grid-cols-2 grid-cols-1 gap-6 w-full md:w-1/2">
-            <Link href="/BlockChainService" passHref>
-              <ServiceItem
-                icon={<SiBlockchaindotcom className="text-purple-600 text-4xl" />}
-                title="Blockchain Development"
-                description="Solutions tailored to your needs."
-              />
-            </Link>
-            <Link href="/AIServices" passHref>
-              <ServiceItem
-                icon={<FaRobot className="text-purple-600 text-4xl" />}
-                title="AI Services"
-                description="Unlock the power of AI."
-              />
-            </Link>
-            <Link href="/GameDevelopment" passHref>
-              <ServiceItem
-                icon={<FaGamepad className="text-purple-600 text-4xl" />}
-                title="Game Development"
-                description="Experiences that drive players."
-              />
-            </Link>
-            <div></div>
-          </div>
-        </div>
+  return (
+    <div ref={popupRef} className="bg-white shadow-lg rounded-lg p-4 w-80 z-50">
+      <div className="flex flex-col gap-3">
+        <Link href="/BlockChainService">
+          <ServiceItem
+            icon={<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 14.4999V6.99988L12.75 3.48438M9.25 3.48438L3 6.99988V14.4999M4.5 16.8439L11 20.4999L15 18.2499L17.5 16.8439M11 7.99988L12.5 8.87488L14 9.74988V13.2499L12.5 14.1249L11 14.9999L9.5 14.1249L8 13.2499V9.74988L9.5 8.87488L11 7.99988ZM11 7.99988V4.49988M14 12.9999L17.5 14.9999M8 12.9999L4.5 14.9999" stroke="#1E1E1E" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>}
+            title="Blockchain Development"
+            description="Blockchain solutions tailored to your needs."
+            highlight={selectedService === "blockchain"} // Highlight if selected
+            onClick={() => handleServiceClick("blockchain")} // Handle click
+          />
+        </Link>
+        <Link href="/GameDevelopment">
+          <ServiceItem
+            icon={<svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" clipRule="evenodd" d="M15.9991 0.5C16.7621 0.5 17.3931 0.934 17.8551 1.39C18.3361 1.863 18.7771 2.499 19.1691 3.2C19.9561 4.606 20.6411 6.443 21.0941 8.258C21.5441 10.059 21.7931 11.94 21.6341 13.419C21.4741 14.904 20.7091 16.5 18.9991 16.5C17.5231 16.5 16.3471 15.74 15.3851 14.969L15.0341 14.68L14.5421 14.265L14.0981 13.897C13.0791 13.072 12.1741 12.5 10.9991 12.5C9.82415 12.5 8.91915 13.072 7.90015 13.897L7.45615 14.265L6.96415 14.68L6.61415 14.969C5.65015 15.74 4.47415 16.5 2.99915 16.5C1.28815 16.5 0.523147 14.904 0.364147 13.419C0.206147 11.939 0.454147 10.059 0.904147 8.258C1.35715 6.443 2.04215 4.606 2.82915 3.199C3.22115 2.499 3.66215 1.863 4.14315 1.389C4.60515 0.934 5.23615 0.5 5.99915 0.5C6.51415 0.5 7.01715 0.623 7.51215 0.77L8.10415 0.951C8.20281 0.981667 8.30115 1.01067 8.39915 1.038C9.26415 1.286 10.1491 1.5 10.9991 1.5C11.8491 1.5 12.7341 1.286 13.5991 1.038L14.4841 0.771C14.9821 0.624 15.4891 0.5 15.9991 0.5ZM15.9991 2.5C15.6161 2.5 15.2161 2.616 14.8281 2.743L14.3701 2.894L14.1491 2.962C13.2641 3.214 12.1491 3.5 10.9991 3.5C9.84915 3.5 8.73415 3.214 7.84915 2.962L7.62915 2.894L7.17015 2.743C6.78215 2.615 6.38215 2.5 5.99915 2.5C5.58115 2.578 5.20615 3.085 4.92315 3.555L4.76515 3.83L4.57515 4.176C3.89315 5.394 3.26515 7.056 2.84515 8.743C2.45015 10.319 2.25815 11.829 2.33115 12.953L2.35715 13.246L2.37715 13.422L2.40715 13.63C2.47615 14.031 2.62515 14.5 2.99915 14.5C3.81115 14.5 4.48915 14.096 5.33215 13.426L5.73515 13.098L6.49515 12.462L6.83915 12.182C7.90315 11.339 9.23415 10.5 10.9991 10.5C12.7641 10.5 14.0951 11.34 15.1591 12.182L15.5041 12.462L16.2641 13.098L16.6661 13.426C17.5091 14.096 18.1861 14.5 18.9991 14.5C19.3391 14.5 19.4931 14.113 19.5701 13.741L19.6081 13.523L19.6451 13.206C19.7681 12.06 19.5781 10.441 19.1541 8.743C18.7681 7.197 18.2081 5.671 17.5921 4.489L17.2331 3.829L17.0751 3.556C16.7921 3.085 16.4171 2.578 15.9991 2.5ZM7.49915 4.5C8.16219 4.5 8.79807 4.76339 9.26691 5.23223C9.73575 5.70107 9.99915 6.33696 9.99915 7C9.99915 7.66304 9.73575 8.29893 9.26691 8.76777C8.79807 9.23661 8.16219 9.5 7.49915 9.5C6.83611 9.5 6.20022 9.23661 5.73138 8.76777C5.26254 8.29893 4.99915 7.66304 4.99915 7C4.99915 6.33696 5.26254 5.70107 5.73138 5.23223C6.20022 4.76339 6.83611 4.5 7.49915 4.5ZM14.4991 4.5C14.7441 4.50003 14.9805 4.58996 15.1635 4.75272C15.3466 4.91547 15.4635 5.13975 15.4921 5.383L15.4991 5.5V6H15.9991C16.254 6.00028 16.4992 6.09788 16.6845 6.27285C16.8699 6.44782 16.9814 6.68695 16.9963 6.94139C17.0113 7.19584 16.9285 7.44638 16.7649 7.64183C16.6013 7.83729 16.3692 7.9629 16.1161 7.993L15.9991 8H15.4991V8.5C15.4989 8.75488 15.4013 9.00003 15.2263 9.18537C15.0513 9.3707 14.8122 9.48223 14.5578 9.49717C14.3033 9.51211 14.0528 9.42933 13.8573 9.26574C13.6619 9.10215 13.5363 8.8701 13.5061 8.617L13.4991 8.5V8H12.9991C12.7443 7.99972 12.4991 7.90212 12.3138 7.72715C12.1284 7.55218 12.0169 7.31305 12.002 7.05861C11.987 6.80416 12.0698 6.55362 12.2334 6.35817C12.397 6.16271 12.6291 6.0371 12.8821 6.007L12.9991 6H13.4991V5.5C13.4991 5.23478 13.6045 4.98043 13.792 4.79289C13.9796 4.60536 14.2339 4.5 14.4991 4.5ZM7.49915 6.5C7.36654 6.5 7.23936 6.55268 7.14559 6.64645C7.05183 6.74021 6.99915 6.86739 6.99915 7C6.99915 7.13261 7.05183 7.25979 7.14559 7.35355C7.23936 7.44732 7.36654 7.5 7.49915 7.5C7.63176 7.5 7.75893 7.44732 7.8527 7.35355C7.94647 7.25979 7.99915 7.13261 7.99915 7C7.99915 6.86739 7.94647 6.74021 7.8527 6.64645C7.75893 6.55268 7.63176 6.5 7.49915 6.5Z" fill="#1E1E1E"/>
+            </svg>}
+            title="Game Development"
+            description="Experiences that drive player engagement."
+            highlight={selectedService === "game"} // Highlight if selected
+            onClick={() => handleServiceClick("game")} // Handle click
+          />
+        </Link>
+        <Link href="/AIServices">
+          <ServiceItem
+            icon={<svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fillRule="evenodd" clipRule="evenodd" d="M15.9991 0.5C16.7621 0.5 17.3931 0.934 17.8551 1.39C18.3361 1.863 18.7771 2.499 19.1691 3.2C19.9561 4.606 20.6411 6.443 21.0941 8.258C21.5441 10.059 21.7931 11.94 21.6341 13.419C21.4741 14.904 20.7091 16.5 18.9991 16.5C17.5231 16.5 16.3471 15.74 15.3851 14.969L15.0341 14.68L14.5421 14.265L14.0981 13.897C13.0791 13.072 12.1741 12.5 10.9991 12.5C9.82415 12.5 8.91915 13.072 7.90015 13.897L7.45615 14.265L6.96415 14.68L6.61415 14.969C5.65015 15.74 4.47415 16.5 2.99915 16.5C1.28815 16.5 0.523147 14.904 0.364147 13.419C0.206147 11.939 0.454147 10.059 0.904147 8.258C1.35715 6.443 2.04215 4.606 2.82915 3.199C3.22115 2.499 3.66215 1.863 4.14315 1.389C4.60515 0.934 5.23615 0.5 5.99915 0.5C6.51415 0.5 7.01715 0.623 7.51215 0.77L8.10415 0.951C8.20281 0.981667 8.30115 1.01067 8.39915 1.038C9.26415 1.286 10.1491 1.5 10.9991 1.5C11.8491 1.5 12.7341 1.286 13.5991 1.038L14.4841 0.771C14.9821 0.624 15.4891 0.5 15.9991 0.5ZM15.9991 2.5C15.6161 2.5 15.2161 2.616 14.8281 2.743L14.3701 2.894L14.1491 2.962C13.2641 3.214 12.1491 3.5 10.9991 3.5C9.84915 3.5 8.73415 3.214 7.84915 2.962L7.62915 2.894L7.17015 2.743C6.78215 2.615 6.38215 2.5 5.99915 2.5C5.58115 2.578 5.20615 3.085 4.92315 3.555L4.76515 3.83L4.57515 4.176C3.89315 5.394 3.26515 7.056 2.84515 8.743C2.45015 10.319 2.25815 11.829 2.33115 12.953L2.35715 13.246L2.37715 13.422L2.40715 13.63C2.47615 14.031 2.62515 14.5 2.99915 14.5C3.81115 14.5 4.48915 14.096 5.33215 13.426L5.73515 13.098L6.49515 12.462L6.83915 12.182C7.90315 11.339 9.23415 10.5 10.9991 10.5C12.7641 10.5 14.0951 11.34 15.1591 12.182L15.5041 12.462L16.2641 13.098L16.6661 13.426C17.5091 14.096 18.1861 14.5 18.9991 14.5C19.3391 14.5 19.4931 14.113 19.5701 13.741L19.6081 13.523L19.6451 13.206C19.7681 12.06 19.5781 10.441 19.1541 8.743C18.7681 7.197 18.2081 5.671 17.5921 4.489L17.2331 3.829L17.0751 3.556C16.7921 3.085 16.4171 2.578 15.9991 2.5ZM7.49915 4.5C8.16219 4.5 8.79807 4.76339 9.26691 5.23223C9.73575 5.70107 9.99915 6.33696 9.99915 7C9.99915 7.66304 9.73575 8.29893 9.26691 8.76777C8.79807 9.23661 8.16219 9.5 7.49915 9.5C6.83611 9.5 6.20022 9.23661 5.73138 8.76777C5.26254 8.29893 4.99915 7.66304 4.99915 7C4.99915 6.33696 5.26254 5.70107 5.73138 5.23223C6.20022 4.76339 6.83611 4.5 7.49915 4.5ZM14.4991 4.5C14.7441 4.50003 14.9805 4.58996 15.1635 4.75272C15.3466 4.91547 15.4635 5.13975 15.4921 5.383L15.4991 5.5V6H15.9991C16.254 6.00028 16.4992 6.09788 16.6845 6.27285C16.8699 6.44782 16.9814 6.68695 16.9963 6.94139C17.0113 7.19584 16.9285 7.44638 16.7649 7.64183C16.6013 7.83729 16.3692 7.9629 16.1161 7.993L15.9991 8H15.4991V8.5C15.4989 8.75488 15.4013 9.00003 15.2263 9.18537C15.0513 9.3707 14.8122 9.48223 14.5578 9.49717C14.3033 9.51211 14.0528 9.42933 13.8573 9.26574C13.6619 9.10215 13.5363 8.8701 13.5061 8.617L13.4991 8.5V8H12.9991C12.7443 7.99972 12.4991 7.90212 12.3138 7.72715C12.1284 7.55218 12.0169 7.31305 12.002 7.05861C11.987 6.80416 12.0698 6.55362 12.2334 6.35817C12.397 6.16271 12.6291 6.0371 12.8821 6.007L12.9991 6H13.4991V5.5C13.4991 5.23478 13.6045 4.98043 13.792 4.79289C13.9796 4.60536 14.2339 4.5 14.4991 4.5ZM7.49915 6.5C7.36654 6.5 7.23936 6.55268 7.14559 6.64645C7.05183 6.74021 6.99915 6.86739 6.99915 7C6.99915 7.13261 7.05183 7.25979 7.14559 7.35355C7.23936 7.44732 7.36654 7.5 7.49915 7.5C7.63176 7.5 7.75893 7.44732 7.8527 7.35355C7.94647 7.25979 7.99915 7.13261 7.99915 7C7.99915 6.86739 7.94647 6.74021 7.8527 6.64645C7.75893 6.55268 7.63176 6.5 7.49915 6.5Z" fill="#1E1E1E"/>
+            </svg>}
+            title="AI Services"
+            description="Unlock the power of artificial intelligence"
+            highlight={selectedService === "ai"} // Highlight if selected
+            onClick={() => handleServiceClick("ai")} // Handle click
+          />
+        </Link>
       </div>
     </div>
   );
@@ -180,13 +69,28 @@ const ServiceItem: React.FC<{
   icon: React.ReactNode;
   title: string;
   description: string;
-}> = ({ icon, title, description }) => {
+  highlight?: boolean;
+  onClick: () => void; // Add onClick prop
+}> = ({ icon, title, description, highlight = false, onClick }) => {
   return (
-    <div className="flex items-center gap-3 cursor-pointer hover:bg-gray-100 p-2 rounded-md transition">
-      <div className="bg-purple-100 p-3 rounded-full">{icon}</div>
+    <div
+      className={`flex items-start gap-3 p-3 rounded-lg cursor-pointer transition-all ${
+        highlight
+          ? "bg-[#d946ef] text-white"
+          : "hover:bg-gray-100 text-gray-800"
+      }`}
+      onClick={onClick} // Attach onClick handler
+    >
+      <div
+        className={`p-2 rounded-full ${
+          highlight ? "bg-white text-[#d946ef]" : "bg-purple-100 text-purple-600"
+        }`}
+      >
+        {icon}
+      </div>
       <div>
-        <h3 className="text-lg font-semibold">{title}</h3>
-        <p className="text-gray-500">{description}</p>
+        <h3 className="text-sm font-semibold">{title}</h3>
+        <p className="text-xs">{description}</p>
       </div>
     </div>
   );
