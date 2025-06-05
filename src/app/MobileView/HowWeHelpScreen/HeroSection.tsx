@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const HowWeHelp = () => {
   return (
-    <section className="flex flex-col md:flex-row-reverse items-center text-center px-6 py-16 md:text-left md:px-20 md:justify-between relative">
+    <section className="flex flex-col md:flex-row-reverse items-center text-center px-6 py-16 md:text-left md:px-20 md:justify-between relative ">
 
 
 <div className="relative w-full lg:w-1/2   flex justify-center items-center">
@@ -36,9 +36,9 @@ const HowWeHelp = () => {
       {/* Text Section */}
       <div className="w-full md:w-1/2 mt-10 md:mt-0 z-10">
         <h2 className="text-[24px] md:text-5xl font-bold text-gray-900">
-          How We Help <br />
-          <span className="text-[#E95DFF] text-[24px] md:text-5xl">Businesses Grow</span> <br />
-          With <span className="italic text-[#E95DFF] text-[24px] md:text-5xl">Blockchain</span>
+          How We Help 
+          <span className="text-[#E95DFF] text-[24px] md:text-5xl"> Businesses Grow </span>
+          With <span className="italic text-[#E95DFF] text-[24px] md:text-5xl"> Blockchain</span>
         </h2>
         <p className="text-[#808080] text-[14px] md:text-lg mt-4">
           At Kai Foundry, we craft blockchain solutions tailored to your
@@ -46,7 +46,7 @@ const HowWeHelp = () => {
           and scale your growth.
         </p>
         <Link href="/ContactUs">
-          <button className="mt-6 px-6 py-1 lg:py-3 rounded-full bg-gradient-to-r from-[#E95DFF] to-[#D680FF] text-white text-[16px] font-medium shadow-lg hover:opacity-90 transition">
+          <button   className="bg-[#D444F1] mt-10 text-white hover:bg-[#B33BC1] rounded-full py-2 px-4 w-40 transition duration-300">
             Contact Us
           </button>
         </Link>

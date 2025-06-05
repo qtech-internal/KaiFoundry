@@ -81,11 +81,24 @@ const HeroSection = () => {
               className="relative z-20 w-full md:w-2/3 lg:w-1/2 flex flex-col items-center text-center md:items-start md:text-left p-8 rounded-lg"
             >
           
-                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900">
+                 {/* <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900">
         <span className="text-[#9F1AB1]">AI Solutions </span>
            That Think, Learn & Evolve <br />
       
-        </h2>
+        </h2> */}
+          <h2 className="text-gray-900 font-bold">
+  {/* Small screens: single-line version */}
+  <span className="block md:hidden text-2xl sm:text-3xl">
+    <span className="text-[#9F1AB1] font-bold">AI Solutions</span> That Think, Learn & Evolve
+  </span>
+
+  {/* Medium and large screens: multi-line version */}
+  <span className="hidden md:block text-4xl md:text-5xl lg:text-7xl">
+    <span className="text-[#9F1AB1] font-bold">AI Solutions </span>
+    That Think, Learn & Evolve
+  </span>
+</h2>
+
               <p className="text-gray-600 text-base md:text-lg mt-4">
               Unlock the power of Artificial Intelligence to automated tasks, drive insights and create smater solutions for your business
               </p>

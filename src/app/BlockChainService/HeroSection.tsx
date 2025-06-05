@@ -33,14 +33,25 @@ const HeroSection = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative z-20 w-full md:w-2/3 lg:w-1/2 flex flex-col items-center text-center md:items-start md:text-left p-8 rounded-lg"
         >
-          {/* <h2 className="text-4xl md:text-4xl lg:text-6xl font-bold text-gray-900">
-            Game That Keep <br />
-            <span className="text-[#E95DFF]">Players</span> Hooked
-          </h2> */}
-             <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 ">
+        
+             {/* <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 ">
           Empowering <br /> Innovation with <br />
           <span className="text-[#E95DFF]">Blockchain</span> Solutions
-        </h2>
+        </h2> */}
+<h2 className="font-bold text-gray-900">
+  {/* Small  */}
+  <span className="block md:hidden text-2xl sm:text-3xl leading-snug">
+    Empowering Innovation with <span className="text-[#E95DFF] italic">Blockchain</span> Solutions
+  </span>
+
+  {/* Medium  */}
+  <span className="hidden md:block text-3xl md:text-4xl lg:text-6xl leading-tight">
+    Empowering <br />
+    Innovation with <br />
+    <span className="text-[#E95DFF] italic">Blockchain</span> Solutions
+  </span>
+</h2>
+
           <p className="text-gray-600 text-base md:text-lg mt-4">
           Secure, scalable, and customized blockchain development for the digital future.
           </p>

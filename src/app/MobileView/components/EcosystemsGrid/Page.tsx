@@ -13,7 +13,7 @@ const ecosystems = [
 const EcosystemsGrid = () => {
   return (
     <div className="text-center sm:p-20 sm:px-60 p-6">
-      <h2 className="text-[24px] lg:text-6xl font-bold text-gray-900">
+     <h2 className="text-4xl sm:text-2xl md:text-4xl font-semibold text-[#414141] mb-16 ">
         <span className="text-fuchsia-800">Ecosystems</span> We Work With
       </h2>
       <div className="grid grid-cols-2 md:grid-cols-4 sm:gap-8 gap-4 mt-16">

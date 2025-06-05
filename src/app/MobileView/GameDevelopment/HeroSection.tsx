@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex items-center  w-full overflow-hidden px-6 md:px-20 border-2">
+    <section className="relative flex items-center  w-full overflow-hidden px-6 md:px-20 ">
       {/* Background GIF */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -41,7 +41,7 @@ const HeroSection = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-6 px-6 py-3 rounded-full bg-gradient-to-r from-[#E95DFF] to-[#D680FF] text-white text-lg font-medium shadow-lg transition"
+           className="bg-[#D444F1] mt-12 text-white hover:bg-[#B33BC1] rounded-full py-3 px-4 w-40 transition duration-300"
           >
             Contact Us
           </motion.button>

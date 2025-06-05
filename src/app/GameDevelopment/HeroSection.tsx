@@ -37,7 +37,7 @@ const HeroSection = () => {
         Game That Keep <br />
         <span className="text-[#E95DFF]">Players</span> Hooked
       </h2>
-      <p className="text-gray-600 text-base md:text-[20px] mt-4">
+      <p className="text-gray-600 text-base md:text-[20px] mt-4 ">
         We create engaging, high-performance games <br /> that players love — seamless, fun, and built for <br /> the future of gaming
       </p>
          <Link href="/ContactUs">
