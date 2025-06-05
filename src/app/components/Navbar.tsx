@@ -186,7 +186,7 @@ const Navbar: React.FC = () => {
         setIsMobilePopupOpen((prev) => !prev);
         setIsDesktopPopupOpen(false);
       }}
-      className="text-gray-700 flex items-center justify-between w-full p-2 rounded-lg border-2 border-purple-600"
+      className="text-gray-700 flex items-center justify-between w-full  rounded-lg "
     >
       Services
       <RiArrowDropDownLine
