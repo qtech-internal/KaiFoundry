@@ -49,12 +49,12 @@ export default function HeroSection() {
             success easier to achieve.
           </p>
           <div
-            className={`flex items-center relative top-6 md:flex transition-opacity duration-1000 ${
+            className={`flex items-center relative top-6 md:flex transition-opacity duration-1000 mt-8 ${
               isVisible ? "opacity-100" : "opacity-0"
             }`}
           >
             <div
-              className="absolute inset-y-0 left-0 right-0 bg-[#D444F1] rounded-full"
+              className="absolute inset-y-0 left-0 right-0 bg-[#D444F1] rounded-full "
               style={{ width: "calc(48% - 10px)" }}
             ></div>
             <Link href="/HowWeHelpScreen">
