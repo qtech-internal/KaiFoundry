@@ -11,7 +11,7 @@ const FAQSection = () => {
 
   return (
     <div className="max-w-4xl mx-auto px-6 flex-col py-24">
-      <h2 className="text-4xl lg:text-[50px] font-bold text-center font-inter text-gray-900 mb-10">
+      <h2 className="text-3xl md:text-4xl lg:text-[50px] font-bold text-center font-inter text-gray-900 mb-10">
         <span className="text-[#BA24D5]">Frequently</span> Asked Questions
       </h2>
       <div className="mt-6">

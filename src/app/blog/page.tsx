@@ -143,10 +143,22 @@ export default function BlogCarousel() {
 
   return (
       <div className="relative max-w-full mx-auto py-32 px-6 container">
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <div className="text-[30px] lg:text-[50px] w-[300px] font-[500] text-[#414141] text-left">Our Latest</div>
           <div className="text-[30px] lg:text-[50px] w-[300px] font-[500] text-[#414141] text-left -mt-4 mb-6">Blogs</div>
-        </div>
+        </div> */}
+<div className="text-[#414141] font-[500] mb-6">
+  {/* Small screens: single line */}
+  <div className="block lg:hidden text-[30px] w-[300px] text-left">
+    Our Latest Blogs
+  </div>
+
+  {/* Large screens: split lines */}
+  <div className="hidden lg:flex flex-col text-[50px] w-[300px] text-left">
+    <div>Our Latest</div>
+    <div className="-mt-4">Blogs</div>
+  </div>
+</div>
 
         <div className="relative overflow-hidden">
           {blogs.length > 0 && (

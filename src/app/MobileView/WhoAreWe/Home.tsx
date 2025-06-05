@@ -19,9 +19,9 @@ const Home = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 1.0, ease: "easeInOut" }}
-        className="text-[24px] lg:text-7xl w-[300px] lg:w-[500px] text-black font-bold"
+        className="text-[24px] lg:text-7xl w-[300px] lg:w-[500px] text-black font-bold  mt-14"
       >
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA24D5] to-[#EA83FF]">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#BA24D5] to-[#EA83FF] ">
           Kai Foundry
         </span>
         : This Is
@@ -56,7 +56,7 @@ const Home = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.6, ease: "easeInOut", delay: 0.9 }}
-        className="mt-6 px-6 py-3 bg-[#D444F1] text-white font-semibold rounded-full shadow-lg transition"
+       className="bg-[#D444F1] mt-12 text-white hover:bg-[#B33BC1] rounded-full py-3 px-4 w-40 transition duration-300"
         >
           
         Contact Us

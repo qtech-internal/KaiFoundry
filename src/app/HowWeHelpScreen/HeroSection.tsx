@@ -53,7 +53,8 @@ const HowWeHelp = () => {
           and scale your growth.
         </p>
         <Link href="/ContactUs">
-          <button className="mt-12 px-10 py-3 rounded-full bg-gradient-to-r from-[#E95DFF] to-[#D680FF] text-white text-lg font-medium shadow-lg hover:opacity-90 transition">
+          <button
+                          className="bg-[#D444F1] mt-12 text-white hover:bg-[#B33BC1] rounded-full py-3 px-4 w-40 transition duration-300">
             Contact Us
           </button>
         </Link>

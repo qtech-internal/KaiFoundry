@@ -4,9 +4,9 @@ import Image from "next/image";
 
 const HeroSection2 = () => {
   return (
-    <section className="relative flex flex-col-reverse gap-4 lg:gap-0 md:flex-row items-center justify-between px-4 md:px-20 py-16 bg-[#FFFFFF]"> 
+    <section className="relative flex flex-col-reverse gap-4 lg:gap-0 md:flex-row items-center justify-between px-4 md:px-20 py-16 bg-[#FFFFFF] "> 
       {/* Left Content */}
-      <div className="text-center md:text-left max-w-2xl">
+      <div className="text-center md:text-left max-w-2xl mt-14">
         <motion.h1
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -61,11 +61,11 @@ const HeroSection2 = () => {
         {/* GIF Background */}
         <div className="absolute inset-0 w-full h-full rounded-full overflow-hidden">
   <Image
-    src="/assets/HowWeHelp/bg.gif" // Replace with your actual GIF path
+    src="/assets/HowWeHelp/bg1.gif" // Replace with your actual GIF path
     alt="Background GIF"
     layout="fill"
     objectFit="cover"
-    className="absolute inset-0 transform scale-820 opacity-30" // Increased size and reduced opacity
+    className="absolute inset-0 transform scale-200 opacity-20" // Increased size and reduced opacity
   />
 </div>
 
